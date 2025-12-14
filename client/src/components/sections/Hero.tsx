@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import heroBg from "@assets/generated_images/subtle_light_abstract_executive_background_texture.png";
+import { ArrowRight, Star } from "lucide-react";
+import heroBg from "@assets/generated_images/warm_organic_beige_background_with_soft_orange_shapes.png";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-[#FAFAF9]">
       {/* Background Texture */}
-      <div className="absolute inset-0 z-0 opacity-40 mix-blend-multiply pointer-events-none">
+      <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
         <img 
           src={heroBg} 
           alt="Abstract background" 
@@ -14,53 +14,53 @@ export function Hero() {
         />
       </div>
       
-      {/* Soft Gradient Overlay for text readability */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-white/20 to-white pointer-events-none" />
 
-      <div className="container-width relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+      <div className="container-width relative z-10 grid lg:grid-cols-12 gap-16 items-center">
         {/* Left Content */}
-        <div className="lg:col-span-7 space-y-8 animate-in slide-in-from-bottom-5 duration-700 fade-in">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-foreground tracking-tight leading-[1.1]">
-            Helping organizations <span className="text-primary">stay relevant</span> in the age of AI.
+        <div className="lg:col-span-7 space-y-10 animate-in slide-in-from-bottom-5 duration-700 fade-in text-center lg:text-left">
+           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary font-bold text-sm uppercase tracking-wider mb-2">
+             <Star className="w-4 h-4 fill-primary" /> Keynote Speaker & Founder
+           </div>
+           
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-foreground tracking-tight leading-[1.05]">
+            Future of Work <br/>
+            <span className="highlight-underline">Humanized</span>.
           </h1>
           
-          <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            I help leaders, HR teams, and organizations redesign work and build the human capability needed for intelligent transformation.
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed font-medium mx-auto lg:mx-0">
+            Helping organizations stay relevant in the age of AI by focusing on what matters most: <span className="text-foreground font-bold">People.</span>
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="xl" className="font-semibold text-lg px-8 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
+          <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center lg:justify-start">
+            <Button size="xl" className="font-bold text-lg px-10 rounded-full shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all hover:-translate-y-1">
               Book Enrique
             </Button>
-            <Button variant="outline" size="xl" className="font-semibold text-lg px-8 bg-white/50 backdrop-blur-sm hover:bg-white border-primary/10">
-              Explore Keynotes
+            <Button variant="outline" size="xl" className="font-bold text-lg px-10 rounded-full border-2 border-foreground hover:bg-foreground hover:text-white transition-all bg-transparent">
+              Watch Keynotes
             </Button>
           </div>
         </div>
 
-        {/* Right Content - Credibility Card */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in">
-          <div className="relative w-full max-w-md aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-2xl border border-white/20 group">
-             {/* Placeholder for Headshot */}
-             <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-400">
-                <span className="sr-only">Enrique Rubio Portrait</span>
+        {/* Right Content - Visual */}
+        <div className="lg:col-span-5 relative animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:block">
+           {/* Decorative elements behind */}
+           <div className="absolute top-10 -right-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+           
+           <div className="relative z-10 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+             <div className="aspect-[4/5] bg-gray-200 rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white relative group">
+                {/* Image Placeholder */}
+                <div className="absolute inset-0 bg-gray-300 flex items-center justify-center text-gray-500 font-bold text-2xl">
+                   Image of Enrique
+                </div>
+                
+                {/* Floating Badge */}
+                <div className="absolute bottom-8 right-8 bg-white p-6 rounded-2xl shadow-xl max-w-[200px] transform group-hover:scale-105 transition-transform">
+                   <p className="font-heading font-bold text-3xl text-primary mb-1">100+</p>
+                   <p className="text-sm font-bold text-foreground leading-tight">Global Keynotes Delivered</p>
+                </div>
              </div>
-             
-             {/* Overlay Content Card */}
-             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-xl shadow-lg border border-gray-100 transform transition-transform duration-500 hover:-translate-y-1">
-               <h3 className="font-heading font-bold text-xl text-foreground">Enrique Rubio</h3>
-               <div className="h-0.5 w-12 bg-primary my-3"></div>
-               <p className="text-sm font-medium text-muted-foreground leading-relaxed">
-                 Speaker on AI, the future of work, & HR technology.
-                 <br/>
-                 Founder, <span className="text-primary">Hacking HR</span>.
-               </p>
-               <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-foreground/70 uppercase tracking-wider">
-                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                 Global Audiences
-               </div>
-             </div>
-          </div>
+           </div>
         </div>
       </div>
     </section>

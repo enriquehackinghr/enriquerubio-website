@@ -2,16 +2,23 @@ import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Speaking", href: "/speaking" },
-    { name: "About", href: "/#about" }, // Placeholder links
+    { name: "About", href: "/#about" }, 
     { name: "Topics", href: "/#topics" },
     { name: "Media", href: "/#media" },
   ];
@@ -19,26 +26,33 @@ export function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
-      <div className="container-width flex items-center justify-between h-20">
+    <nav className={cn(
+      "fixed top-0 w-full z-50 transition-all duration-300",
+      scrolled || isOpen ? "bg-white shadow-sm py-4" : "bg-transparent py-6"
+    )}>
+      <div className="container-width flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="font-heading font-bold text-xl tracking-tight text-foreground hover:opacity-80 transition-opacity">
-          Enrique Rubio
+        <Link href="/">
+          <a className="font-heading font-black text-2xl tracking-tight text-foreground hover:text-primary transition-colors">
+            Enrique Rubio<span className="text-primary">.</span>
+          </a>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          <div className="flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-10">
+          <div className="flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href} className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                location === link.href ? "text-primary" : "text-muted-foreground"
-              )}>
-                {link.name}
+              <Link key={link.name} href={link.href}>
+                <a className={cn(
+                  "text-base font-bold transition-colors hover:text-primary",
+                  location === link.href ? "text-primary" : "text-foreground"
+                )}>
+                  {link.name}
+                </a>
               </Link>
             ))}
           </div>
-          <Button className="font-semibold px-6" size="lg">
+          <Button className="font-bold px-8 rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/30" size="lg">
             Book Enrique
           </Button>
         </div>
@@ -49,20 +63,25 @@ export function Navbar() {
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
         </button>
       </div>
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-100 p-6 animate-in slide-in-from-top-5">
-          <div className="flex flex-col gap-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-8 animate-in slide-in-from-top-5 shadow-xl">
+          <div className="flex flex-col gap-6 items-center text-center">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href} className="text-lg font-medium py-2 border-b border-gray-50 text-muted-foreground hover:text-primary" onClick={() => setIsOpen(false)}>
-                {link.name}
+              <Link key={link.name} href={link.href}>
+                <a 
+                  className="text-xl font-bold text-foreground hover:text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </a>
               </Link>
             ))}
-            <Button className="w-full mt-4" size="lg">
+            <Button className="w-full mt-4 rounded-full py-6 text-lg" size="lg">
               Book Enrique
             </Button>
           </div>

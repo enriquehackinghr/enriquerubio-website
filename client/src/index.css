@@ -9,55 +9,50 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Clean, Executive Palette */
-  --color-background: hsl(0 0% 99%); /* Near white */
-  --color-foreground: hsl(220 10% 10%); /* Near black, slight cool tint */
+  /* Warm, Human-Centered Palette (Smiley Poswolsky inspired) */
+  --color-background: hsl(40 20% 98%); /* Warm off-white/cream */
+  --color-foreground: hsl(222 47% 11%); /* Deep Navy */
 
   --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(220 10% 10%);
+  --color-card-foreground: hsl(222 47% 11%);
 
   --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(220 10% 10%);
+  --color-popover-foreground: hsl(222 47% 11%);
 
-  /* Signal Color: Electric Blue / Indigo */
-  --color-primary: hsl(225 80% 50%);
+  /* Signal Color: Vibrant Coral Orange */
+  --color-primary: hsl(16 100% 60%); /* #FF6B35 approx equivalent */
   --color-primary-foreground: hsl(0 0% 100%);
 
-  --color-secondary: hsl(220 10% 96%);
-  --color-secondary-foreground: hsl(220 10% 10%);
+  /* Secondary: Soft Warm Gray/Beige */
+  --color-secondary: hsl(30 20% 92%);
+  --color-secondary-foreground: hsl(222 47% 11%);
 
-  --color-muted: hsl(220 10% 94%);
-  --color-muted-foreground: hsl(220 10% 40%);
+  --color-muted: hsl(30 10% 94%);
+  --color-muted-foreground: hsl(215 16% 47%);
 
-  --color-accent: hsl(225 80% 50%);
-  --color-accent-foreground: hsl(0 0% 100%);
+  --color-accent: hsl(16 100% 96%); /* Very light coral tint */
+  --color-accent-foreground: hsl(16 100% 50%);
 
   --color-destructive: hsl(0 84% 60%);
   --color-destructive-foreground: hsl(0 0% 98%);
 
-  --color-border: hsl(220 10% 90%);
-  --color-input: hsl(220 10% 90%);
-  --color-ring: hsl(225 80% 50%);
+  --color-border: hsl(30 10% 88%);
+  --color-input: hsl(30 10% 88%);
+  --color-ring: hsl(16 100% 60%);
 
-  --color-chart-1: hsl(225 80% 50%);
-  --color-chart-2: hsl(173 58% 39%);
-  --color-chart-3: hsl(197 37% 24%);
-  --color-chart-4: hsl(43 74% 66%);
-  --color-chart-5: hsl(27 87% 67%);
-
-  --color-sidebar: hsl(0 0% 98%);
-  --color-sidebar-foreground: hsl(240 5.3% 26.1%);
-  --color-sidebar-primary: hsl(240 5.9% 10%);
+  --color-sidebar: hsl(40 20% 98%);
+  --color-sidebar-foreground: hsl(222 47% 11%);
+  --color-sidebar-primary: hsl(222 47% 11%);
   --color-sidebar-primary-foreground: hsl(0 0% 98%);
-  --color-sidebar-accent: hsl(240 4.8% 95.9%);
-  --color-sidebar-accent-foreground: hsl(240 5.9% 10%);
-  --color-sidebar-border: hsl(220 13% 91%);
-  --color-sidebar-ring: hsl(217.2 91.2% 59.8%);
+  --color-sidebar-accent: hsl(30 20% 92%);
+  --color-sidebar-accent-foreground: hsl(222 47% 11%);
+  --color-sidebar-border: hsl(30 10% 88%);
+  --color-sidebar-ring: hsl(16 100% 60%);
 
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Manrope', sans-serif;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
   
-  --radius: 0.25rem;
+  --radius: 0.75rem; /* Softer, rounder corners */
 }
 
 @layer base {
@@ -72,21 +67,37 @@
   }
 }
 
-/* Custom utilities for that "Premium" feel */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
   
   .glass-panel {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+    @apply bg-white/80 backdrop-blur-md border border-white/40 shadow-sm;
   }
   
   .section-spacing {
-    @apply py-20 md:py-32;
+    @apply py-24 md:py-36;
   }
   
   .container-width {
     @apply max-w-[1200px] mx-auto px-6 md:px-12;
+  }
+
+  /* Custom underline style for emphasis */
+  .highlight-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .highlight-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-color: hsl(var(--primary) / 0.3);
+    z-index: -1;
+    transform: rotate(-1deg);
   }
 }
