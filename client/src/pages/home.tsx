@@ -10,6 +10,7 @@ import { EngagementFormats } from "@/components/sections/EngagementFormats";
 import { FounderSection } from "@/components/sections/FounderSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { BookingSection } from "@/components/sections/BookingSection";
+import { ChatWidget } from "@/components/ChatWidget";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <BookingSection />
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   );
 }

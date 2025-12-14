@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { appendBookingToSheet } from "./googleSheets";
 import { sendBookingNotificationEmail, sendEmailToAddress } from "./gmail";
 import { generateResponse, generateWelcomeEmail, generateInitialAssistantMessage, type ChatMessage } from "./aiAgent";
+import { createAnonymousConversationSchema, updateContactSchema, sendMessageSchema } from "@shared/schema";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -116,6 +117,58 @@ export async function registerRoutes(
     }
   });
 
+  // Create anonymous conversation (for chat widget)
+  app.post('/api/conversations', async (req, res) => {
+    try {
+      const parsed = createAnonymousConversationSchema.safeParse(req.body);
+      if (!parsed.success) {
+        return res.status(400).json({ error: 'Invalid request', details: parsed.error.format() });
+      }
+      const { source } = parsed.data;
+      const conversation = await storage.createAnonymousConversation(source);
+      
+      // Store initial AI greeting
+      const greeting = "Hi there! I'm Enrique's AI assistant. I can answer questions about his speaking topics, availability, and help you explore if he's the right fit for your event. What brings you here today?";
+      await storage.createMessage({
+        conversationId: conversation.id,
+        role: 'assistant',
+        content: greeting
+      });
+
+      res.json({ 
+        conversationId: conversation.id,
+        greeting 
+      });
+    } catch (error: any) {
+      console.error('Create conversation error:', error);
+      res.status(500).json({ error: 'Failed to create conversation' });
+    }
+  });
+
+  // Update conversation contact info
+  app.patch('/api/conversation/:id/contact', async (req, res) => {
+    try {
+      const { id } = req.params;
+      
+      const parsed = updateContactSchema.safeParse(req.body);
+      if (!parsed.success) {
+        return res.status(400).json({ error: 'Invalid request', details: parsed.error.format() });
+      }
+
+      const conversation = await storage.getConversation(id);
+      if (!conversation) {
+        return res.status(404).json({ error: 'Conversation not found' });
+      }
+
+      await storage.updateConversationContact(id, parsed.data);
+      
+      res.json({ success: true });
+    } catch (error: any) {
+      console.error('Update contact error:', error);
+      res.status(500).json({ error: 'Failed to update contact info' });
+    }
+  });
+
   // Get conversation and messages
   app.get('/api/conversation/:id', async (req, res) => {
     try {
@@ -139,11 +192,12 @@ export async function registerRoutes(
   app.post('/api/conversation/:id/message', async (req, res) => {
     try {
       const { id } = req.params;
-      const { message } = req.body;
-
-      if (!message) {
-        return res.status(400).json({ error: 'Message is required' });
+      
+      const parsed = sendMessageSchema.safeParse(req.body);
+      if (!parsed.success) {
+        return res.status(400).json({ error: 'Invalid request', details: parsed.error.format() });
       }
+      const { message } = parsed.data;
 
       const conversation = await storage.getConversation(id);
       if (!conversation) {

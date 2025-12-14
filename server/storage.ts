@@ -2,6 +2,7 @@ import {
   type User, type InsertUser,
   type Conversation, type InsertConversation,
   type Message, type InsertMessage,
+  type UpdateContact,
   users, conversations, messages
 } from "@shared/schema";
 import { db } from "./db";
@@ -13,9 +14,11 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
   
   createConversation(conversation: InsertConversation): Promise<Conversation>;
+  createAnonymousConversation(source: string): Promise<Conversation>;
   getConversation(id: string): Promise<Conversation | undefined>;
   getConversationByEmail(email: string): Promise<Conversation | undefined>;
   updateConversationEscalation(id: string, reason: string): Promise<void>;
+  updateConversationContact(id: string, data: UpdateContact): Promise<void>;
   
   createMessage(message: InsertMessage): Promise<Message>;
   getMessagesByConversation(conversationId: string): Promise<Message[]>;
@@ -42,6 +45,11 @@ export class DatabaseStorage implements IStorage {
     return created;
   }
 
+  async createAnonymousConversation(source: string): Promise<Conversation> {
+    const [created] = await db.insert(conversations).values({ source }).returning();
+    return created;
+  }
+
   async getConversation(id: string): Promise<Conversation | undefined> {
     const [conversation] = await db.select().from(conversations).where(eq(conversations.id, id));
     return conversation;
@@ -65,6 +73,13 @@ export class DatabaseStorage implements IStorage {
         escalatedAt: new Date(),
         escalationReason: reason 
       })
+      .where(eq(conversations.id, id));
+  }
+
+  async updateConversationContact(id: string, data: UpdateContact): Promise<void> {
+    await db
+      .update(conversations)
+      .set(data)
       .where(eq(conversations.id, id));
   }
 
