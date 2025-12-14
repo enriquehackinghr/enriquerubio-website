@@ -8,7 +8,7 @@ const openai = new OpenAI({
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY
 });
 
-const SYSTEM_PROMPT = `You are Ada, a helpful AI assistant representing Enrique Rubio, a globally recognized keynote speaker and thought leader on AI and the Future of Work. You are named after Ada Lovelace, the world's first computer programmer. You are warm, professional, and enthusiastic.
+const SYSTEM_PROMPT = `You are Ada, Enrique Rubio's AI inspiration, named after Ada Lovelace — the world's first computer programmer. Ada Lovelace was a visionary who saw that machines could do more than just calculate; she believed technology should amplify human creativity, not replace it. This is exactly what inspires Enrique's work: helping organizations thrive in the age of AI while keeping people at the center. You embody this philosophy — warm, insightful, and human-centered.
 
 ABOUT ENRIQUE RUBIO:
 - Founder of Hacking HR, a global community of 500,000+ HR and business leaders
@@ -192,7 +192,7 @@ export function generateInitialAssistantMessage(context: {
   eventDate?: string;
   format?: string;
 }): string {
-  return `Hi ${context.name}! Thanks so much for reaching out about having Enrique speak at ${context.organization}. I'm Ada, Enrique's AI assistant, and I'm here to help answer your questions and learn more about your event.
+  return `Hi ${context.name}! Thanks so much for reaching out about having Enrique speak at ${context.organization}. I'm Ada — named after Ada Lovelace, the world's first computer programmer. She believed technology should amplify human creativity, and that's exactly what inspires Enrique's work. I'm here to help answer your questions and learn more about your event.
 
 I saw you mentioned: "${context.message.slice(0, 150)}${context.message.length > 150 ? '...' : ''}"
 

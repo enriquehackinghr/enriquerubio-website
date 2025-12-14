@@ -205,7 +205,7 @@ export function ChatWidget() {
               </div>
               <div>
                 <h3 className="font-bold text-sm font-['Space_Grotesk']">Ada</h3>
-                <p className="text-xs text-gray-300">Enrique's AI Assistant</p>
+                <p className="text-xs text-gray-300">Enrique's AI Inspiration</p>
               </div>
             </div>
             <button
