@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { appendBookingToSheet } from "./googleSheets";
+import { sendBookingNotificationEmail } from "./gmail";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -20,15 +21,26 @@ export async function registerRoutes(
         });
       }
 
-      // Append to Google Sheets
-      const result = await appendBookingToSheet({
+      const bookingData = {
         name,
         organization,
         email,
         eventDate: eventDate || '',
         format: format || 'Not specified',
         message
-      });
+      };
+
+      // Append to Google Sheets
+      const result = await appendBookingToSheet(bookingData);
+
+      // Send email notification via Gmail
+      try {
+        await sendBookingNotificationEmail(bookingData);
+        console.log('Email notification sent successfully');
+      } catch (emailError: any) {
+        console.error('Email notification failed:', emailError.message);
+        // Don't fail the whole request if email fails - data is already saved to sheet
+      }
 
       res.json({ 
         success: true, 
