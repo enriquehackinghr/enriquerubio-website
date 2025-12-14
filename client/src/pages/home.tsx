@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { FutureOfWorkSection } from "@/components/sections/FutureOfWorkSection";
 import { ProblemFraming } from "@/components/sections/ProblemFraming";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { TopicGrid } from "@/components/sections/TopicGrid";
@@ -16,7 +15,6 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        <FutureOfWorkSection />
         <ProblemFraming />
         <HowItWorks />
         <TopicGrid />
