@@ -1,5 +1,4 @@
-import { ArrowUpRight, CheckSquare } from "lucide-react";
-import { Link } from "wouter";
+import { ArrowUpRight } from "lucide-react";
 
 interface Topic {
   title: string;
@@ -95,12 +94,6 @@ export function TopicGrid() {
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-20 text-center">
-           <Link href="/speaking" className="inline-flex items-center gap-2 px-8 py-4 bg-black border-2 border-primary font-mono font-bold text-lg text-primary hover:bg-primary hover:text-black hover:border-black transition-all uppercase tracking-widest">
-              <CheckSquare className="w-5 h-5" /> View full descriptions
-          </Link>
         </div>
       </div>
     </section>
