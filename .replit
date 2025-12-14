@@ -42,3 +42,8 @@ waitForPort = 5000
 [agent]
 mockupState = "FULLSTACK"
 integrations = ["google-sheet:1.0.0", "google-mail:1.0.0"]
+
+[userenv]
+
+[userenv.shared]
+NOTIFICATION_EMAIL = "enrique@hackinghr.io"
