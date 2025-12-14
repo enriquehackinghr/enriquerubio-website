@@ -5,7 +5,7 @@ import userHeadshot from "@assets/Headshot_-_PRO_4_1765720656304.png";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#F3F4F6]">
+    <section id="hero" className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#F3F4F6]">
       {/* Background Texture */}
       <div className="absolute inset-0 z-0 opacity-40 pointer-events-none mix-blend-overlay">
         <img 

@@ -4,10 +4,11 @@ import { Hero } from "@/components/sections/Hero";
 import { ProblemFraming } from "@/components/sections/ProblemFraming";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { TopicGrid } from "@/components/sections/TopicGrid";
-import { Credibility } from "@/components/sections/Credibility";
+import { SpeakingSection } from "@/components/sections/SpeakingSection";
 import { EngagementFormats } from "@/components/sections/EngagementFormats";
 import { FounderSection } from "@/components/sections/FounderSection";
-import { Cta } from "@/components/sections/Cta";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { BookingSection } from "@/components/sections/BookingSection";
 
 export default function Home() {
   return (
@@ -17,11 +18,12 @@ export default function Home() {
         <Hero />
         <ProblemFraming />
         <HowItWorks />
+        <SpeakingSection />
         <TopicGrid />
-        <FounderSection />
-        <Credibility />
         <EngagementFormats />
-        <Cta />
+        <FounderSection />
+        <AboutSection />
+        <BookingSection />
       </main>
       <Footer />
     </div>
