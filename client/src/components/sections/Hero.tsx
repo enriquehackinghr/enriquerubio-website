@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Sparkles } from "lucide-react";
 import heroBg from "@assets/generated_images/paper_texture_with_colorful_abstract_doodle_shapes.png";
+import userHeadshot from "@assets/Headshot_-_PRO_4_1765720656304.png";
 
 export function Hero() {
   return (
@@ -47,18 +48,22 @@ export function Hero() {
         <div className="lg:col-span-5 relative animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:block">
            <div className="relative z-10 transform rotate-3 transition-transform duration-500 hover:rotate-1">
              <div className="aspect-[4/5] bg-white rounded-2xl overflow-hidden border-4 border-black brutal-shadow-lg relative group">
-                {/* Image Placeholder */}
-                <div className="absolute inset-0 bg-[#E0F2F1] flex items-center justify-center text-foreground font-black text-3xl uppercase tracking-widest opacity-20">
-                   Enrique Photo
+                {/* User Headshot */}
+                <div className="absolute inset-0 bg-[#E0F2F1]">
+                   <img 
+                    src={userHeadshot} 
+                    alt="Enrique Rubio" 
+                    className="w-full h-full object-cover object-center scale-110 translate-y-4"
+                   />
                 </div>
                 
                 {/* Floating Sticker */}
-                <div className="absolute -top-6 -right-6 bg-accent w-24 h-24 rounded-full border-2 border-black flex items-center justify-center animate-bounce duration-[3000ms]">
+                <div className="absolute -top-6 -right-6 bg-accent w-24 h-24 rounded-full border-2 border-black flex items-center justify-center animate-bounce duration-[3000ms] z-20">
                    <Star className="w-10 h-10 text-black fill-white" />
                 </div>
 
                 {/* Info Card */}
-                <div className="absolute bottom-0 left-0 right-0 bg-white border-t-4 border-black p-6">
+                <div className="absolute bottom-0 left-0 right-0 bg-white border-t-4 border-black p-6 z-10">
                    <p className="font-heading font-black text-4xl text-foreground mb-1">100+</p>
                    <p className="text-sm font-bold text-gray-500 uppercase tracking-wider">Global Keynotes Delivered</p>
                 </div>
