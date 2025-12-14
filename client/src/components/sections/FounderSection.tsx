@@ -1,89 +1,84 @@
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Users, Globe, BookOpen } from "lucide-react";
+import { ArrowUpRight, Users, Globe, BookOpen, Terminal } from "lucide-react";
 
 export function FounderSection() {
   return (
-    <section className="py-24 md:py-36 bg-[#FFD54F] border-t-2 border-black relative overflow-hidden">
+    <section className="py-24 md:py-36 bg-black border-t-2 border-white/20 relative overflow-hidden text-white">
       {/* Decorative background pattern */}
-      <div className="absolute inset-0 opacity-10" style={{backgroundImage: "radial-gradient(#000 2px, transparent 2px)", backgroundSize: "30px 30px"}}></div>
+      <div className="absolute inset-0 opacity-20" style={{backgroundImage: "linear-gradient(0deg, transparent 24%, rgba(0, 230, 118, .3) 25%, rgba(0, 230, 118, .3) 26%, transparent 27%, transparent 74%, rgba(0, 230, 118, .3) 75%, rgba(0, 230, 118, .3) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 230, 118, .3) 25%, rgba(0, 230, 118, .3) 26%, transparent 27%, transparent 74%, rgba(0, 230, 118, .3) 75%, rgba(0, 230, 118, .3) 76%, transparent 77%, transparent)", backgroundSize: "50px 50px"}}></div>
 
       <div className="container-width relative z-10">
-        <div className="bg-white border-2 border-black rounded-2xl p-8 md:p-12 shadow-[8px_8px_0px_0px_#1A1A1A]">
+        <div className="bg-[#111] border-2 border-primary/50 p-8 md:p-12 shadow-[0px_0px_20px_rgba(0,230,118,0.2)]">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             
             {/* Text Content */}
             <div className="space-y-6">
-              <div className="inline-block bg-black text-white px-4 py-1 font-bold uppercase tracking-widest text-sm rotate-[-1deg]">
-                Community Builder
+              <div className="inline-block bg-primary text-black px-4 py-1 font-mono font-bold uppercase tracking-widest text-xs">
+                :: Network_Node_Admin
               </div>
               
-              <h2 className="text-4xl md:text-5xl font-heading font-black text-foreground leading-tight">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold leading-tight uppercase">
                 Founder of <br/>
-                <span className="text-primary">Hacking HR</span>
+                <span className="text-primary text-stroke">Hacking HR</span>
               </h2>
               
-              <h3 className="text-xl font-bold text-foreground/80 border-b-2 border-black/10 pb-4">
+              <h3 className="text-xl font-mono text-gray-400 border-b border-gray-800 pb-4">
                 & People and Culture Strategy Institute
               </h3>
               
-              <p className="text-lg text-foreground/70 leading-relaxed font-medium">
-                I don't just speak about the future; I'm actively building it. Hacking HR is a global community of leaders dedicated to the intersection of the future of work, technology, and human potential.
+              <p className="text-lg text-gray-300 leading-relaxed font-mono">
+                > Initiating protocol: Community Building... <br/>
+                > I don't just speak about the future; I'm actively coding it into reality. Hacking HR is a global network of leaders upgrading human potential.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <div className="flex items-center gap-2 font-bold text-sm bg-gray-100 px-3 py-1.5 rounded-lg border border-black/20">
-                  <Users className="w-4 h-4 text-primary" /> Global Community
+                <div className="flex items-center gap-2 font-mono text-xs bg-gray-900 px-3 py-2 border border-gray-700 text-primary">
+                  <Users className="w-4 h-4" /> Global_Community
                 </div>
-                <div className="flex items-center gap-2 font-bold text-sm bg-gray-100 px-3 py-1.5 rounded-lg border border-black/20">
-                  <Globe className="w-4 h-4 text-primary" /> World-Class Events
+                <div className="flex items-center gap-2 font-mono text-xs bg-gray-900 px-3 py-2 border border-gray-700 text-primary">
+                  <Globe className="w-4 h-4" /> World_Class_Events
                 </div>
-                <div className="flex items-center gap-2 font-bold text-sm bg-gray-100 px-3 py-1.5 rounded-lg border border-black/20">
-                  <BookOpen className="w-4 h-4 text-primary" /> Learning Lab
+                <div className="flex items-center gap-2 font-mono text-xs bg-gray-900 px-3 py-2 border border-gray-700 text-primary">
+                  <BookOpen className="w-4 h-4" /> Learning_Lab
                 </div>
               </div>
 
               <div className="pt-6">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-black text-white hover:bg-gray-800 hover:text-white border-transparent">
-                  Visit Hacking HR <ArrowUpRight className="w-4 h-4 ml-2" />
+                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent text-primary hover:bg-primary hover:text-black border-2 border-primary rounded-none font-mono uppercase tracking-widest">
+                  Access_Hacking_HR <ArrowUpRight className="w-4 h-4 ml-2" />
                 </Button>
               </div>
             </div>
 
             {/* Visual/Logo Area */}
             <div className="relative">
-              {/* Pseudo-Browser Window for Visual Interest */}
-              <div className="bg-white border-2 border-black rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_#1A1A1A]">
-                <div className="bg-black p-3 flex gap-2 items-center border-b-2 border-black">
-                  <div className="w-3 h-3 rounded-full bg-red-500 border border-black/30"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500 border border-black/30"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500 border border-black/30"></div>
+              {/* Terminal Window */}
+              <div className="bg-black border-2 border-gray-700 overflow-hidden shadow-2xl relative">
+                <div className="bg-gray-900 p-2 flex justify-between items-center border-b border-gray-700">
+                   <div className="flex gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                   </div>
+                   <div className="text-xs font-mono text-gray-500">bash — 80x24</div>
                 </div>
-                <div className="p-8 bg-[#FAFAFA] min-h-[300px] flex flex-col items-center justify-center text-center space-y-6 relative overflow-hidden">
-                   {/* Abstract representation of the Hacking HR brand since we don't have the logo yet */}
-                   <div className="relative z-10">
-                     <h4 className="font-heading font-black text-4xl tracking-tighter">HACKING <span className="text-primary">HR</span></h4>
-                     <p className="text-xs font-bold tracking-[0.3em] uppercase mt-1 text-gray-400">Future of Work</p>
+                <div className="p-8 min-h-[300px] flex flex-col items-center justify-center text-center space-y-6 relative overflow-hidden font-mono">
+                   
+                   <div className="relative z-10 text-left w-full">
+                     <p className="text-green-500">$ ./start_hacking_hr.sh</p>
+                     <p className="text-white mt-2">Initializing core modules...</p>
+                     <p className="text-white">Loading future_of_work.js...</p>
+                     <div className="mt-8 border-2 border-primary p-4 inline-block">
+                        <h4 className="font-heading font-bold text-4xl tracking-tighter text-white">HACKING_<span className="text-primary">HR</span></h4>
+                     </div>
+                     <p className="text-primary mt-4 animate-pulse">_Cursor blinking...</p>
                    </div>
                    
-                   {/* Decorative elements */}
-                   <div className="absolute top-10 right-10 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
-                   <div className="absolute bottom-10 left-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-xl"></div>
-                   
-                   <div className="w-full max-w-[200px] h-2 bg-gray-200 rounded-full mt-8 overflow-hidden">
-                     <div className="w-2/3 h-full bg-primary animate-pulse"></div>
-                   </div>
-                   <div className="flex gap-2 opacity-50">
-                     <div className="w-8 h-8 rounded bg-gray-200"></div>
-                     <div className="w-8 h-8 rounded bg-gray-200"></div>
-                     <div className="w-8 h-8 rounded bg-gray-200"></div>
-                   </div>
+                   {/* Grid Overlay inside terminal */}
+                   <div className="absolute inset-0 bg-[linear-gradient(rgba(18,18,18,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-20 pointer-events-none bg-[length:100%_2px,3px_100%]"></div>
                 </div>
               </div>
               
-              {/* Floating Badge */}
-              <div className="absolute -bottom-6 -right-6 bg-white border-2 border-black px-6 py-3 rounded-xl shadow-[4px_4px_0px_0px_#1A1A1A] rotate-3">
-                 <span className="font-heading font-black text-xl">Top Voice 2025</span>
-              </div>
             </div>
 
           </div>

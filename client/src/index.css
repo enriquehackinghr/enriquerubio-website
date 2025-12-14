@@ -9,41 +9,42 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Smiley-inspired Pop Palette */
-  --color-background: #FFFCF5; /* Warm paper white */
-  --color-foreground: #1A1A1A; /* Sharp Black */
+  /* Tech / Future AI Palette */
+  --color-background: #F3F4F6; /* Cool Light Gray */
+  --color-foreground: #09090B; /* Deep Black */
 
   --color-card: #FFFFFF;
-  --color-card-foreground: #1A1A1A;
+  --color-card-foreground: #09090B;
 
   --color-popover: #FFFFFF;
-  --color-popover-foreground: #1A1A1A;
+  --color-popover-foreground: #09090B;
 
-  /* Primary: Energetic Orange */
-  --color-primary: #FF5E3A; 
-  --color-primary-foreground: #FFFFFF;
+  /* Primary: Electric Lime / Cyber Green */
+  --color-primary: #00E676; 
+  --color-primary-foreground: #000000;
 
-  /* Secondary: Soft Blue/Lilac for contrast */
-  --color-secondary: #E0F2F1;
-  --color-secondary-foreground: #1A1A1A;
+  /* Secondary: Cool Steel Blue */
+  --color-secondary: #E0E7FF;
+  --color-secondary-foreground: #09090B;
 
-  --color-muted: #F0F0F0;
-  --color-muted-foreground: #666666;
+  --color-muted: #F1F5F9;
+  --color-muted-foreground: #64748B;
 
-  --color-accent: #FFD54F; /* Sunny Yellow */
-  --color-accent-foreground: #1A1A1A;
+  /* Accent: Electric Blue */
+  --color-accent: #2979FF; 
+  --color-accent-foreground: #FFFFFF;
 
-  --color-destructive: #FF4444;
+  --color-destructive: #FF1744;
   --color-destructive-foreground: #FFFFFF;
 
-  --color-border: #1A1A1A; /* Black borders for that "Pop" look */
+  --color-border: #09090B; /* Maintain the bold borders */
   --color-input: #FFFFFF;
-  --color-ring: #FF5E3A;
+  --color-ring: #00E676;
 
   --font-sans: 'DM Sans', sans-serif;
-  --font-heading: 'Poppins', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif; /* Tech font */
   
-  --radius: 12px;
+  --radius: 4px; /* Sharper corners for tech feel */
 }
 
 @layer base {
@@ -54,7 +55,7 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold tracking-tight text-balance;
+    @apply font-heading font-bold tracking-tight text-balance uppercase; /* Uppercase for tech feel */
   }
 }
 
@@ -64,24 +65,24 @@
   }
   
   .container-width {
-    @apply max-w-[1100px] mx-auto px-6 md:px-12;
+    @apply max-w-[1200px] mx-auto px-6 md:px-12;
   }
 
-  /* POP / BRUTALIST UTILITIES */
+  /* TECH BRUTALIST UTILITIES */
   .brutal-border {
     @apply border-2 border-black;
   }
 
   .brutal-shadow {
-    box-shadow: 4px 4px 0px 0px #1A1A1A;
+    box-shadow: 4px 4px 0px 0px #00E676; /* Neon Green Shadow */
   }
   
   .brutal-shadow-sm {
-    box-shadow: 2px 2px 0px 0px #1A1A1A;
+    box-shadow: 2px 2px 0px 0px #09090B;
   }
 
   .brutal-shadow-lg {
-    box-shadow: 8px 8px 0px 0px #1A1A1A;
+    box-shadow: 8px 8px 0px 0px #2979FF; /* Electric Blue Shadow */
   }
 
   .brutal-hover {
@@ -89,14 +90,18 @@
   }
   
   .brutal-hover:hover {
-    box-shadow: 6px 6px 0px 0px #1A1A1A;
+    box-shadow: 6px 6px 0px 0px #00E676;
     transform: translate(-2px, -2px);
   }
 
   .highlight-marker {
-    background-image: linear-gradient(120deg, #FFD54F 0%, #FFD54F 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0.4em;
-    background-position: 0 88%;
+    background: linear-gradient(180deg, transparent 60%, #00E676 60%);
+  }
+  
+  .tech-grid-bg {
+    background-image: 
+      linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 }

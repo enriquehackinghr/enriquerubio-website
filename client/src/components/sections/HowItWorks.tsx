@@ -9,24 +9,27 @@ export function HowItWorks() {
   ];
 
   return (
-    <section className="py-24 md:py-36 bg-[#E0F2F1] border-b-2 border-black">
+    <section className="py-24 md:py-36 bg-[#E0E7FF] border-b-2 border-black">
       <div className="container-width grid lg:grid-cols-2 gap-16 items-start">
         <div>
-          <h2 className="text-4xl md:text-6xl font-heading font-black mb-8 text-balance text-foreground">
-            Strategic translation into <span className="text-primary">action.</span>
+           <div className="inline-block border border-black px-2 py-1 font-mono text-xs font-bold uppercase mb-4">
+              :: Algorithm_Output
+           </div>
+          <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 text-balance text-foreground uppercase tracking-tight">
+            Strategic translation into <span className="text-primary bg-black px-2">action.</span>
           </h2>
-          <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed max-w-lg font-bold">
-            I don't just talk about the future; I help organizations understand how AI changes work, redesign workflows, and prepare their people for a new operating reality.
+          <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed max-w-lg font-mono">
+            // I don't just talk about the future; I help organizations understand how AI changes work, redesign workflows, and prepare their people for a new operating reality.
           </p>
         </div>
         
         <div className="space-y-6">
           {outcomes.map((outcome, idx) => (
-            <div key={idx} className="flex items-start gap-6 p-6 bg-white rounded-xl border-2 border-black shadow-[4px_4px_0px_0px_#1A1A1A] transition-transform hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#1A1A1A]">
-              <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-accent border-2 border-black flex items-center justify-center text-black">
+            <div key={idx} className="flex items-start gap-6 p-6 bg-white border-2 border-black shadow-[4px_4px_0px_0px_#000] transition-transform hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#2979FF]">
+              <div className="mt-1 flex-shrink-0 w-8 h-8 bg-black border border-primary flex items-center justify-center text-primary">
                 <Check className="w-5 h-5" strokeWidth={4} />
               </div>
-              <p className="font-bold text-lg text-foreground">{outcome}</p>
+              <p className="font-bold text-lg text-foreground font-heading uppercase leading-tight">{outcome}</p>
             </div>
           ))}
         </div>

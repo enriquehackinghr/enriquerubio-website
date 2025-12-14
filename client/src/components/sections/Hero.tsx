@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Sparkles } from "lucide-react";
-import heroBg from "@assets/generated_images/paper_texture_with_colorful_abstract_doodle_shapes.png";
+import { ArrowRight, Cpu, Terminal } from "lucide-react";
+import heroBg from "@assets/generated_images/digital_grid_with_subtle_glitch_noise_and_data_patterns.png";
 import userHeadshot from "@assets/Headshot_-_PRO_4_1765720656304.png";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#FFFCF5]">
+    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#F3F4F6]">
       {/* Background Texture */}
-      <div className="absolute inset-0 z-0 opacity-80 pointer-events-none mix-blend-multiply">
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none mix-blend-overlay">
         <img 
           src={heroBg} 
           alt="Abstract background" 
@@ -15,63 +15,78 @@ export function Hero() {
         />
       </div>
       
+      {/* Grid Overlay */}
+      <div className="absolute inset-0 z-0 tech-grid-bg opacity-30 pointer-events-none" />
+      
       <div className="container-width relative z-10 grid lg:grid-cols-12 gap-12 items-center">
         {/* Left Content */}
         <div className="lg:col-span-7 space-y-8 animate-in slide-in-from-bottom-5 duration-700 fade-in text-left">
            
-           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-black brutal-shadow-sm rounded-full font-bold text-sm uppercase tracking-wider mb-2 rotate-[-2deg]">
-             <Sparkles className="w-4 h-4 text-primary fill-primary" /> 
-             Keynote Speaker & Founder
+           <div className="inline-flex items-center gap-2 px-4 py-1 bg-black border border-primary brutal-shadow-sm text-primary font-mono font-bold text-xs uppercase tracking-widest mb-2">
+             <Terminal className="w-3 h-3" /> 
+             System.Init: Keynote_Speaker
            </div>
            
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-foreground tracking-tight leading-[1.0] drop-shadow-sm">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-foreground tracking-tighter leading-[0.9] drop-shadow-sm uppercase">
             Future of Work
             <br />
-            <span className="text-primary highlight-marker px-2">Humanized.</span>
+            <span className="text-primary bg-black px-2 inline-block transform -skew-x-12">Humanized_</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-foreground max-w-xl leading-relaxed font-bold border-l-4 border-primary pl-6">
-            Helping organizations stay relevant in the age of AI by focusing on what matters most: <span className="underline decoration-4 decoration-accent underline-offset-4">People.</span>
+          <p className="text-xl md:text-2xl text-foreground max-w-xl leading-relaxed font-medium border-l-4 border-primary pl-6 font-mono">
+            // Helping organizations upgrade their OS for the age of AI by focusing on the core kernel: <span className="bg-primary/20 px-1 text-black font-bold">PEOPLE.</span>
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 pt-6 items-start">
-            <Button size="xl" className="rotate-[-1deg]">
-              Book Enrique Now <ArrowRight className="w-5 h-5" />
+            <Button size="xl" className="bg-primary text-black hover:bg-primary/80 border-2 border-black shadow-[4px_4px_0px_0px_#000] rounded-none uppercase font-bold tracking-wider">
+              Book Enrique Now <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button variant="outline" size="xl" className="rotate-[1deg]">
-              Watch Keynotes
+            <Button variant="outline" size="xl" className="bg-white text-black border-2 border-black shadow-[4px_4px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none rounded-none uppercase font-bold tracking-wider font-mono">
+              [Watch_Keynotes]
             </Button>
           </div>
         </div>
 
         {/* Right Content - Visual */}
         <div className="lg:col-span-5 relative animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:block">
-           <div className="relative z-10 transform rotate-3 transition-transform duration-500 hover:rotate-1">
-             <div className="aspect-[4/5] bg-white rounded-2xl overflow-hidden border-4 border-black brutal-shadow-lg relative group">
+           <div className="relative z-10">
+             <div className="aspect-[4/5] bg-gray-200 overflow-hidden border-2 border-black shadow-[8px_8px_0px_0px_#00E676] relative group">
                 {/* User Headshot */}
-                <div className="absolute inset-0 bg-[#E0F2F1]">
+                <div className="absolute inset-0 bg-[#E0E7FF] mix-blend-multiply">
                    <img 
                     src={userHeadshot} 
                     alt="Enrique Rubio" 
-                    className="w-full h-full object-cover object-center scale-110 translate-y-4"
+                    className="w-full h-full object-cover object-center scale-110 translate-y-4 grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500"
                    />
                 </div>
                 
-                {/* Floating Sticker */}
-                <div className="absolute -top-6 -right-6 bg-accent w-24 h-24 rounded-full border-2 border-black flex items-center justify-center animate-bounce duration-[3000ms] z-20">
-                   <Star className="w-10 h-10 text-black fill-white" />
+                {/* Tech Overlays */}
+                <div className="absolute top-4 left-4 w-2 h-2 bg-primary animate-pulse"></div>
+                <div className="absolute top-4 right-4 w-2 h-2 bg-primary animate-pulse delay-75"></div>
+                <div className="absolute bottom-4 left-4 w-2 h-2 bg-primary animate-pulse delay-150"></div>
+                <div className="absolute bottom-4 right-4 w-2 h-2 bg-primary animate-pulse delay-300"></div>
+                
+                {/* Floating Badge */}
+                <div className="absolute -top-6 -right-6 bg-black text-primary w-24 h-24 border-2 border-primary flex flex-col items-center justify-center z-20 shadow-[4px_4px_0px_0px_#000]">
+                   <Cpu className="w-8 h-8 mb-1 animate-spin-slow" />
+                   <span className="font-mono text-xs font-bold">AI_READY</span>
                 </div>
 
                 {/* Info Card */}
-                <div className="absolute bottom-0 left-0 right-0 bg-white border-t-4 border-black p-6 z-10">
-                   <p className="font-heading font-black text-4xl text-foreground mb-1">100+</p>
-                   <p className="text-sm font-bold text-gray-500 uppercase tracking-wider">Global Keynotes Delivered</p>
+                <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur border-t-2 border-primary p-4 z-10 text-white">
+                   <div className="flex justify-between items-end">
+                     <div>
+                       <p className="font-mono text-xs text-primary mb-1">:: METRIC_LOADED</p>
+                       <p className="font-heading font-bold text-3xl leading-none">100+</p>
+                     </div>
+                     <p className="text-xs font-mono text-gray-400 text-right max-w-[100px]">GLOBAL KEYNOTES DEPLOYED</p>
+                   </div>
                 </div>
              </div>
            </div>
            
            {/* Decorative doodle behind */}
-           <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary rounded-full border-4 border-black -z-10"></div>
+           <div className="absolute -bottom-8 -left-8 w-full h-full border-2 border-black bg-transparent -z-10 bg-[linear-gradient(45deg,#000_25%,transparent_25%,transparent_75%,#000_75%,#000),linear-gradient(45deg,#000_25%,transparent_25%,transparent_75%,#000_75%,#000)] bg-[length:20px_20px] opacity-10"></div>
         </div>
       </div>
     </section>

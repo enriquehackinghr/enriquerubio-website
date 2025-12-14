@@ -5,17 +5,17 @@ export function ProblemFraming() {
         <div className="max-w-5xl mx-auto">
           <h2 className="sr-only">The Challenge</h2>
           <div className="space-y-12 md:space-y-16">
-            <p className="text-4xl md:text-6xl font-heading font-black text-foreground leading-[1.1] tracking-tight">
+            <p className="text-4xl md:text-6xl font-heading font-bold text-foreground leading-[1.0] tracking-tighter uppercase">
               AI is moving faster than <br/>
-              <span className="bg-primary/20 px-2 decoration-4 underline decoration-primary underline-offset-4">organizations can adapt.</span>
+              <span className="bg-black text-white px-2">organizations can adapt.</span>
             </p>
-            <p className="text-3xl md:text-5xl font-heading font-bold text-muted-foreground leading-tight">
+            <p className="text-3xl md:text-5xl font-heading font-bold text-gray-400 leading-tight uppercase">
               Leaders feel pressure but lack clarity on the "how."
             </p>
-            <p className="text-4xl md:text-6xl font-heading font-black text-foreground leading-[1.1] tracking-tight pl-0 md:pl-20 border-l-8 border-accent">
+            <p className="text-4xl md:text-6xl font-heading font-bold text-foreground leading-[1.0] tracking-tighter pl-0 md:pl-20 border-l-8 border-primary uppercase">
               HR is expected to lead transformation without the mandate.
             </p>
-            <p className="text-3xl md:text-5xl font-heading font-bold text-muted-foreground leading-tight">
+            <p className="text-3xl md:text-5xl font-heading font-bold text-gray-400 leading-tight uppercase">
               Employees feel uncertainty when they should feel capability.
             </p>
           </div>
