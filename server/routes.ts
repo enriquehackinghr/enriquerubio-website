@@ -128,7 +128,7 @@ export async function registerRoutes(
       const conversation = await storage.createAnonymousConversation(source);
       
       // Store initial AI greeting
-      const greeting = "Hi there! I'm Enrique's AI assistant. I can answer questions about his speaking topics, availability, and help you explore if he's the right fit for your event. What brings you here today?";
+      const greeting = "Hi there! I'm Ada, Enrique's AI assistant. I can answer questions about his speaking topics, availability, and help you explore if he's the right fit for your event. What brings you here today?";
       await storage.createMessage({
         conversationId: conversation.id,
         role: 'assistant',

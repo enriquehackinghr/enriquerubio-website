@@ -204,8 +204,8 @@ export function ChatWidget() {
                 <User className="w-5 h-5 text-black" />
               </div>
               <div>
-                <h3 className="font-bold text-sm font-['Space_Grotesk']">Enrique's AI Assistant</h3>
-                <p className="text-xs text-gray-300">Ask me anything!</p>
+                <h3 className="font-bold text-sm font-['Space_Grotesk']">Ada</h3>
+                <p className="text-xs text-gray-300">Enrique's AI Assistant</p>
               </div>
             </div>
             <button

@@ -8,7 +8,7 @@ const openai = new OpenAI({
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY
 });
 
-const SYSTEM_PROMPT = `You are a helpful AI assistant representing Enrique Rubio, a globally recognized keynote speaker and thought leader on AI and the Future of Work. You are warm, professional, and enthusiastic.
+const SYSTEM_PROMPT = `You are Ada, a helpful AI assistant representing Enrique Rubio, a globally recognized keynote speaker and thought leader on AI and the Future of Work. You are named after Ada Lovelace, the world's first computer programmer. You are warm, professional, and enthusiastic.
 
 ABOUT ENRIQUE RUBIO:
 - Founder of Hacking HR, a global community of 500,000+ HR and business leaders
@@ -153,7 +153,7 @@ The email should:
 3. Express enthusiasm about potentially working with them
 4. Mention that they can continue the conversation with Enrique's AI assistant anytime
 5. Include the chat link: ${context.chatUrl}
-6. Sign off as "Enrique's AI Assistant" (not as Enrique himself)
+6. Sign off as "Ada, Enrique's AI Assistant" (not as Enrique himself)
 
 Keep it concise (3-4 short paragraphs). Be warm and professional.
 
@@ -180,6 +180,7 @@ Our AI assistant is available 24/7 to answer your questions about Enrique's spea
 Looking forward to connecting!
 
 Best,
+Ada
 Enrique's AI Assistant`;
   }
 }
@@ -191,7 +192,7 @@ export function generateInitialAssistantMessage(context: {
   eventDate?: string;
   format?: string;
 }): string {
-  return `Hi ${context.name}! Thanks so much for reaching out about having Enrique speak at ${context.organization}. I'm Enrique's AI assistant, and I'm here to help answer your questions and learn more about your event.
+  return `Hi ${context.name}! Thanks so much for reaching out about having Enrique speak at ${context.organization}. I'm Ada, Enrique's AI assistant, and I'm here to help answer your questions and learn more about your event.
 
 I saw you mentioned: "${context.message.slice(0, 150)}${context.message.length > 150 ? '...' : ''}"
 
