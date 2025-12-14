@@ -77,9 +77,14 @@ Reply directly to ${data.email} to respond to this inquiry.
 
   const subject = `New Speaking Inquiry from ${data.name} at ${data.organization}`;
   
+  // Get the authenticated user's email address
+  const profile = await gmail.users.getProfile({ userId: 'me' });
+  const myEmail = profile.data.emailAddress;
+
   const rawMessage = [
     'Content-Type: text/plain; charset="UTF-8"',
     'MIME-Version: 1.0',
+    `To: ${myEmail}`,
     `Subject: ${subject}`,
     `Reply-To: ${data.email}`,
     '',
