@@ -9,50 +9,41 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Warm, Human-Centered Palette (Smiley Poswolsky inspired) */
-  --color-background: hsl(40 20% 98%); /* Warm off-white/cream */
-  --color-foreground: hsl(222 47% 11%); /* Deep Navy */
+  /* Smiley-inspired Pop Palette */
+  --color-background: #FFFCF5; /* Warm paper white */
+  --color-foreground: #1A1A1A; /* Sharp Black */
 
-  --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(222 47% 11%);
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1A1A1A;
 
-  --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(222 47% 11%);
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #1A1A1A;
 
-  /* Signal Color: Vibrant Coral Orange */
-  --color-primary: hsl(16 100% 60%); /* #FF6B35 approx equivalent */
-  --color-primary-foreground: hsl(0 0% 100%);
+  /* Primary: Energetic Orange */
+  --color-primary: #FF5E3A; 
+  --color-primary-foreground: #FFFFFF;
 
-  /* Secondary: Soft Warm Gray/Beige */
-  --color-secondary: hsl(30 20% 92%);
-  --color-secondary-foreground: hsl(222 47% 11%);
+  /* Secondary: Soft Blue/Lilac for contrast */
+  --color-secondary: #E0F2F1;
+  --color-secondary-foreground: #1A1A1A;
 
-  --color-muted: hsl(30 10% 94%);
-  --color-muted-foreground: hsl(215 16% 47%);
+  --color-muted: #F0F0F0;
+  --color-muted-foreground: #666666;
 
-  --color-accent: hsl(16 100% 96%); /* Very light coral tint */
-  --color-accent-foreground: hsl(16 100% 50%);
+  --color-accent: #FFD54F; /* Sunny Yellow */
+  --color-accent-foreground: #1A1A1A;
 
-  --color-destructive: hsl(0 84% 60%);
-  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-destructive: #FF4444;
+  --color-destructive-foreground: #FFFFFF;
 
-  --color-border: hsl(30 10% 88%);
-  --color-input: hsl(30 10% 88%);
-  --color-ring: hsl(16 100% 60%);
-
-  --color-sidebar: hsl(40 20% 98%);
-  --color-sidebar-foreground: hsl(222 47% 11%);
-  --color-sidebar-primary: hsl(222 47% 11%);
-  --color-sidebar-primary-foreground: hsl(0 0% 98%);
-  --color-sidebar-accent: hsl(30 20% 92%);
-  --color-sidebar-accent-foreground: hsl(222 47% 11%);
-  --color-sidebar-border: hsl(30 10% 88%);
-  --color-sidebar-ring: hsl(16 100% 60%);
+  --color-border: #1A1A1A; /* Black borders for that "Pop" look */
+  --color-input: #FFFFFF;
+  --color-ring: #FF5E3A;
 
   --font-sans: 'DM Sans', sans-serif;
   --font-heading: 'Poppins', sans-serif;
   
-  --radius: 0.75rem; /* Softer, rounder corners */
+  --radius: 12px;
 }
 
 @layer base {
@@ -63,7 +54,7 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight text-balance;
+    @apply font-heading font-bold tracking-tight text-balance;
   }
 }
 
@@ -72,32 +63,40 @@
     text-wrap: balance;
   }
   
-  .glass-panel {
-    @apply bg-white/80 backdrop-blur-md border border-white/40 shadow-sm;
-  }
-  
-  .section-spacing {
-    @apply py-24 md:py-36;
-  }
-  
   .container-width {
-    @apply max-w-[1200px] mx-auto px-6 md:px-12;
+    @apply max-w-[1100px] mx-auto px-6 md:px-12;
   }
 
-  /* Custom underline style for emphasis */
-  .highlight-underline {
-    position: relative;
-    display: inline-block;
+  /* POP / BRUTALIST UTILITIES */
+  .brutal-border {
+    @apply border-2 border-black;
   }
-  .highlight-underline::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background-color: hsl(var(--primary) / 0.3);
-    z-index: -1;
-    transform: rotate(-1deg);
+
+  .brutal-shadow {
+    box-shadow: 4px 4px 0px 0px #1A1A1A;
+  }
+  
+  .brutal-shadow-sm {
+    box-shadow: 2px 2px 0px 0px #1A1A1A;
+  }
+
+  .brutal-shadow-lg {
+    box-shadow: 8px 8px 0px 0px #1A1A1A;
+  }
+
+  .brutal-hover {
+    @apply transition-all duration-200 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none;
+  }
+  
+  .brutal-hover:hover {
+    box-shadow: 6px 6px 0px 0px #1A1A1A;
+    transform: translate(-2px, -2px);
+  }
+
+  .highlight-marker {
+    background-image: linear-gradient(120deg, #FFD54F 0%, #FFD54F 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.4em;
+    background-position: 0 88%;
   }
 }

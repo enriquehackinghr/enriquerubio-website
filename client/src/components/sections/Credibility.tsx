@@ -6,51 +6,44 @@ export function Credibility() {
     "Experienced working with executive audiences globally."
   ];
 
-  const targetAudiences = [
-    "CEOs & Executive Teams",
-    "CHROs & HR Leadership",
-    "Transformation Leaders",
-    "Conference Organizers",
-    "Boards of Directors"
-  ];
-
   return (
-    <section className="section-spacing bg-gray-900 text-white">
+    <section className="section-spacing bg-[#1A1A1A] text-white">
       <div className="container-width">
         <div className="grid lg:grid-cols-2 gap-20">
           <div>
-            <h2 className="text-3xl font-heading font-bold mb-8">Trusted Perspective</h2>
-            <div className="space-y-6">
+            <h2 className="text-4xl font-heading font-black mb-10 text-accent">Trusted Perspective</h2>
+            <div className="space-y-8">
               {points.map((point, idx) => (
-                <div key={idx} className="flex gap-4">
-                  <span className="text-primary font-mono">0{idx + 1}</span>
-                  <p className="text-gray-300 font-medium text-lg">{point}</p>
+                <div key={idx} className="flex gap-6 items-start">
+                  <span className="flex-shrink-0 w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center font-heading font-bold text-xl text-primary bg-white/5">
+                    {idx + 1}
+                  </span>
+                  <p className="text-white/90 font-medium text-xl leading-relaxed">{point}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div>
-            <h2 className="text-3xl font-heading font-bold mb-8">Who this is for</h2>
-            <div className="flex flex-wrap gap-3">
-              {targetAudiences.map((audience, idx) => (
+            <h2 className="text-4xl font-heading font-black mb-10 text-accent">Who this is for</h2>
+            <div className="flex flex-wrap gap-4">
+              {["CEOs & Execs", "CHROs", "HR Leaders", "Event Planners", "Boards", "Transformation Leads"].map((audience, idx) => (
                 <span 
                   key={idx}
-                  className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium hover:bg-white/10 transition-colors cursor-default"
+                  className="px-6 py-3 rounded-xl border-2 border-white/20 bg-white/5 text-lg font-bold hover:bg-white hover:text-black hover:border-white transition-all cursor-default"
                 >
                   {audience}
                 </span>
               ))}
             </div>
             
-            <div className="mt-12 pt-12 border-t border-white/10">
-               <p className="text-sm text-gray-400 uppercase tracking-widest font-bold mb-6">Featured In / Trusted By</p>
-               <div className="grid grid-cols-3 md:grid-cols-4 gap-8 opacity-40 grayscale">
-                 {/* Logo Placeholders using CSS to look like generic logos */}
-                 <div className="h-8 bg-current rounded w-full"></div>
-                 <div className="h-8 bg-current rounded w-full"></div>
-                 <div className="h-8 bg-current rounded w-full"></div>
-                 <div className="h-8 bg-current rounded w-full hidden md:block"></div>
+            <div className="mt-16 p-8 border-2 border-white/10 rounded-2xl bg-white/5">
+               <p className="text-sm text-gray-400 uppercase tracking-widest font-bold mb-6 text-center">Featured In / Trusted By</p>
+               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+                 <div className="h-10 bg-white/20 rounded w-full"></div>
+                 <div className="h-10 bg-white/20 rounded w-full"></div>
+                 <div className="h-10 bg-white/20 rounded w-full"></div>
+                 <div className="h-10 bg-white/20 rounded w-full"></div>
                </div>
             </div>
           </div>
