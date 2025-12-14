@@ -1,92 +1,42 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cpu, Terminal } from "lucide-react";
-import heroBg from "@assets/generated_images/digital_grid_with_subtle_glitch_noise_and_data_patterns.png";
 import userHeadshot from "@assets/Headshot_-_PRO_4_1765720656304.png";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#F3F4F6]">
-      {/* Background Texture */}
-      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none mix-blend-overlay">
-        <img 
-          src={heroBg} 
-          alt="Abstract background" 
-          className="w-full h-full object-cover"
-        />
-      </div>
-      
-      {/* Grid Overlay */}
-      <div className="absolute inset-0 z-0 tech-grid-bg opacity-30 pointer-events-none" />
-      
-      <div className="container-width relative z-10 grid lg:grid-cols-12 gap-12 items-center">
-        {/* Left Content */}
-        <div className="lg:col-span-7 space-y-8 animate-in slide-in-from-bottom-5 duration-700 fade-in text-left">
-           
-           <div className="inline-flex items-center gap-2 px-4 py-1 bg-black border border-primary brutal-shadow-sm text-primary font-mono font-bold text-xs uppercase tracking-widest mb-2">
-             <Terminal className="w-3 h-3" /> 
-             System.Init: Keynote_Speaker
-           </div>
-           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-foreground tracking-tighter leading-[0.9] drop-shadow-sm uppercase">
-            Future of Work
-            <br />
-            <span className="text-primary bg-black px-2 inline-block transform -skew-x-12">Humanized_</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-foreground max-w-xl leading-relaxed font-medium border-l-4 border-primary pl-6 font-mono">
-            // Helping organizations upgrade their OS for the age of AI by focusing on the core kernel: <span className="bg-primary/20 px-1 text-black font-bold">PEOPLE.</span>
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 pt-6 items-start">
-            <Button size="xl" className="bg-primary text-black hover:bg-primary/80 border-2 border-black shadow-[4px_4px_0px_0px_#000] rounded-none uppercase font-bold tracking-wider">
-              Book Enrique Now <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-            <Button variant="outline" size="xl" className="bg-white text-black border-2 border-black shadow-[4px_4px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none rounded-none uppercase font-bold tracking-wider font-mono">
-              [Watch_Keynotes]
-            </Button>
+    <section className="relative min-h-[90vh] flex items-center bg-black overflow-hidden pt-20">
+      <div className="container-width relative z-10 h-full">
+        <div className="grid lg:grid-cols-2 gap-12 items-center h-full">
+          {/* Left Content - Text */}
+          <div className="order-2 lg:order-1 space-y-12 py-12 lg:py-0">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-medium text-white tracking-tight leading-tight text-balance">
+              The AI keynote speaker who connects to your audience at a human level.
+            </h1>
+            
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button size="xl" className="bg-white text-black hover:bg-gray-200 rounded-sm px-8 py-6 text-lg font-medium">
+                Watch Keynotes
+              </Button>
+              <Button size="xl" className="bg-white text-black hover:bg-gray-200 rounded-sm px-8 py-6 text-lg font-medium">
+                Book Enrique
+              </Button>
+            </div>
           </div>
-        </div>
 
-        {/* Right Content - Visual */}
-        <div className="lg:col-span-5 relative animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:block">
-           <div className="relative z-10">
-             <div className="aspect-[4/5] bg-gray-200 overflow-hidden border-2 border-black shadow-[8px_8px_0px_0px_#00E676] relative group">
-                {/* User Headshot */}
-                <div className="absolute inset-0 bg-[#E0E7FF] mix-blend-multiply">
-                   <img 
-                    src={userHeadshot} 
-                    alt="Enrique Rubio" 
-                    className="w-full h-full object-cover object-center scale-110 translate-y-4 grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500"
-                   />
-                </div>
-                
-                {/* Tech Overlays */}
-                <div className="absolute top-4 left-4 w-2 h-2 bg-primary animate-pulse"></div>
-                <div className="absolute top-4 right-4 w-2 h-2 bg-primary animate-pulse delay-75"></div>
-                <div className="absolute bottom-4 left-4 w-2 h-2 bg-primary animate-pulse delay-150"></div>
-                <div className="absolute bottom-4 right-4 w-2 h-2 bg-primary animate-pulse delay-300"></div>
-                
-                {/* Floating Badge */}
-                <div className="absolute -top-6 -right-6 bg-black text-primary w-24 h-24 border-2 border-primary flex flex-col items-center justify-center z-20 shadow-[4px_4px_0px_0px_#000]">
-                   <Cpu className="w-8 h-8 mb-1 animate-spin-slow" />
-                   <span className="font-mono text-xs font-bold">AI_READY</span>
-                </div>
-
-                {/* Info Card */}
-                <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur border-t-2 border-primary p-4 z-10 text-white">
-                   <div className="flex justify-between items-end">
-                     <div>
-                       <p className="font-mono text-xs text-primary mb-1">:: METRIC_LOADED</p>
-                       <p className="font-heading font-bold text-3xl leading-none">100+</p>
-                     </div>
-                     <p className="text-xs font-mono text-gray-400 text-right max-w-[100px]">GLOBAL KEYNOTES DEPLOYED</p>
-                   </div>
-                </div>
+          {/* Right Content - Image */}
+          <div className="order-1 lg:order-2 relative h-full min-h-[50vh] lg:min-h-[80vh] flex items-end justify-center lg:justify-end">
+             {/* Image container that spans height */}
+             <div className="relative w-full h-full flex items-end justify-end">
+                <img 
+                  src={userHeadshot} 
+                  alt="Enrique Rubio" 
+                  className="max-h-[80vh] w-auto object-contain object-bottom grayscale contrast-125 brightness-90 mask-image-b"
+                  style={{
+                    maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)'
+                  }}
+                />
              </div>
-           </div>
-           
-           {/* Decorative doodle behind */}
-           <div className="absolute -bottom-8 -left-8 w-full h-full border-2 border-black bg-transparent -z-10 bg-[linear-gradient(45deg,#000_25%,transparent_25%,transparent_75%,#000_75%,#000),linear-gradient(45deg,#000_25%,transparent_25%,transparent_75%,#000_75%,#000)] bg-[length:20px_20px] opacity-10"></div>
+          </div>
         </div>
       </div>
     </section>
