@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Speaking from "@/pages/speaking";
+import { useEffect } from "react";
 
 function Router() {
   return (
@@ -18,6 +19,13 @@ function Router() {
 }
 
 function App() {
+  useEffect(() => {
+    // Force HTTPS redirect for custom domains
+    if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && !window.location.hostname.includes('.replit.dev')) {
+      window.location.href = window.location.href.replace('http:', 'https:');
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
