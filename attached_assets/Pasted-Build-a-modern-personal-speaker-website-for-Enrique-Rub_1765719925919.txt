@@ -1,0 +1,363 @@
+Build a modern personal speaker website for Enrique Rubio (speaker and founder of Hacking HR) focused on helping organizations stay relevant in the age of AI. The site must feel premium, minimal, and high-conversion, with a strong strategic tone. It must work extremely well even without keynote videos and with limited testimonials. Prioritize clarity, hierarchy, whitespace, and decisive calls-to-action.
+
+GENERAL DESIGN SYSTEM AND STYLE
+
+Use a clean, editorial design aesthetic: generous whitespace, large typography, calm contrast, minimal decoration. The site must feel like an executive-level brand, not a flashy marketing page.
+
+Typography:
+
+Use a modern sans-serif font (examples: Inter, Manrope, or similar).
+
+Headings: bold, large, tight line-height.
+
+Body: readable size, comfortable line-height, slightly muted color.
+
+Use consistent typographic scale: very large hero headline, medium section headers, normal body.
+
+Color:
+
+Primary background: white or near-white.
+
+Text: near-black for headings, dark gray for body.
+
+Accent color: one confident “signal” color used only for buttons, links, and small highlights. Keep it restrained.
+
+Layout:
+
+Max width around 1100–1200px, centered.
+
+Large vertical spacing between sections.
+
+All sections should be responsive: on mobile, content stacks cleanly with comfortable padding.
+
+Add subtle dividing elements: thin lines, faint background blocks, or spacing rather than heavy borders.
+
+Navigation:
+
+Sticky header is optional, but recommended.
+
+Header should include: Enrique Rubio (name as logo), and navigation links:
+Home, Speaking, About, Topics, Media, Contact (or Book).
+
+Primary CTA in header: “Book Enrique” button.
+
+Pages:
+
+Minimum pages: Home and Speaking.
+
+Optional pages: About, Contact.
+
+The Home page should convert, and the Speaking page should detail keynotes and booking.
+
+FUNCTIONAL REQUIREMENTS
+
+Booking CTA:
+
+Primary conversion path is “Book Enrique.”
+
+“Book Enrique” should open either:
+
+a dedicated Contact/Booking section on the page with a form, or
+
+a separate Contact page.
+
+The form should include: name, organization, email, event date (optional), event location (optional), format (in-person/virtual), audience size (optional), message field.
+
+After submission, show a clear success confirmation message.
+
+No video requirement:
+
+Do not include a hero video or keynote reel.
+
+If there is a Media section, allow simple embedded links later but do not depend on it.
+
+HOME PAGE STRUCTURE (SECTION BY SECTION)
+
+SECTION 1: HERO (above the fold)
+
+Goal: In 8–10 seconds, communicate “Enrique helps companies stay relevant in the age of AI” and provide a clear booking CTA.
+
+Layout:
+
+Two-column on desktop, stacked on mobile.
+
+Left side: headline, supporting paragraph, buttons.
+
+Right side: a clean “credibility card” or portrait image placeholder.
+
+Content requirements:
+
+Large headline (one sentence max) stating the value proposition:
+Example direction: “Helping organizations stay relevant in the age of AI.”
+
+Supporting paragraph (2–3 lines) that frames the stakes and Enrique’s role:
+Mention leaders, HR, people capability, work redesign, transformation.
+
+Buttons:
+Primary button: Book Enrique
+Secondary button: Explore Keynotes (scroll to Topics section)
+
+Right-side content:
+
+Either a professional headshot placeholder (if available), or a clean card with:
+“Enrique Rubio”
+“Speaker on AI, the future of work, workplace transformation, HR technology”
+“Founder, Hacking HR”
+
+Include subtle proof line such as: “Global audiences. Executive-level relevance.” without making claims that require verification.
+
+SECTION 2: THE PROBLEM FRAMING (“Why this matters now”)
+
+Goal: Make visitors feel understood. This replaces the need for testimonials.
+
+Layout:
+
+Full-width section with strong typographic emphasis.
+
+Use 3–4 short statements, each on its own line, with spacing.
+
+Content direction:
+
+“AI is moving faster than organizations can adapt.”
+
+“Leaders feel pressure but lack clarity.”
+
+“HR is expected to lead transformation without the mandate, model, or roadmap.”
+
+“Employees feel uncertainty when they should feel capability and confidence.”
+
+Keep it crisp, not dramatic.
+
+SECTION 3: HOW ENRIQUE HELPS (Strategic translation into action)
+
+Goal: Define the role Enrique plays.
+
+Layout:
+
+Section header + short paragraph + 3–4 “outcome bullets.”
+
+Present bullets as short, business-like statements.
+
+Content direction:
+
+Explain that Enrique helps organizations understand how AI changes work, redesign workflows and decision-making, prepare leaders and people, and align HR strategy with transformation.
+
+Outcome bullets should read like:
+
+“Clarifies what AI changes in work, leadership, and people strategy.”
+
+“Helps leaders move from experimentation to operational relevance.”
+
+“Builds readiness across culture, capability, and governance.”
+
+“Connects HR technology, AI adoption, and workforce transformation.”
+
+SECTION 4: SIGNATURE KEYNOTES / TOPICS (productized offers)
+
+Goal: Make it easy to choose a talk.
+
+Layout:
+
+A grid of 4–6 topic cards.
+
+Each card has: title, one-sentence description, and a small “Outcomes” line.
+
+Cards should be clean with subtle hover effect.
+
+Topic cards to include (use these as placeholders if needed):
+
+Staying Relevant in the Age of AI
+
+AI and the Future of Work: What’s Changing and What to Do Next
+
+HR’s Role in AI-Driven Workplace Transformation
+
+Leadership in an AI-Augmented Organization
+
+Building Human Capability for Intelligent Systems
+
+Responsible AI at Work: Governance, Trust, and Adoption
+
+Each topic should include an outcome phrase like:
+
+“Outcome: Alignment, clarity, action.”
+
+“Outcome: Readiness across leaders and people.”
+
+SECTION 5: WHO THIS IS FOR (buyer clarity)
+
+Goal: Help decision-makers self-select quickly.
+
+Layout:
+
+Two-column list or pill-style segments.
+
+Include segments such as:
+
+CEOs and Executive Teams
+
+CHROs and HR Leadership Teams
+
+HR and People Functions navigating AI adoption
+
+Conference and Summit Organizers
+
+Boards and Senior Leadership Offsites
+
+SECTION 6: CREDIBILITY WITHOUT TESTIMONIALS (proof infrastructure)
+
+Goal: Provide credible signals without relying on quotes.
+
+Layout:
+
+A calm section with a headline and 3–5 proof points.
+
+Optionally include a logo strip placeholder for future partner/event logos.
+
+Proof points to include (worded conservatively):
+
+Founder of Hacking HR, a global community and learning platform for HR and business leaders
+
+Creator and host of global events and programs exploring AI, work, leadership, and HR transformation
+
+Focused on practical, strategic translation of AI into workforce and operating model readiness
+
+Experienced working with global audiences across industries and geographies
+
+Do not invent metrics. If metrics are unknown, avoid numbers.
+
+SECTION 7: ENGAGEMENT FORMATS (reduce friction)
+
+Goal: Show flexibility and professionalism.
+
+Layout:
+
+Simple list or cards.
+
+Include:
+
+Keynotes (in-person or virtual)
+
+Executive briefings
+
+Leadership offsites
+
+Fireside chats and moderated conversations
+
+HR leadership sessions
+
+Workshops (optional, if Enrique offers them)
+
+SECTION 8: FINAL CTA (conversion block)
+
+Goal: Make booking feel easy and natural.
+
+Layout:
+
+A bold, clean section with a short headline and a button.
+
+Optionally include a short line about response time and professionalism.
+
+Content direction:
+Headline example: “If your organization is serious about staying relevant in the age of AI, let’s talk.”
+Button: Book Enrique
+Subtext: “Share your event details and we’ll respond with availability and next steps.”
+
+SPEAKING PAGE (DETAILED CONTENT)
+
+Create a Speaking page that expands the topics and makes booking straightforward.
+
+Speaking page sections:
+
+Speaking headline and positioning statement (similar to hero but slightly longer)
+
+Signature keynotes list:
+
+For each keynote: title, 2–3 sentence description, 3 bullet outcomes, suggested audiences, typical format (45–60 min keynote, optional Q&A)
+
+Engagement formats (repeat briefly)
+
+What organizers receive:
+
+Clear list: pre-event alignment call, customized framing, promotional blurb, speaker bio, headshot, post-session resources (optional)
+
+Booking section with form (same form as above)
+
+ABOUT PAGE (optional but recommended)
+
+If included, keep it concise:
+
+A short narrative about Enrique’s focus on AI, HR transformation, future of work.
+
+A “What I believe” section with 3–5 principles:
+Examples:
+
+AI strategy must become operating reality
+
+Adoption is a people system, not a tool rollout
+
+HR must lead readiness, not just support change
+
+Include a professional headshot placeholder.
+
+CONTACT / BOOKING (if separate page)
+
+If you prefer separate:
+
+Title: “Book Enrique”
+
+One paragraph: what to include in request
+
+Form fields as listed earlier
+
+Confirmation message after submit
+
+UX DETAILS
+
+Scrolling:
+
+“Explore Keynotes” on the hero should scroll to the Topics section.
+
+The nav links should scroll to sections on the Home page if it’s a single-page layout, but still keep a separate Speaking page for detail.
+
+Micro-interactions:
+
+Buttons: subtle hover and press states.
+
+Cards: subtle hover elevation or border emphasis.
+
+No heavy animations. Keep it professional.
+
+Performance:
+
+Fast load, minimal assets.
+
+Optimized images.
+
+Accessibility:
+
+Strong contrast, readable font sizes.
+
+Clear focus states for keyboard navigation.
+
+CONTENT PLACEHOLDERS TO INCLUDE NOW
+
+Because Enrique has limited recent stage video and limited testimonials, implement these placeholders:
+
+“Logos strip placeholder” labeled “Featured in / Trusted by” (can be populated later)
+
+“Media placeholder” on Speaking or About: “Podcasts, interviews, articles” (links can be added later)
+
+No testimonial slider. If needed, include a single optional “What clients say” section that can remain hidden until testimonials exist.
+
+DELIVERABLE EXPECTATION
+
+Implement a complete, polished, responsive site with:
+
+Home page with the 8 sections above
+
+Speaking page with keynote detail and booking form
+
+Clean header navigation with primary Book Enrique CTA
+
+A consistent design system across pages
