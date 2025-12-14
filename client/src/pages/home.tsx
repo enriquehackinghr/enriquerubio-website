@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { ProblemFraming } from "@/components/sections/ProblemFraming";
 import { HowItWorks } from "@/components/sections/HowItWorks";
+import { BuildWithYouSection } from "@/components/sections/BuildWithYouSection";
 import { TopicGrid } from "@/components/sections/TopicGrid";
 import { SpeakingSection } from "@/components/sections/SpeakingSection";
 import { EngagementFormats } from "@/components/sections/EngagementFormats";
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <ProblemFraming />
         <HowItWorks />
+        <BuildWithYouSection />
         <SpeakingSection />
         <TopicGrid />
         <EngagementFormats />
