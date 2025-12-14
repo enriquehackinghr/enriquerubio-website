@@ -63,21 +63,42 @@ export function ChatWidget() {
     }
   };
 
-  const startConversation = async (): Promise<string> => {
-    const response = await fetch('/api/conversations', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ source: 'widget' })
-    });
-    const data = await response.json();
-    localStorage.setItem(STORAGE_KEY, data.conversationId);
-    setConversationId(data.conversationId);
-    setMessages([{
-      id: 'greeting',
-      role: 'assistant',
-      content: data.greeting
-    }]);
-    return data.conversationId;
+  const startConversation = async (): Promise<string | null> => {
+    try {
+      const response = await fetch('/api/conversations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ source: 'widget' })
+      });
+      
+      if (!response.ok) {
+        console.error('Failed to create conversation:', response.status);
+        setMessages([{
+          id: 'error',
+          role: 'assistant',
+          content: "Sorry, I'm having trouble connecting right now. Please try again in a moment or use the contact form below."
+        }]);
+        return null;
+      }
+      
+      const data = await response.json();
+      localStorage.setItem(STORAGE_KEY, data.conversationId);
+      setConversationId(data.conversationId);
+      setMessages([{
+        id: 'greeting',
+        role: 'assistant',
+        content: data.greeting
+      }]);
+      return data.conversationId;
+    } catch (error) {
+      console.error('Failed to start conversation:', error);
+      setMessages([{
+        id: 'error',
+        role: 'assistant',
+        content: "Sorry, I'm having trouble connecting right now. Please try again in a moment or use the contact form below."
+      }]);
+      return null;
+    }
   };
 
   const sendMessage = async (e: React.FormEvent) => {
@@ -91,6 +112,10 @@ export function ChatWidget() {
     let currentConversationId = conversationId;
     if (!currentConversationId) {
       currentConversationId = await startConversation();
+      if (!currentConversationId) {
+        setSending(false);
+        return;
+      }
     }
 
     const optimisticMessage: Message = {
