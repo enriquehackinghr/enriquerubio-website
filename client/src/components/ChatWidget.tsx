@@ -76,7 +76,7 @@ export function ChatWidget() {
         setMessages([{
           id: 'error',
           role: 'assistant',
-          content: "Sorry, I'm having trouble connecting right now. Please try again in a moment or use the contact form below."
+          content: "Sorry, I'm having trouble connecting right now. Please close this chat and try again in a moment."
         }]);
         return null;
       }
@@ -95,7 +95,7 @@ export function ChatWidget() {
       setMessages([{
         id: 'error',
         role: 'assistant',
-        content: "Sorry, I'm having trouble connecting right now. Please try again in a moment or use the contact form below."
+        content: "Sorry, I'm having trouble connecting right now. Please close this chat and try again in a moment."
       }]);
       return null;
     }
