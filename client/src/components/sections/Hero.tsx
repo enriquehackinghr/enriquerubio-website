@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import userHeadshot from "@assets/Headshot_-_PRO_4_1765720656304.png";
+import userHeadshot from "@assets/Partnership_Templates_1765722497738.png";
 
 export function Hero() {
   return (
