@@ -3,7 +3,7 @@ import { ArrowUpRight, Users, Globe, BookOpen } from "lucide-react";
 
 export function FounderSection() {
   return (
-    <section className="section-spacing bg-[#FFD54F] border-t-2 border-black relative overflow-hidden">
+    <section className="py-24 md:py-36 bg-[#FFD54F] border-t-2 border-black relative overflow-hidden">
       {/* Decorative background pattern */}
       <div className="absolute inset-0 opacity-10" style={{backgroundImage: "radial-gradient(#000 2px, transparent 2px)", backgroundSize: "30px 30px"}}></div>
 

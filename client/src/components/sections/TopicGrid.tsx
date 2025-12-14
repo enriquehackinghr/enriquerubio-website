@@ -49,7 +49,7 @@ const topics: Topic[] = [
 
 export function TopicGrid() {
   return (
-    <section id="topics" className="section-spacing bg-white border-y-2 border-black">
+    <section id="topics" className="py-24 md:py-36 bg-white border-y-2 border-black">
       <div className="container-width">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-block bg-black text-white px-4 py-1 font-bold uppercase tracking-widest text-sm mb-6 rotate-[-2deg]">

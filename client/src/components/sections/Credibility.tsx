@@ -7,7 +7,7 @@ export function Credibility() {
   ];
 
   return (
-    <section className="section-spacing bg-[#1A1A1A] text-white">
+    <section className="py-24 md:py-36 bg-[#1A1A1A] text-white">
       <div className="container-width">
         <div className="grid lg:grid-cols-2 gap-20">
           <div>
