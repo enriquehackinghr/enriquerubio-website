@@ -98,10 +98,8 @@ export function TopicGrid() {
         </div>
         
         <div className="mt-20 text-center">
-           <Link href="/speaking">
-            <a className="inline-flex items-center gap-2 px-8 py-4 bg-black border-2 border-primary font-mono font-bold text-lg text-primary hover:bg-primary hover:text-black hover:border-black transition-all uppercase tracking-widest">
+           <Link href="/speaking" className="inline-flex items-center gap-2 px-8 py-4 bg-black border-2 border-primary font-mono font-bold text-lg text-primary hover:bg-primary hover:text-black hover:border-black transition-all uppercase tracking-widest">
               <CheckSquare className="w-5 h-5" /> View full descriptions
-            </a>
           </Link>
         </div>
       </div>
