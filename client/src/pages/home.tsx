@@ -6,6 +6,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { TopicGrid } from "@/components/sections/TopicGrid";
 import { Credibility } from "@/components/sections/Credibility";
 import { EngagementFormats } from "@/components/sections/EngagementFormats";
+import { FounderSection } from "@/components/sections/FounderSection";
 import { Cta } from "@/components/sections/Cta";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <ProblemFraming />
         <HowItWorks />
         <TopicGrid />
+        <FounderSection />
         <Credibility />
         <EngagementFormats />
         <Cta />
