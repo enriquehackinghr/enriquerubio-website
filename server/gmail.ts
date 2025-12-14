@@ -128,3 +128,35 @@ Reply directly to ${data.email} to respond to this inquiry.
 
   return { success: true };
 }
+
+export async function sendEmailToAddress(
+  toEmail: string,
+  subject: string,
+  body: string
+) {
+  const gmail = await getGmailClient();
+
+  const rawMessage = [
+    'Content-Type: text/plain; charset="UTF-8"',
+    'MIME-Version: 1.0',
+    `To: ${toEmail}`,
+    `Subject: ${subject}`,
+    '',
+    body
+  ].join('\r\n');
+
+  const encodedMessage = Buffer.from(rawMessage)
+    .toString('base64')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/, '');
+
+  await gmail.users.messages.send({
+    userId: 'me',
+    requestBody: {
+      raw: encodedMessage
+    }
+  });
+
+  return { success: true };
+}

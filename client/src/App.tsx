@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Speaking from "@/pages/speaking";
+import ChatPage from "@/pages/chat";
 import { useEffect } from "react";
 
 function Router() {
@@ -13,6 +14,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/speaking" component={Speaking} />
+      <Route path="/chat/:id" component={ChatPage} />
       <Route component={NotFound} />
     </Switch>
   );
