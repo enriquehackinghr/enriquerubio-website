@@ -27,8 +27,8 @@ export function FounderSection() {
               </h3>
               
               <p className="text-lg text-gray-300 leading-relaxed font-mono">
-                > Initiating protocol: Community Building... <br/>
-                > I don't just speak about the future; I'm actively coding it into reality. Hacking HR is a global network of leaders upgrading human potential.
+                &gt; Initiating protocol: Community Building... <br/>
+                &gt; I don't just speak about the future; I'm actively coding it into reality. Hacking HR is a global network of leaders upgrading human potential.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
