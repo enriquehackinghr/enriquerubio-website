@@ -3,9 +3,9 @@ import { google } from 'googleapis';
 
 let connectionSettings: any;
 
-async function getAccessToken() {
+async function getConnectionSettings() {
   if (connectionSettings && connectionSettings.settings.expires_at && new Date(connectionSettings.settings.expires_at).getTime() > Date.now()) {
-    return connectionSettings.settings.access_token;
+    return connectionSettings;
   }
   
   const hostname = process.env.REPLIT_CONNECTORS_HOSTNAME;
@@ -34,7 +34,27 @@ async function getAccessToken() {
   if (!connectionSettings || !accessToken) {
     throw new Error('Gmail not connected');
   }
-  return accessToken;
+  return connectionSettings;
+}
+
+async function getAccessToken() {
+  const settings = await getConnectionSettings();
+  return settings?.settings?.access_token || settings.settings?.oauth?.credentials?.access_token;
+}
+
+export async function getConnectedEmail(): Promise<string | null> {
+  // First check environment variable
+  if (process.env.NOTIFICATION_EMAIL) {
+    return process.env.NOTIFICATION_EMAIL;
+  }
+  
+  try {
+    const settings = await getConnectionSettings();
+    console.log('Gmail connection settings keys:', Object.keys(settings?.settings || {}));
+    return settings?.settings?.email || settings?.settings?.oauth?.email || settings?.settings?.user_email || null;
+  } catch {
+    return null;
+  }
 }
 
 async function getGmailClient() {
@@ -77,9 +97,11 @@ Reply directly to ${data.email} to respond to this inquiry.
 
   const subject = `New Speaking Inquiry from ${data.name} at ${data.organization}`;
   
-  // Get the authenticated user's email address
-  const profile = await gmail.users.getProfile({ userId: 'me' });
-  const myEmail = profile.data.emailAddress;
+  // Get the authenticated user's email address from connection settings
+  const myEmail = await getConnectedEmail();
+  if (!myEmail) {
+    throw new Error('Could not determine recipient email address. Please set NOTIFICATION_EMAIL environment variable.');
+  }
 
   const rawMessage = [
     'Content-Type: text/plain; charset="UTF-8"',
