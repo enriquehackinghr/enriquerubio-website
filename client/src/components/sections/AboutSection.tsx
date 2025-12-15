@@ -1,4 +1,4 @@
-import { Users, Globe, BookOpen, Lightbulb, Mountain, TreePine } from "lucide-react";
+import { Users, Globe, BookOpen, Lightbulb, Mountain, TreePine, Book } from "lucide-react";
 
 export function AboutSection() {
   const highlights = [
@@ -130,6 +130,67 @@ export function AboutSection() {
                   <Mountain className="w-24 h-24 text-white/20" />
                 </div>
                 <p className="absolute bottom-2 left-2 text-xs font-mono text-white/50">// ultrarunning_hero</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Upcoming Book Section */}
+        <div className="mt-24 pt-24 border-t border-white/10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Book Cover Placeholder */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative">
+                <div className="w-64 md:w-80 aspect-[3/4] bg-gradient-to-br from-primary/20 to-black border-2 border-primary shadow-[8px_8px_0px_0px_#00E676] flex flex-col items-center justify-center p-8">
+                  <Book className="w-16 h-16 text-primary mb-6" />
+                  <p className="font-heading font-bold text-xl md:text-2xl text-center uppercase leading-tight">
+                    Human-Centered,<br />
+                    <span className="text-primary">AI-Powered</span>
+                  </p>
+                  <p className="font-mono text-xs text-gray-400 mt-4 text-center">Coming Soon</p>
+                </div>
+                <div className="absolute -top-3 -right-3 bg-primary text-black px-3 py-1 font-mono font-bold text-xs uppercase">
+                  New Book
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Book Info */}
+            <div>
+              <div className="inline-block bg-primary text-black px-4 py-1 font-mono font-bold uppercase tracking-widest text-xs mb-6">
+                :: Upcoming_Book
+              </div>
+              <h3 className="text-4xl md:text-5xl font-heading font-bold mb-6 uppercase tracking-tight">
+                Human-Centered, <br/><span className="text-primary">AI-Powered</span>
+              </h3>
+              <p className="text-xl text-gray-300 font-mono mb-6 leading-relaxed">
+                A Strategic Leadership Playbook for the Age of AI
+              </p>
+              <div className="space-y-6 text-gray-300 font-mono leading-relaxed">
+                <p>
+                  &gt; The first strategic leadership playbook for building AI-ready organizations where AI becomes a core capability that accelerates performance—while leaders protect trust, accountability, and what makes work human.
+                </p>
+                <p>
+                  &gt; This book moves leaders beyond narrow conversations about AI tools and efficiency gains, developing their ability to lead systemic organizational redesign. It shows how to embed AI as a core organizational capability across work, workforce, culture, data, processes, governance, and technology.
+                </p>
+                <p>
+                  &gt; Through structured frameworks, real-world scenarios, and progressive exercises, readers actively build their own human-centered, AI-powered organizational blueprint.
+                </p>
+              </div>
+              
+              <div className="flex flex-wrap gap-4 mt-8">
+                <div className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5">
+                  <span className="text-primary font-mono text-sm">//</span>
+                  <span className="font-mono text-sm">Strategic Frameworks</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5">
+                  <span className="text-primary font-mono text-sm">//</span>
+                  <span className="font-mono text-sm">Real-World Scenarios</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5">
+                  <span className="text-primary font-mono text-sm">//</span>
+                  <span className="font-mono text-sm">Practical Exercises</span>
+                </div>
               </div>
             </div>
           </div>
