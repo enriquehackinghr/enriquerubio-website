@@ -18,7 +18,7 @@ export function AdaChatSection() {
   const [sending, setSending] = useState(false);
   const [loading, setLoading] = useState(false);
   const [initialized, setInitialized] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const storedId = localStorage.getItem(STORAGE_KEY);
@@ -30,7 +30,9 @@ export function AdaChatSection() {
   }, []);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
   }, [messages]);
 
   const loadConversation = async (id: string) => {
@@ -159,7 +161,7 @@ export function AdaChatSection() {
           </div>
 
           <div className="bg-white border-4 border-primary shadow-[8px_8px_0px_0px_rgba(0,230,118,0.5)]">
-            <div className="h-[400px] overflow-y-auto p-6 bg-gray-50" data-testid="ada-chat-messages">
+            <div ref={chatContainerRef} className="h-[400px] overflow-y-auto p-6 bg-gray-50" data-testid="ada-chat-messages">
               {loading ? (
                 <div className="flex justify-center py-8">
                   <Loader2 className="w-8 h-8 animate-spin text-primary" />
@@ -211,7 +213,6 @@ export function AdaChatSection() {
                       </div>
                     </div>
                   )}
-                  <div ref={messagesEndRef} />
                 </div>
               )}
             </div>
