@@ -94,15 +94,15 @@ export function SpeakingSection() {
           </p>
         </div>
 
-        {/* Horizontal Tab Menu */}
-        <div className="mb-8 overflow-x-auto scrollbar-hide">
-          <div className="flex gap-2 min-w-max pb-2">
+        {/* Tab Menu */}
+        <div className="mb-8">
+          <div className="flex flex-wrap gap-2">
             {keynotes.map((note, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
                 data-testid={`tab-keynote-${idx}`}
-                className={`px-4 py-3 font-mono font-bold text-sm uppercase tracking-wide border-2 border-black transition-all whitespace-nowrap ${
+                className={`px-4 py-3 font-mono font-bold text-sm uppercase tracking-wide border-2 border-black transition-all ${
                   activeIndex === idx
                     ? "bg-primary text-black shadow-[3px_3px_0px_0px_#000]"
                     : "bg-white text-foreground/70 hover:bg-gray-100"
