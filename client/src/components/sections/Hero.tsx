@@ -28,9 +28,9 @@ export function Hero() {
            </div>
            
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-foreground tracking-tighter leading-[0.9] drop-shadow-sm uppercase">
-            Future of Work
+            Staying Ahead in
             <br />
-            <span className="text-primary bg-black px-2 inline-block transform -skew-x-12">Humanized_</span>
+            <span className="text-primary bg-black px-2 inline-block transform -skew-x-12">the Age of AI</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground max-w-xl leading-relaxed font-medium border-l-4 border-primary pl-6 font-mono">
