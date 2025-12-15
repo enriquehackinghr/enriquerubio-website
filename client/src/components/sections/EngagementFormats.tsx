@@ -5,28 +5,28 @@ export function EngagementFormats() {
     {
       icon: <Mic className="w-8 h-8" />,
       title: "Keynotes",
-      desc: "High-impact presentations for large audiences (Virtual or In-Person).",
+      desc: "High-impact keynotes for senior leaders and enterprise audiences (virtual or in person).",
       color: "bg-white", 
       accent: "border-primary"
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Executive Briefings",
-      desc: "Strategic deep-dives for leadership teams and boards.",
+      desc: "Strategic deep-dives for executive teams and boards.",
       color: "bg-white",
       accent: "border-[#2979FF]"
     },
     {
       icon: <Coffee className="w-8 h-8" />,
       title: "Fireside Chats",
-      desc: "Moderated conversations that explore specific organizational challenges.",
+      desc: "Moderated conversations focused on strategic, organizational, and leadership challenges.",
       color: "bg-white",
       accent: "border-[#FF1744]"
     },
     {
       icon: <Projector className="w-8 h-8" />,
       title: "Workshops",
-      desc: "Interactive sessions to build capability and roadmap solutions.",
+      desc: "Interactive sessions to build organizational capability and execution roadmaps.",
       color: "bg-white",
       accent: "border-[#FFD600]"
     }
@@ -36,7 +36,7 @@ export function EngagementFormats() {
     <section className="py-24 md:py-36 bg-[#F3F4F6] border-b-2 border-black">
       <div className="container-width text-center">
         <h2 className="text-5xl md:text-6xl font-heading font-bold mb-20 text-foreground uppercase tracking-tight">
-          Engagement_Formats
+          Engagement Formats
         </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
