@@ -5,22 +5,22 @@ export function AboutSection() {
     {
       icon: <Users className="w-6 h-6" />,
       title: "Global Community Builder",
-      description: "Founder of Hacking HR, connecting HR and people leaders worldwide."
+      description: "Founder of Hacking HR, a global leadership and learning community focused on AI, work, and organizational transformation."
     },
     {
       icon: <Globe className="w-6 h-6" />,
       title: "International Speaker",
-      description: "100+ keynotes delivered across 6 continents to diverse audiences."
+      description: "Keynotes and executive sessions delivered globally to senior leaders and enterprise audiences."
     },
     {
       icon: <BookOpen className="w-6 h-6" />,
       title: "Thought Leader",
-      description: "Creator of the People and Culture Strategy Institute."
+      description: "Founder of the People and Culture Strategy Institute, focused on executive education and applied research."
     },
     {
       icon: <Lightbulb className="w-6 h-6" />,
       title: "AI & Future of Work Expert",
-      description: "Focused on translating AI strategy into practical organizational readiness."
+      description: "Focused on translating AI strategy into execution, readiness, and governance at scale."
     }
   ];
 
@@ -39,13 +39,16 @@ export function AboutSection() {
             </h2>
             <div className="space-y-6 text-gray-300 font-mono leading-relaxed">
               <p>
-                &gt; I'm Enrique Rubio, and I believe that the future of work isn't just about technology—it's about people. For over a decade, I've been at the intersection of HR, technology, and organizational transformation.
+                &gt; I'm Enrique Rubio. For over two decades, I've worked at the intersection of technology, leadership, and organizational transformation, helping leaders navigate how work actually changes in moments of disruption.
               </p>
               <p>
-                &gt; As the founder of Hacking HR, I've built a global community of leaders who are committed to making work more human, even as AI reshapes every industry. My work isn't about predicting the future; it's about helping organizations and their people prepare for it.
+                &gt; As the founder of Hacking HR, I built a global leadership and learning ecosystem focused on the future of work, AI, and organizational change. My work is not about prediction—it's about helping organizations build the capability to respond.
               </p>
               <p>
-                &gt; I don't just talk about change—I help leaders understand it, embrace it, and lead through it.
+                &gt; I don't just talk about change. I work with leaders to understand it, structure for it, and lead through it with clarity and intent.
+              </p>
+              <p className="text-gray-400 text-sm">
+                My background spans engineering, public administration, and global leadership—bringing a systems lens to how organizations adapt in the age of AI.
               </p>
             </div>
           </div>

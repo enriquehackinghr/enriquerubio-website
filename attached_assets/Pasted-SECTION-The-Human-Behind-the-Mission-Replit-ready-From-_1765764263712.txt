@@ -1,0 +1,49 @@
+SECTION: The Human Behind the Mission
+Replit-ready
+From: THE HUMAN BEHIND THE MISSION
+To: THE HUMAN BEHIND THE MISSION
+
+Intro paragraph
+From: > I'm Enrique Rubio, and I believe that the future of work isn't just about technology—it's about people. For over a decade, I've been at the intersection of HR, technology, and organizational transformation.
+To: > I’m Enrique Rubio. For over two decades, I’ve worked at the intersection of technology, leadership, and organizational transformation, helping leaders navigate how work actually changes in moments of disruption.
+
+Second paragraph (Hacking HR + systems view)
+From: > As the founder of Hacking HR, I've built a global community of leaders who are committed to making work more human, even as AI reshapes every industry. My work isn't about predicting the future; it's about helping organizations and their people prepare for it.
+To: > As the founder of Hacking HR, I built a global leadership and learning ecosystem focused on the future of work, AI, and organizational change. My work is not about prediction—it’s about helping organizations build the capability to respond.
+
+Third paragraph (leadership + execution)
+From: > I don't just talk about change—I help leaders understand it, embrace it, and lead through it.
+To: > I don’t just talk about change. I work with leaders to understand it, structure for it, and lead through it with clarity and intent.
+
+RIGHT-SIDE CARDS
+Card 1 — Global Community Builder
+From: GLOBAL COMMUNITY BUILDER
+To: GLOBAL COMMUNITY BUILDER
+
+From: Founder of Hacking HR, connecting HR and people leaders worldwide.
+To: Founder of Hacking HR, a global leadership and learning community focused on AI, work, and organizational transformation.
+
+Card 2 — International Speaker
+From: INTERNATIONAL SPEAKER
+To: INTERNATIONAL SPEAKER
+
+From: 100+ keynotes delivered across 6 continents to diverse audiences.
+To: Keynotes and executive sessions delivered globally to senior leaders and enterprise audiences.
+
+Card 3 — Thought Leader
+From: THOUGHT LEADER
+To: THOUGHT LEADER
+
+From: Creator of the People and Culture Strategy Institute.
+To: Founder of the People and Culture Strategy Institute, focused on executive education and applied research.
+
+Card 4 — AI & Future of Work Expert
+From: AI & FUTURE OF WORK EXPERT
+To: AI & FUTURE OF WORK EXPERT
+
+From: Focused on translating AI strategy into practical organizational readiness.
+To: Focused on translating AI strategy into execution, readiness, and governance at scale.
+
+OPTIONAL ADDITION (if one more line is allowed)
+From: [No existing line]
+To: My background spans engineering, public administration, and global leadership—bringing a systems lens to how organizations adapt in the age of AI.
