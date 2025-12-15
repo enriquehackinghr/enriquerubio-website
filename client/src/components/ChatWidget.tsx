@@ -238,7 +238,7 @@ export function ChatWidget() {
                   className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[85%] p-3 text-sm ${
+                    className={`max-w-[85%] p-3 text-sm whitespace-pre-line ${
                       message.role === 'user'
                         ? 'bg-[#2979FF] text-white rounded-lg rounded-br-none'
                         : 'bg-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-lg rounded-bl-none'

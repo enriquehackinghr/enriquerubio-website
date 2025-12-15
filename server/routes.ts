@@ -127,8 +127,16 @@ export async function registerRoutes(
       const { source } = parsed.data;
       const conversation = await storage.createAnonymousConversation(source);
       
-      // Store initial AI greeting
-      const greeting = "Hi there! I'm Ada, named after Ada Lovelace — the world's first computer programmer and a visionary who saw the potential of machines to do more than just calculate.\n\nShe inspires Enrique because she believed technology should amplify human creativity, not replace it.\n\nThat's exactly what Enrique talks about: helping organizations thrive in the age of AI while keeping people at the center.\n\nI'm here to answer your questions about his speaking topics, availability, and help you explore if he's the right fit for your event.\n\nBefore we dive in, what's your name?";
+      // Store initial AI greeting - each paragraph separated by double newlines
+      const greeting = `Hi there! I'm Ada, named after Ada Lovelace — the world's first computer programmer.
+
+She inspires Enrique because she believed technology should amplify human creativity, not replace it.
+
+That's exactly what Enrique talks about: helping organizations thrive in the age of AI while keeping people at the center.
+
+I'm here to answer your questions about his speaking topics, availability, and help you explore if he's the right fit for your event.
+
+Before we dive in, what's your name?`;
       await storage.createMessage({
         conversationId: conversation.id,
         role: 'assistant',
