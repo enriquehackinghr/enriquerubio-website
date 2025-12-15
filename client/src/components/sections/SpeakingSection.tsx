@@ -96,21 +96,21 @@ export function SpeakingSection() {
 
         {/* Tab Menu */}
         <div className="mb-10">
-          <div className="flex items-center justify-start gap-6 md:gap-8">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
             {keynotes.map((note, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
                 data-testid={`tab-keynote-${idx}`}
-                className={`font-mono font-bold text-lg md:text-xl transition-all relative ${
+                className={`font-mono text-sm transition-all relative ${
                   activeIndex === idx
-                    ? "text-primary"
-                    : "text-foreground/40 hover:text-foreground/70"
+                    ? "text-primary font-bold"
+                    : "text-foreground/50 hover:text-foreground/80"
                 }`}
               >
-                0{idx + 1}
+                {note.shortTitle}
                 {activeIndex === idx && (
-                  <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary" />
                 )}
               </button>
             ))}
