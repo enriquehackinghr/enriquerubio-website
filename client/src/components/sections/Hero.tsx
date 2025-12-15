@@ -48,11 +48,11 @@ export function Hero() {
         </div>
 
         {/* Right Content - Visual */}
-        <div className="lg:col-span-5 relative animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:block">
+        <div className="lg:col-span-5 absolute right-0 bottom-0 top-20 animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:flex items-end justify-end">
            <img 
              src={userHeadshot} 
              alt="Enrique Rubio" 
-             className="w-full h-auto object-contain block"
+             className="h-full w-auto object-contain object-bottom"
            />
         </div>
       </div>
