@@ -162,6 +162,26 @@ export async function registerRoutes(
 
       await storage.updateConversationContact(id, parsed.data);
       
+      // Send email notification to Enrique with conversation summary
+      try {
+        const messages = await storage.getMessagesByConversation(id);
+        const conversationSummary = messages.map(m => 
+          `${m.role === 'user' ? (parsed.data.name || 'Visitor') : 'Ada'}: ${m.content}`
+        ).join('\n\n');
+
+        await sendBookingNotificationEmail({
+          name: parsed.data.name || 'Anonymous Visitor',
+          organization: parsed.data.organization || 'Not specified',
+          email: parsed.data.email || 'Not provided',
+          eventDate: '',
+          format: 'Chat Widget Inquiry',
+          message: `A visitor shared their contact info after chatting with Ada.\n\n--- Conversation ---\n\n${conversationSummary}`
+        });
+        console.log('Contact info email sent to Enrique');
+      } catch (emailError: any) {
+        console.error('Failed to send contact info email:', emailError.message);
+      }
+      
       res.json({ success: true });
     } catch (error: any) {
       console.error('Update contact error:', error);

@@ -19,6 +19,7 @@ export function ChatWidget() {
   const [sending, setSending] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showEmailCapture, setShowEmailCapture] = useState(false);
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -170,6 +171,14 @@ export function ChatWidget() {
       });
       
       if (response.ok) {
+        setEmailSubmitted(true);
+        // Add thank you message from Ada
+        const thankYouMessage: Message = {
+          id: `thanks-${Date.now()}`,
+          role: 'assistant',
+          content: `Thank you${name ? `, ${name}` : ''}! I've shared our conversation with Enrique. He'll reach out to you at ${email} soon.`
+        };
+        setMessages(prev => [...prev, thankYouMessage]);
         setShowEmailCapture(false);
       }
     } catch (error) {
@@ -250,25 +259,35 @@ export function ChatWidget() {
             <div ref={messagesEndRef} />
           </div>
 
-          {showEmailCapture && (
+          {showEmailCapture && !emailSubmitted && (
             <form onSubmit={submitEmail} className="p-3 bg-[#00E676]/10 border-t-2 border-black">
-              <p className="text-xs text-gray-700 mb-2">Want Enrique to follow up? Leave your email:</p>
-              <div className="flex gap-2">
+              <p className="text-xs text-gray-700 mb-2">Want Enrique to follow up? Share your details:</p>
+              <div className="flex flex-col gap-2">
                 <Input
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email"
-                  type="email"
-                  className="flex-1 text-sm border-2 border-black h-9"
-                  data-testid="input-email-capture"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Your name"
+                  className="text-sm border-2 border-black h-9"
+                  data-testid="input-name-capture"
                 />
-                <Button
-                  type="submit"
-                  className="bg-[#00E676] text-black border-2 border-black h-9 px-3 hover:bg-[#00E676]/80"
-                  data-testid="button-submit-email"
-                >
-                  Save
-                </Button>
+                <div className="flex gap-2">
+                  <Input
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Your email"
+                    type="email"
+                    className="flex-1 text-sm border-2 border-black h-9"
+                    data-testid="input-email-capture"
+                  />
+                  <Button
+                    type="submit"
+                    disabled={!email.trim()}
+                    className="bg-[#00E676] text-black border-2 border-black h-9 px-3 hover:bg-[#00E676]/80"
+                    data-testid="button-submit-email"
+                  >
+                    Send
+                  </Button>
+                </div>
               </div>
             </form>
           )}
