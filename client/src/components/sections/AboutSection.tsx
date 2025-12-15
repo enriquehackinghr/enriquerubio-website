@@ -82,7 +82,7 @@ export function AboutSection() {
               </h3>
               <div className="space-y-6 text-gray-300 font-mono leading-relaxed">
                 <p>
-                  &gt; When I'm not speaking or building communities, you'll find me on mountain trails pushing my limits as an ultrarunner. There's something about running 50+ miles through wilderness that teaches you about resilience, patience, and the power of one step at a time.
+                  &gt; When I'm not speaking or building communities, you'll find me on mountain trails pushing my limits as an ultrarunner. There's something about running 3 to 4 thousand miles a year through wilderness that teaches you about resilience, patience, and the power of one step at a time.
                 </p>
                 <p>
                   &gt; Nature isn't just where I train—it's where I think. The clarity I find in forests and mountains directly informs my perspective on work and leadership. The best ideas often come when you're miles away from any screen.
