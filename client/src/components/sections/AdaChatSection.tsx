@@ -153,7 +153,7 @@ export function AdaChatSection() {
               <span className="font-mono text-primary text-sm uppercase tracking-wider">Meet Ada</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-white uppercase tracking-tight mb-4">
-              Ask <span className="text-primary">Ada</span> Anything
+              How Can I <span className="text-primary">Help</span> You?
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Named after Ada Lovelace, the world's first computer programmer. She's here to help you explore how Enrique can support your organization.
