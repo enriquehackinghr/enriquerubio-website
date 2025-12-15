@@ -176,7 +176,7 @@ export function ChatWidget() {
         const thankYouMessage: Message = {
           id: `thanks-${Date.now()}`,
           role: 'assistant',
-          content: `Thank you${name ? `, ${name}` : ''}! I've shared our conversation with Enrique. He'll reach out to you at ${email} soon.`
+          content: `Thank you${name ? `, ${name}` : ''}! I've shared our conversation with Enrique. He'll reach out to you at ${email} soon.\n\nCan I help with anything else?`
         };
         setMessages(prev => [...prev, thankYouMessage]);
         setShowEmailCapture(false);
