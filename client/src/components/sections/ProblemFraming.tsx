@@ -10,13 +10,13 @@ export function ProblemFraming() {
               <span className="bg-black text-white px-2">organizations can adapt.</span>
             </p>
             <p className="text-3xl md:text-5xl font-heading font-bold text-gray-400 leading-tight uppercase">
-              Leaders feel pressure but lack clarity on the "how."
+              Leaders feel pressure but lack clarity on where and how to start.
             </p>
             <p className="text-4xl md:text-6xl font-heading font-bold text-foreground leading-[1.0] tracking-tighter pl-0 md:pl-20 border-l-8 border-primary uppercase">
-              HR is expected to lead transformation without the mandate.
+              Transformation is expected without clear ownership or mandate.
             </p>
             <p className="text-3xl md:text-5xl font-heading font-bold text-gray-400 leading-tight uppercase">
-              Employees feel uncertainty when they should feel capability.
+              People feel uncertainty when they should feel capable.
             </p>
           </div>
         </div>
