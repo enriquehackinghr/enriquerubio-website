@@ -2,10 +2,10 @@ import { Check } from "lucide-react";
 
 export function HowItWorks() {
   const outcomes = [
-    "Clarifies what AI changes in work, leadership, and people strategy.",
-    "Helps leaders move from experimentation to operational relevance.",
-    "Builds readiness across culture, capability, and governance.",
-    "Connects HR technology, AI adoption, and workforce transformation."
+    "Clarifies what AI changes in strategy, work and leadership.",
+    "Helps leaders move from experimentation to real execution and AI operational excellence.",
+    "Builds readiness across capability, culture, and governance.",
+    "Connects AI adoption with operating models and work design."
   ];
 
   return (
@@ -19,7 +19,7 @@ export function HowItWorks() {
             Strategic translation into <span className="text-primary bg-black px-2">action.</span>
           </h2>
           <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed max-w-lg font-mono">
-            // I don't just talk about the future; I help organizations understand how AI changes work, redesign workflows, and prepare their people for a new operating reality.
+            // I don't just talk about the future. I help organizations turn AI into real operating change.
           </p>
         </div>
         
