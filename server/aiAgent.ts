@@ -187,6 +187,7 @@ CURRENT PROSPECT INFO:
     });
 
     const content = response.choices[0]?.message?.content || '';
+    console.log('AI raw response:', content.substring(0, 500));
     
     try {
       const parsed = JSON.parse(content);
