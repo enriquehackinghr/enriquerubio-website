@@ -2,7 +2,6 @@
 // Uses Replit AI Integrations for OpenAI access (no API key required, billed to credits)
 import OpenAI from "openai";
 
-// the newest OpenAI model is "gpt-5" which was released August 7, 2025. do not change this unless explicitly requested by the user
 const openai = new OpenAI({
   baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY
@@ -180,9 +179,9 @@ CURRENT PROSPECT INFO:
 
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-5",
+      model: "gpt-4o",
       messages: messages.map(m => ({ role: m.role, content: m.content })),
-      max_completion_tokens: 1024,
+      max_tokens: 1024,
       response_format: { type: "json_object" }
     });
 
@@ -256,7 +255,7 @@ Respond with just the email body text, no subject line.`;
 
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-5",
+      model: "gpt-4o",
       messages: [{ role: 'user', content: prompt }],
       max_completion_tokens: 512
     });

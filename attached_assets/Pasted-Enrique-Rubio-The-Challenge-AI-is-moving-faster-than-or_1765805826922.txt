@@ -1,0 +1,284 @@
+Enrique Rubio
+The Challenge
+AI is moving faster than
+organizations can adapt.
+
+Leaders feel pressure but lack clarity on where and how to start.
+
+Transformation is expected without clear ownership or mandate.
+
+People feel uncertainty when they should feel capable.
+
+Meet Ada
+How Can I Help You?
+Named after Ada Lovelace, the world's first computer programmer. She's here to help you explore how Enrique can support your organization.
+
+Hi, I'm Ada!
+I'm inspired by Ada Lovelace — a visionary who believed technology should amplify human creativity. Ask me anything about Enrique's speaking topics and how he can help your organization thrive in the age of AI.
+
+What topics does Enrique speak about?
+How does Enrique work with organizations?
+What makes Enrique's approach different?
+Ask Ada a question...
+
+:: Algorithm_Output
+Strategic translation into action.
+// I don't just talk about the future. I help organizations turn AI into real operating change.
+
+Clarifies what AI changes in strategy, work and leadership.
+
+Helps leaders move from experimentation to real execution and AI operational excellence.
+
+Builds readiness across capability, culture, and governance.
+
+Connects AI adoption with operating models and work design.
+
+:: Collaboration_Mode
+I don't just speak.
+I build with you.
+> Inspiration is the starting point. Execution is the work.
+
+> I partner with organizations to build real strategies, frameworks, and capabilities that hold up after the session ends.
+
+> We don't just talk about the future. We build it together.
+
+AI Tools & Frameworks
+Practical frameworks leaders can use to integrate AI into real operations.
+
+Custom Strategies
+Tailored roadmaps that align AI adoption with strategy, structure, and goals.
+
+Leadership & Team Workshops
+Hands-on sessions where leaders and teams design solutions together.
+
+Implementation Support
+From pilot to scale: support that turns strategy into operating reality.
+
+:: Speaking_Engagements
+Keynotes & Talks
+// Provocative, practical, and strategic talks for leaders navigating AI-driven change.
+
+Staying Relevant
+Future of Work
+Workplace Transformation
+Strategy to Execution
+AI Leadership
+AI Governance
+01
+Staying Relevant in the Age of AI
+A strategic view of how AI reshapes value creation, operating models, and organizational relevance.
+
+// Outcomes
+Align leadership on AI direction and priorities
+Understand the urgency of organizational adaptation
+Clarify the path from experimentation to scale
+// Audience & Format
+Executive teams, boards, and transformation leaders
+
+Duration to be discussed
+Interested in this topic?
+
+Inquire Availability
+:: System_Modules
+Topics that ignite action.
+// Practical, provocative, and tailored to enterprise leadership challenges.
+
+[Strategy]
+01
+Staying Relevant in the Age of AI
+How AI reshapes value creation, competitive advantage, and organizational relevance.
+
+[Future_Trends]
+02
+AI and the Future of Work
+Moving beyond hype to understand real shifts in work, workflows, and operating models.
+
+[Leadership]
+03
+Leading Enterprise Transformation with AI
+How leadership teams align people, structure, and governance to drive AI adoption.
+
+[Management]
+04
+Leadership in an AI-Augmented Organization
+How leadership, decision-making, and accountability evolve when intelligence scales.
+
+[Culture]
+05
+Building Organizational Capability
+Building capability across people, processes, and systems in an AI-powered organization.
+
+[Ethics]
+06
+Responsible AI at Scale
+Designing governance, accountability, and trust into AI at enterprise scale.
+
+[Execution]
+07
+From Strategy to Execution
+Translating AI ambition into execution across functions, workflows, and business units.
+
+[Operations]
+08
+AI Readiness and Operating Models
+Redesigning operating models to support AI integration, scale, and resilience.
+
+[Governance]
+09
+Governing AI in Complex Organizations
+Managing risk, compliance, and accountability across regions, systems, and teams.
+
+Engagement Formats
+Keynotes
+High-impact keynotes for senior leaders and enterprise audiences (virtual or in person).
+
+Executive Briefings
+Strategic deep-dives for executive teams and boards.
+
+Fireside Chats
+Moderated conversations focused on strategic, organizational, and leadership challenges.
+
+Workshops
+Interactive sessions to build organizational capability and execution roadmaps.
+
+:: Network_Node_Admin
+Founder of
+Hacking HR
+& The People and Culture Strategy Institute
+> Initiating protocol: Enterprise learning and leadership activation...
+> I don't just speak about the future. I build platforms, programs, and communities that help leaders turn change into capability at scale.
+
+Hacking HR brings together senior leaders, practitioners, and organizations to explore how technology, work, and leadership are evolving—and how to respond with clarity and intent.
+
+Global Leadership Community
+Global Executive Events
+Applied Learning Lab
+Explore Hacking HR
+bash — 80x24
+$ ./start_hacking_hr.sh
+
+Initializing core modules...
+
+Loading future_of_work.js...
+
+HACKING_HR
+_Cursor blinking...
+
+:: About_Enrique
+The Human Behind
+the Mission
+> I'm Enrique Rubio. For over two decades, I've worked at the intersection of technology, leadership, and organizational transformation, helping leaders navigate how work actually changes in moments of disruption.
+
+> As the founder of Hacking HR, I built a global leadership and learning ecosystem focused on the future of work, AI, and organizational change. My work is not about prediction—it's about helping organizations build the capability to respond.
+
+> I don't just talk about change. I work with leaders to understand it, structure for it, and lead through it with clarity and intent.
+
+My background spans engineering, public administration, and global leadership—bringing a systems lens to how organizations adapt in the age of AI.
+
+Global Community Builder
+Founder of Hacking HR, a global leadership and learning community focused on AI, work, and organizational transformation.
+
+International Speaker
+Keynotes and executive sessions delivered globally to senior leaders and enterprise audiences.
+
+Thought Leader
+Founder of the People and Culture Strategy Institute, focused on executive education and applied research.
+
+AI & Future of Work Expert
+Focused on translating AI strategy into execution, readiness, and governance at scale.
+
+:: Beyond_Work
+Ultrarunner &
+Nature Lover
+> When I'm not speaking or building communities, you'll find me on mountain trails pushing my limits as an ultrarunner. There's something about running 3 to 4 thousand miles a year through wilderness that teaches you about resilience, patience, and the power of one step at a time.
+
+> Nature isn't just where I train—it's where I think. The clarity I find in forests and mountains directly informs my perspective on work and leadership. The best ideas often come when you're miles away from any screen.
+
+Ultrarunner
+
+50+ mile races
+
+Nature Lover
+
+Trails & Mountains
+
+// trail_photo_1
+// nature_photo_1
+// ultrarunning_hero
+Human-Centered,
+AI-Powered
+
+Coming Soon
+
+New Book
+:: Upcoming_Book
+Human-Centered,
+AI-Powered
+A Strategic Leadership Playbook for the Age of AI
+
+> The first strategic leadership playbook for building AI-ready organizations where AI becomes a core capability that accelerates performance—while leaders protect trust, accountability, and what makes work human.
+
+> This book moves leaders beyond narrow conversations about AI tools and efficiency gains, developing their ability to lead systemic organizational redesign. It shows how to embed AI as a core organizational capability across work, workforce, culture, data, processes, governance, and technology.
+
+> Through structured frameworks, real-world scenarios, and progressive exercises, readers actively build their own human-centered, AI-powered organizational blueprint.
+
+//
+Strategic Frameworks
+//
+Real-World Scenarios
+//
+Practical Exercises
+:: Contact_Form
+Book Enrique
+// Tell us about your event. We usually respond within 24 hours.
+
+Name *
+Your name
+Organization *
+Company name
+Email *
+you@company.com
+Event Date (Optional)
+mm/dd/yyyy
+Format
+In-Person Keynote
+Message *
+Tell us about the audience, theme, and goals...
+Send Inquiry
+Enrique Rubio
+Helping organizations stay relevant in the age of AI through workforce transformation and strategic HR leadership.
+
+© 2025 Enrique Rubio. All rights reserved.
+Navigation
+Home
+Speaking
+About
+Contact
+Connect
+LinkedIn
+Hacking HR
+Ada
+Enrique's AI Inspiration
+
+
+Hi there! I'm Ada, named after Ada Lovelace — the world's first computer programmer.
+
+She inspires Enrique because she believed technology should amplify human creativity, not replace it.
+
+That's exactly what Enrique talks about: helping organizations thrive in the age of AI while keeping people at the center.
+
+I'm here to answer your questions about his speaking topics, availability, and help you explore if he's the right fit for your event.
+
+Before we dive in, what's your name?
+Enrique
+Nice to meet you, Enrique! How can I help today?
+
+Are you looking to:
+• Explore a speaking topic for an event
+• Get a quick AI strategy starter plan
+• Learn about the Workplace Ecosystem or Strategic AI Leadership frameworks
+• Talk through governance and responsible AI
+
+If you share your goal, I can point you to the right framework or next steps.
+tell me about enrique
+I'm sorry, I had a brief hiccup. Could you repeat your question?
