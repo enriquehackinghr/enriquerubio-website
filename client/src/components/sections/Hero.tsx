@@ -38,17 +38,16 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 pt-6 items-start">
-            <Button size="xl" className="bg-primary text-black hover:bg-primary/80 border-2 border-black shadow-[4px_4px_0px_0px_#000] rounded-none uppercase font-bold tracking-wider">
-              Book Enrique Now <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-            <Button variant="outline" size="xl" className="bg-white text-black border-2 border-black shadow-[4px_4px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none rounded-none uppercase font-bold tracking-wider font-mono">
-              [Watch_Keynotes]
-            </Button>
+            <a href="#booking">
+              <Button size="xl" className="bg-primary text-black hover:bg-primary/80 border-2 border-black shadow-[4px_4px_0px_0px_#000] rounded-none uppercase font-bold tracking-wider">
+                Book Enrique Now <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
           </div>
         </div>
 
         {/* Right Content - Visual */}
-        <div className="lg:col-span-5 absolute right-0 bottom-0 top-24 animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:flex items-end justify-end pr-8">
+        <div className="lg:col-span-5 absolute -right-16 bottom-0 top-24 animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:flex items-end justify-end">
            <img 
              src={userHeadshot} 
              alt="Enrique Rubio" 
