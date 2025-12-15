@@ -172,14 +172,31 @@ CURRENT PROSPECT INFO:
     
     try {
       const parsed = JSON.parse(content);
+      const message = parsed.message || parsed.response || content;
+      
+      // If message is empty, provide a fallback
+      if (!message || message.trim() === '') {
+        return {
+          message: "I'm sorry, I had a brief hiccup. Could you repeat your question?",
+          shouldEscalate: false
+        };
+      }
+      
       return {
-        message: parsed.message || parsed.response || content,
+        message,
         shouldEscalate: parsed.escalate === true || parsed.shouldEscalate === true,
         escalationReason: parsed.escalationReason || parsed.reason
       };
     } catch {
+      // If we can't parse JSON but have content, use it directly
+      if (content && content.trim() !== '') {
+        return {
+          message: content,
+          shouldEscalate: false
+        };
+      }
       return {
-        message: content,
+        message: "I'm sorry, I had a brief hiccup. Could you repeat your question?",
         shouldEscalate: false
       };
     }
