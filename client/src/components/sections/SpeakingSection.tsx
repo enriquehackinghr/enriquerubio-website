@@ -5,36 +5,66 @@ export function SpeakingSection() {
   const keynotes = [
     {
       title: "Staying Relevant in the Age of AI",
-      description: "A strategic overview of how AI reshapes value creation and what organizations must do to keep up. This talk focuses on the macro shifts in business models and the micro shifts in daily work.",
+      description: "A strategic view of how AI reshapes value creation, operating models, and organizational relevance.",
       outcomes: [
-        "Align leadership on AI strategy",
-        "Understand the urgency of adaptation",
-        "Clarify the path from pilot to scale"
+        "Align leadership on AI direction and priorities",
+        "Understand the urgency of organizational adaptation",
+        "Clarify the path from experimentation to scale"
       ],
-      audience: "Executive Leadership, Boards, Strategy Teams",
-      format: "45-60 min Keynote"
+      audience: "Executive teams, boards, and transformation leaders",
+      format: "Duration to be discussed"
     },
     {
       title: "AI and the Future of Work: What's Changing",
-      description: "Going beyond the hype to understand practical shifts in jobs, skills, and workflows. We deconstruct roles and reconstruct them for an AI-augmented reality.",
+      description: "Moving beyond hype to understand how AI reshapes work, workflows, and decision-making.",
       outcomes: [
-        "Realistic roadmap for work redesign",
-        "Skill mapping for the future",
-        "Mitigating fear through clarity"
+        "Practical roadmap for work and workflow redesign",
+        "Capability mapping for an AI-augmented organization",
+        "Reducing uncertainty through clarity"
       ],
-      audience: "All Employees, HR, Managers",
-      format: "45-60 min Keynote + Q&A"
+      audience: "Leaders, managers, and transformation teams",
+      format: "Duration to be discussed"
     },
     {
-      title: "HR's Role in AI-Driven Workplace Transformation",
-      description: "Why HR is the most critical function for AI adoption and how to lead the charge. Moving HR from a support function to the architect of the new operating model.",
+      title: "Leading AI-Driven Workplace Transformation",
+      description: "How leadership teams align people, structure, governance, and operating models to enable AI at scale.",
       outcomes: [
-        "Empowered HR leadership strategy",
-        "Governance frameworks for AI",
-        "Culture change for digital adoption"
+        "Clear ownership and leadership alignment",
+        "Governance frameworks for responsible AI",
+        "Cultural and operational change for AI adoption"
       ],
-      audience: "HR Leaders, People Operations",
-      format: "Keynote or Half-day Workshop"
+      audience: "Executive teams, HR, and transformation leaders",
+      format: "Duration to be discussed"
+    },
+    {
+      title: "From AI Strategy to Execution",
+      description: "How organizations translate AI ambition into execution across workflows, functions, and business units.",
+      outcomes: [
+        "Connect AI strategy to measurable business outcomes",
+        "Identify where AI creates value—and where it creates risk"
+      ],
+      audience: "Executive teams, operations, strategy, and transformation leaders",
+      format: "Duration to be discussed"
+    },
+    {
+      title: "Leadership in an AI-Augmented Organization",
+      description: "How leadership, decision-making, and accountability change when intelligence scales across the enterprise.",
+      outcomes: [
+        "Redefine leadership roles in AI-augmented environments",
+        "Improve decision quality, speed, and accountability"
+      ],
+      audience: "Senior leaders, managers, and enterprise leadership teams",
+      format: "Duration to be discussed"
+    },
+    {
+      title: "Governing AI at Enterprise Scale",
+      description: "Designing governance, oversight, and accountability for AI across complex, global organizations.",
+      outcomes: [
+        "Establish clear ownership, decision rights, and guardrails",
+        "Balance innovation, risk, and trust at scale"
+      ],
+      audience: "Boards, executive leadership, legal, risk, and transformation teams",
+      format: "Duration to be discussed"
     }
   ];
 
@@ -49,7 +79,7 @@ export function SpeakingSection() {
             Keynotes & <span className="text-primary bg-black px-2">Talks</span>
           </h2>
           <p className="text-xl text-foreground/70 leading-relaxed font-mono">
-            // Provocative, practical, and strategic talks that help audiences navigate the intersection of human capability and artificial intelligence.
+            // Provocative, practical, and strategic talks for leaders navigating AI-driven change.
           </p>
         </div>
 
