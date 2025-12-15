@@ -44,9 +44,11 @@ export function FounderSection() {
               </div>
 
               <div className="pt-6">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent text-primary hover:bg-primary hover:text-black border-2 border-primary rounded-none font-mono uppercase tracking-widest">
-                  Access_Hacking_HR <ArrowUpRight className="w-4 h-4 ml-2" />
-                </Button>
+                <a href="https://hackinghrlab.io/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent text-primary hover:bg-primary hover:text-black border-2 border-primary rounded-none font-mono uppercase tracking-widest">
+                    Access_Hacking_HR <ArrowUpRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </a>
               </div>
             </div>
 

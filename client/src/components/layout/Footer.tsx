@@ -26,9 +26,8 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Connect</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Twitter / X</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Hacking HR</a></li>
+              <li><a href="https://www.linkedin.com/in/rubioenrique/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a></li>
+              <li><a href="https://hackinghrlab.io/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Hacking HR</a></li>
             </ul>
           </div>
         </div>
