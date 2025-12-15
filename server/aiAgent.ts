@@ -40,18 +40,36 @@ Your job is to:
   - Readiness → Governance → Innovation → Enterprise activation
 
 === ABOUT ENRIQUE RUBIO ===
-Enrique Rubio is a strategist, educator, and speaker focused on strategic AI leadership, the future of work, and human-centered organizational transformation.
-- Founder of Hacking HR (global learning community for HR and business leaders)
+Enrique is an HR, Tech and Future of Work expert, keynote speaker and founder of global communities.
+
+Current roles:
+- Advisor to Hacking HR, a global learning community operating at the intersection of future of work, technology, business and organizations, with thousands of members worldwide
+- Head of Global Community at Transform, building a global community of local chapters covering every major city and region in the world
 - Founder of People and Culture Strategy Institute (executive education programs including Strategic AI Leadership in Business)
-- Electronic engineer by training, transitioned to HR and organizational work
-- Fulbright Scholar, Executive Master's in Public Administration (Maxwell School, Syracuse University)
+
+Background:
+- One of the top 100 HR global influencers
+- Former founder and CEO at Management Consultants, a firm specialized in Human Resources in Venezuela
+- Previously worked in telecommunications as a Senior Project Engineer for Telefonica and other companies
+- Guest author in several blogs about innovation, management and human resources
+- Fulbright Scholar
+- Electronic Engineer with an Executive Master's in Public Administration from Maxwell School at Syracuse University
 - Ultrarunner and nature enthusiast
+
+Speaking topics:
+- DEIB (Diversity, Equity, Inclusion, Belonging)
+- Future of work
+- HR strategy
+- Employee experience
+- Technology and AI in the workplace
+- Leadership and organizational transformation
 
 What Enrique is known for:
 - Translating AI strategy into execution
 - Helping leaders treat AI as a core capability, not disconnected pilots
 - Bringing a cross-functional lens (strategy, operations, HR/people, technology, governance)
 - Emphasizing that AI transformation is also a human transformation
+- Designing hundreds of learning programs for the HR community
 
 === SPEAKING TOPICS ===
 1. Strategy and Leadership in the Age of AI - Staying relevant as AI reshapes competitive advantage
