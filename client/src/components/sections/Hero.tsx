@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cpu, Terminal } from "lucide-react";
+import { ArrowRight, Terminal } from "lucide-react";
 import heroBg from "@assets/generated_images/digital_grid_with_subtle_glitch_noise_and_data_patterns.png";
 import userHeadshot from "@assets/Enrique_1765759922247.png";
 
@@ -48,34 +48,12 @@ export function Hero() {
         </div>
 
         {/* Right Content - Visual */}
-        <div className="lg:col-span-5 relative animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:block">
-           <div className="relative z-10">
-             <div className="aspect-[4/5] overflow-hidden relative group">
-                {/* User Headshot */}
-                <img 
-                  src={userHeadshot} 
-                  alt="Enrique Rubio" 
-                  className="w-full h-full object-cover object-top"
-                />
-                
-                {/* Floating Badge */}
-                <div className="absolute -top-6 -right-6 bg-black text-primary w-24 h-24 border-2 border-primary flex flex-col items-center justify-center z-20 shadow-[4px_4px_0px_0px_#000]">
-                   <Cpu className="w-8 h-8 mb-1 animate-spin-slow" />
-                   <span className="font-mono text-xs font-bold">AI_READY</span>
-                </div>
-
-                {/* Info Card */}
-                <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur border-t-2 border-primary p-4 z-10 text-white">
-                   <div className="flex justify-between items-end">
-                     <div>
-                       <p className="font-mono text-xs text-primary mb-1">:: METRIC_LOADED</p>
-                       <p className="font-heading font-bold text-3xl leading-none">100+</p>
-                     </div>
-                     <p className="text-xs font-mono text-gray-400 text-right max-w-[100px]">GLOBAL KEYNOTES DEPLOYED</p>
-                   </div>
-                </div>
-             </div>
-           </div>
+        <div className="lg:col-span-5 relative animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:block self-end">
+           <img 
+             src={userHeadshot} 
+             alt="Enrique Rubio" 
+             className="w-full h-auto object-contain"
+           />
         </div>
       </div>
     </section>
