@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cpu, Terminal } from "lucide-react";
 import heroBg from "@assets/generated_images/digital_grid_with_subtle_glitch_noise_and_data_patterns.png";
-import userHeadshot from "@assets/Headshot_-_PRO_4_1765720656304.png";
+import userHeadshot from "@assets/Enrique_1765759922247.png";
 
 export function Hero() {
   return (
@@ -50,21 +50,13 @@ export function Hero() {
         {/* Right Content - Visual */}
         <div className="lg:col-span-5 relative animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:block">
            <div className="relative z-10">
-             <div className="aspect-[4/5] bg-gray-200 overflow-hidden border-2 border-black shadow-[8px_8px_0px_0px_#00E676] relative group">
+             <div className="aspect-[4/5] overflow-hidden relative group">
                 {/* User Headshot */}
-                <div className="absolute inset-0 bg-[#E0E7FF] mix-blend-multiply">
-                   <img 
-                    src={userHeadshot} 
-                    alt="Enrique Rubio" 
-                    className="w-full h-full object-cover object-center scale-110 translate-y-4 grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500"
-                   />
-                </div>
-                
-                {/* Tech Overlays */}
-                <div className="absolute top-4 left-4 w-2 h-2 bg-primary animate-pulse"></div>
-                <div className="absolute top-4 right-4 w-2 h-2 bg-primary animate-pulse delay-75"></div>
-                <div className="absolute bottom-4 left-4 w-2 h-2 bg-primary animate-pulse delay-150"></div>
-                <div className="absolute bottom-4 right-4 w-2 h-2 bg-primary animate-pulse delay-300"></div>
+                <img 
+                  src={userHeadshot} 
+                  alt="Enrique Rubio" 
+                  className="w-full h-full object-cover object-top"
+                />
                 
                 {/* Floating Badge */}
                 <div className="absolute -top-6 -right-6 bg-black text-primary w-24 h-24 border-2 border-primary flex flex-col items-center justify-center z-20 shadow-[4px_4px_0px_0px_#000]">
@@ -84,9 +76,6 @@ export function Hero() {
                 </div>
              </div>
            </div>
-           
-           {/* Decorative doodle behind */}
-           <div className="absolute -bottom-8 -left-8 w-full h-full border-2 border-black bg-transparent -z-10 bg-[linear-gradient(45deg,#000_25%,transparent_25%,transparent_75%,#000_75%,#000)] bg-[length:20px_20px] opacity-10"></div>
         </div>
       </div>
     </section>
