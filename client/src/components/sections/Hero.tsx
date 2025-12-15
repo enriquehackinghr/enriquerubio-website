@@ -5,7 +5,7 @@ import userHeadshot from "@assets/Enrique_1765759922247.png";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#F3F4F6]">
+    <section id="hero" className="relative min-h-[90vh] flex items-end pt-20 pb-0 overflow-hidden bg-[#F3F4F6]">
       {/* Background Texture */}
       <div className="absolute inset-0 z-0 opacity-40 pointer-events-none mix-blend-overlay">
         <img 
@@ -18,9 +18,9 @@ export function Hero() {
       {/* Grid Overlay */}
       <div className="absolute inset-0 z-0 tech-grid-bg opacity-30 pointer-events-none" />
       
-      <div className="container-width relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+      <div className="container-width relative z-10 grid lg:grid-cols-12 gap-12 items-end w-full">
         {/* Left Content */}
-        <div className="lg:col-span-7 space-y-8 animate-in slide-in-from-bottom-5 duration-700 fade-in text-left">
+        <div className="lg:col-span-7 space-y-8 animate-in slide-in-from-bottom-5 duration-700 fade-in text-left pb-16">
            
            <div className="inline-flex items-center gap-2 px-4 py-1 bg-black border border-primary brutal-shadow-sm text-primary font-mono font-bold text-xs uppercase tracking-widest mb-2">
              <Terminal className="w-3 h-3" /> 
@@ -48,11 +48,11 @@ export function Hero() {
         </div>
 
         {/* Right Content - Visual */}
-        <div className="lg:col-span-5 relative animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:block self-end">
+        <div className="lg:col-span-5 relative animate-in slide-in-from-right-5 duration-1000 delay-200 fade-in hidden md:block">
            <img 
              src={userHeadshot} 
              alt="Enrique Rubio" 
-             className="w-full h-auto object-contain"
+             className="w-full h-auto object-contain block"
            />
         </div>
       </div>
