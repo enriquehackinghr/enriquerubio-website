@@ -23,30 +23,33 @@ export function FounderSection() {
               </h2>
               
               <h3 className="text-xl font-mono text-gray-400 border-b border-gray-800 pb-4">
-                & People and Culture Strategy Institute
+                & The People and Culture Strategy Institute
               </h3>
               
               <p className="text-lg text-gray-300 leading-relaxed font-mono">
-                &gt; Initiating protocol: Community Building... <br/>
-                &gt; I don't just speak about the future; I'm actively coding it into reality. Hacking HR is a global network of leaders upgrading human potential.
+                &gt; Initiating protocol: Enterprise learning and leadership activation... <br/>
+                &gt; I don't just speak about the future. I build platforms, programs, and communities that help leaders turn change into capability at scale.
+              </p>
+              <p className="text-sm text-gray-400 leading-relaxed font-mono">
+                Hacking HR brings together senior leaders, practitioners, and organizations to explore how technology, work, and leadership are evolving—and how to respond with clarity and intent.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="flex items-center gap-2 font-mono text-xs bg-gray-900 px-3 py-2 border border-gray-700 text-primary">
-                  <Users className="w-4 h-4" /> Global_Community
+                  <Users className="w-4 h-4" /> Global Leadership Community
                 </div>
                 <div className="flex items-center gap-2 font-mono text-xs bg-gray-900 px-3 py-2 border border-gray-700 text-primary">
-                  <Globe className="w-4 h-4" /> World_Class_Events
+                  <Globe className="w-4 h-4" /> Global Executive Events
                 </div>
                 <div className="flex items-center gap-2 font-mono text-xs bg-gray-900 px-3 py-2 border border-gray-700 text-primary">
-                  <BookOpen className="w-4 h-4" /> Learning_Lab
+                  <BookOpen className="w-4 h-4" /> Applied Learning Lab
                 </div>
               </div>
 
               <div className="pt-6">
                 <a href="https://hackinghrlab.io/" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent text-primary hover:bg-primary hover:text-black border-2 border-primary rounded-none font-mono uppercase tracking-widest">
-                    Access_Hacking_HR <ArrowUpRight className="w-4 h-4 ml-2" />
+                    Explore Hacking HR <ArrowUpRight className="w-4 h-4 ml-2" />
                   </Button>
                 </a>
               </div>
