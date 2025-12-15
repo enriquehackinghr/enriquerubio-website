@@ -5,22 +5,22 @@ export function BuildWithYouSection() {
     {
       icon: <Wrench className="w-6 h-6" />,
       title: "AI Tools & Frameworks",
-      description: "Practical tools your teams can use immediately to integrate AI into daily workflows."
+      description: "Practical frameworks leaders can use to integrate AI into real operations."
     },
     {
       icon: <Lightbulb className="w-6 h-6" />,
       title: "Custom Strategies",
-      description: "Tailored roadmaps for AI adoption that fit your organization's unique culture and goals."
+      description: "Tailored roadmaps that align AI adoption with strategy, structure, and goals."
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Team Workshops",
-      description: "Hands-on sessions where your people don't just learn—they create solutions together."
+      title: "Leadership & Team Workshops",
+      description: "Hands-on sessions where leaders and teams design solutions together."
     },
     {
       icon: <Rocket className="w-6 h-6" />,
       title: "Implementation Support",
-      description: "From pilot to scale: guidance that turns strategy into operational reality."
+      description: "From pilot to scale: support that turns strategy into operating reality."
     }
   ];
 
@@ -39,10 +39,10 @@ export function BuildWithYouSection() {
             </h2>
             <div className="space-y-6 text-gray-300 font-mono leading-relaxed">
               <p>
-                &gt; Inspiration is just the starting point. Ideas without execution are just dreams. That's why my work goes beyond the stage.
+                &gt; Inspiration is the starting point. Execution is the work.
               </p>
               <p>
-                &gt; I partner with organizations to build real things—tools, strategies, frameworks, and capabilities that your teams can use long after the applause fades.
+                &gt; I partner with organizations to build real strategies, frameworks, and capabilities that hold up after the session ends.
               </p>
               <p>
                 &gt; We don't just talk about the future. <span className="text-primary font-bold">We build it together.</span>
