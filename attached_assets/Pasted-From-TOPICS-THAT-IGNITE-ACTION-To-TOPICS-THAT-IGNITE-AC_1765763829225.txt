@@ -1,0 +1,78 @@
+From: TOPICS THAT IGNITE ACTION.
+To: TOPICS THAT IGNITE ACTION.
+
+From: // Practical, provocative, and tailored to your specific industry challenges.
+To: // Practical, provocative, and tailored to enterprise leadership challenges.
+CARD 01
+vbnet
+Copy code
+From: STAYING RELEVANT IN THE AGE OF AI
+To: STAYING RELEVANT IN THE AGE OF AI
+
+From: A strategic overview of how AI reshapes value creation and what organizations must do to keep up.
+To: How AI reshapes value creation, competitive advantage, and organizational relevance.
+CARD 02
+vbnet
+Copy code
+From: AI AND THE FUTURE OF WORK
+To: AI AND THE FUTURE OF WORK
+
+From: Going beyond the hype to understand practical shifts in jobs, skills, and workflows.
+To: Moving beyond hype to understand real shifts in work, workflows, and operating models.
+CARD 03 (HR reframed, not removed)
+vbnet
+Copy code
+From: HR’S ROLE IN TRANSFORMATION
+To: LEADING ENTERPRISE TRANSFORMATION WITH AI
+
+From: Why HR is the most critical function for AI adoption and how to lead the charge.
+To: How leadership teams align people, structure, and governance to drive AI adoption.
+CARD 04
+vbnet
+Copy code
+From: LEADERSHIP IN AN AI-AUGMENTED ORG
+To: LEADERSHIP IN AN AI-AUGMENTED ORGANIZATION
+
+From: How decision-making, management, and culture must evolve when intelligence is a commodity.
+To: How leadership, decision-making, and accountability evolve when intelligence scales.
+CARD 05
+makefile
+Copy code
+From: BUILDING HUMAN CAPABILITY
+To: BUILDING ORGANIZATIONAL CAPABILITY
+
+From: Strategies for upskilling, reskilling, and fostering a growth mindset in a tech-first world.
+To: Building capability across people, processes, and systems in an AI-powered organization.
+CARD 06
+vbnet
+Copy code
+From: RESPONSIBLE AI AT WORK
+To: RESPONSIBLE AI AT SCALE
+
+From: Navigating the ethics, governance, and trust issues inherent in AI deployment.
+To: Designing governance, accountability, and trust into AI at enterprise scale.
+NEW ROW — ADD 3 MORE CARDS (as requested)
+CARD 07 (NEW)
+vbnet
+Copy code
+From: [NEW CARD]
+To: FROM STRATEGY TO EXECUTION
+
+From: [NEW CARD DESCRIPTION]
+To: Translating AI ambition into execution across functions, workflows, and business units.
+CARD 08 (NEW)
+vbnet
+Copy code
+From: [NEW CARD]
+To: AI READINESS AND OPERATING MODELS
+
+From: [NEW CARD DESCRIPTION]
+To: Redesigning operating models to support AI integration, scale, and resilience.
+CARD 09 (NEW)
+vbnet
+Copy code
+From: [NEW CARD]
+To: GOVERNING AI IN COMPLEX ORGANIZATIONS
+
+From: [NEW CARD DESCRIPTION]
+To: Managing risk, compliance, and accountability across regions, systems, and teams.

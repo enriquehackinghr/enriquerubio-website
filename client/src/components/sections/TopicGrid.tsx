@@ -10,38 +10,56 @@ interface Topic {
 const topics: Topic[] = [
   {
     title: "Staying Relevant in the Age of AI",
-    description: "A strategic overview of how AI reshapes value creation and what organizations must do to keep up.",
+    description: "How AI reshapes value creation, competitive advantage, and organizational relevance.",
     tag: "Strategy",
     color: "bg-white" 
   },
   {
     title: "AI and the Future of Work",
-    description: "Going beyond the hype to understand practical shifts in jobs, skills, and workflows.",
+    description: "Moving beyond hype to understand real shifts in work, workflows, and operating models.",
     tag: "Future_Trends",
     color: "bg-white" 
   },
   {
-    title: "HR’s Role in Transformation",
-    description: "Why HR is the most critical function for AI adoption and how to lead the charge.",
+    title: "Leading Enterprise Transformation with AI",
+    description: "How leadership teams align people, structure, and governance to drive AI adoption.",
     tag: "Leadership",
     color: "bg-white" 
   },
   {
-    title: "Leadership in an AI-Augmented Org",
-    description: "How decision-making, management, and culture must evolve when intelligence is a commodity.",
+    title: "Leadership in an AI-Augmented Organization",
+    description: "How leadership, decision-making, and accountability evolve when intelligence scales.",
     tag: "Management",
     color: "bg-white" 
   },
   {
-    title: "Building Human Capability",
-    description: "Strategies for upskilling, reskilling, and fostering a growth mindset in a tech-first world.",
+    title: "Building Organizational Capability",
+    description: "Building capability across people, processes, and systems in an AI-powered organization.",
     tag: "Culture",
     color: "bg-white" 
   },
   {
-    title: "Responsible AI at Work",
-    description: "Navigating the ethics, governance, and trust issues inherent in AI deployment.",
+    title: "Responsible AI at Scale",
+    description: "Designing governance, accountability, and trust into AI at enterprise scale.",
     tag: "Ethics",
+    color: "bg-white" 
+  },
+  {
+    title: "From Strategy to Execution",
+    description: "Translating AI ambition into execution across functions, workflows, and business units.",
+    tag: "Execution",
+    color: "bg-white" 
+  },
+  {
+    title: "AI Readiness and Operating Models",
+    description: "Redesigning operating models to support AI integration, scale, and resilience.",
+    tag: "Operations",
+    color: "bg-white" 
+  },
+  {
+    title: "Governing AI in Complex Organizations",
+    description: "Managing risk, compliance, and accountability across regions, systems, and teams.",
+    tag: "Governance",
     color: "bg-white" 
   }
 ];
@@ -58,7 +76,7 @@ export function TopicGrid() {
             Topics that ignite <span className="bg-primary text-black px-2">action</span>.
           </h2>
           <p className="text-xl font-medium text-gray-600 font-mono">
-            // Practical, provocative, and tailored to your specific industry challenges.
+            // Practical, provocative, and tailored to enterprise leadership challenges.
           </p>
         </div>
 
@@ -75,7 +93,7 @@ export function TopicGrid() {
                     [{topic.tag}]
                   </span>
                   <div className="w-8 h-8 bg-black flex items-center justify-center text-primary font-mono border border-primary">
-                    <span className="font-bold">0{idx + 1}</span>
+                    <span className="font-bold">{String(idx + 1).padStart(2, '0')}</span>
                   </div>
                 </div>
                 
