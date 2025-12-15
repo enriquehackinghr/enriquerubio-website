@@ -226,9 +226,9 @@ export async function registerRoutes(
 
       // Generate AI response
       const aiResponse = await generateResponse(history, message, {
-        name: conversation.name,
-        organization: conversation.organization,
-        email: conversation.email,
+        name: conversation.name || 'Anonymous',
+        organization: conversation.organization || 'Not specified',
+        email: conversation.email || 'Not provided',
         eventDate: conversation.eventDate || undefined,
         format: conversation.format || undefined
       });
@@ -251,9 +251,9 @@ export async function registerRoutes(
           ).join('\n\n');
 
           await sendBookingNotificationEmail({
-            name: conversation.name,
-            organization: conversation.organization,
-            email: conversation.email,
+            name: conversation.name || 'Anonymous',
+            organization: conversation.organization || 'Not specified',
+            email: conversation.email || 'Not provided',
             eventDate: conversation.eventDate || '',
             format: conversation.format || '',
             message: `ESCALATION: ${aiResponse.escalationReason || 'Ready for personal follow-up'}\n\n--- Conversation History ---\n\n${conversationSummary}`
