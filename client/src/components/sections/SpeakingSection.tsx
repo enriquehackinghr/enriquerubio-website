@@ -95,21 +95,23 @@ export function SpeakingSection() {
         </div>
 
         {/* Tab Menu */}
-        <div className="mb-8">
-          <div className="flex flex-wrap gap-2">
+        <div className="mb-10">
+          <div className="flex items-center justify-start gap-6 md:gap-8">
             {keynotes.map((note, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
                 data-testid={`tab-keynote-${idx}`}
-                className={`px-4 py-3 font-mono font-bold text-sm uppercase tracking-wide border-2 border-black transition-all ${
+                className={`font-mono font-bold text-lg md:text-xl transition-all relative ${
                   activeIndex === idx
-                    ? "bg-primary text-black shadow-[3px_3px_0px_0px_#000]"
-                    : "bg-white text-foreground/70 hover:bg-gray-100"
+                    ? "text-primary"
+                    : "text-foreground/40 hover:text-foreground/70"
                 }`}
               >
-                <span className="mr-2 text-xs opacity-70">0{idx + 1}</span>
-                {note.shortTitle}
+                0{idx + 1}
+                {activeIndex === idx && (
+                  <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary" />
+                )}
               </button>
             ))}
           </div>
