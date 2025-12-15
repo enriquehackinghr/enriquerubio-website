@@ -1,0 +1,130 @@
+SECTION: Keynotes & Talks
+Replit-ready
+From: KEYNOTES & TALKS
+To: KEYNOTES & TALKS
+
+From: // Provocative, practical, and strategic talks that help audiences navigate the intersection of human capability and artificial intelligence.
+To: // Provocative, practical, and strategic talks for leaders navigating AI-driven change.
+
+TALK 01
+From: STAYING RELEVANT IN THE AGE OF AI
+To: STAYING RELEVANT IN THE AGE OF AI
+
+From: A strategic overview of how AI reshapes value creation and what organizations must do to keep up. This talk focuses on the macro shifts in business models and the micro shifts in daily work.
+To: A strategic view of how AI reshapes value creation, operating models, and organizational relevance.
+
+From: Align leadership on AI strategy
+To: Align leadership on AI direction and priorities
+
+From: Understand the urgency of adaptation
+To: Understand the urgency of organizational adaptation
+
+From: Clarify the path from pilot to scale
+To: Clarify the path from experimentation to scale
+
+From: Executive Leadership, Boards, Strategy Teams
+To: Executive teams, boards, and transformation leaders
+
+From: 45–60 min Keynote
+To: Duration to be discussed
+
+TALK 02
+From: AI AND THE FUTURE OF WORK: WHAT'S CHANGING
+To: AI AND THE FUTURE OF WORK: WHAT’S CHANGING
+
+From: Going beyond the hype to understand practical shifts in jobs, skills, and workflows. We deconstruct roles and reconstruct them for an AI-augmented reality.
+To: Moving beyond hype to understand how AI reshapes work, workflows, and decision-making.
+
+From: Realistic roadmap for work redesign
+To: Practical roadmap for work and workflow redesign
+
+From: Skill mapping for the future
+To: Capability mapping for an AI-augmented organization
+
+From: Mitigating fear through clarity
+To: Reducing uncertainty through clarity
+
+From: All Employees, HR, Managers
+To: Leaders, managers, and transformation teams
+
+From: 45–60 min Keynote + Q&A
+To: Duration to be discussed
+
+TALK 03
+From: HR'S ROLE IN AI-DRIVEN WORKPLACE TRANSFORMATION
+To: LEADING AI-DRIVEN WORKPLACE TRANSFORMATION
+
+From: Why HR is the most critical function for AI adoption and how to lead the charge. Moving HR from a support function to the architect of the new operating model.
+To: How leadership teams align people, structure, governance, and operating models to enable AI at scale.
+
+From: Empowered HR leadership strategy
+To: Clear ownership and leadership alignment
+
+From: Governance frameworks for AI
+To: Governance frameworks for responsible AI
+
+From: Culture change for digital adoption
+To: Cultural and operational change for AI adoption
+
+From: HR Leaders, People Operations
+To: Executive teams, HR, and transformation leaders
+
+From: Keynote or Half-day Workshop
+To: Duration to be discussed
+
+TALK 04 (NEW)
+From: [NEW TALK]
+To: FROM AI STRATEGY TO EXECUTION
+
+From: [NEW DESCRIPTION]
+To: How organizations translate AI ambition into execution across workflows, functions, and business units.
+
+From: [NEW OUTCOME]
+To: Connect AI strategy to measurable business outcomes
+
+From: [NEW OUTCOME]
+To: Identify where AI creates value—and where it creates risk
+
+From: [NEW AUDIENCE]
+To: Executive teams, operations, strategy, and transformation leaders
+
+From: [NEW FORMAT]
+To: Duration to be discussed
+
+TALK 05 (NEW)
+From: [NEW TALK]
+To: LEADERSHIP IN AN AI-AUGMENTED ORGANIZATION
+
+From: [NEW DESCRIPTION]
+To: How leadership, decision-making, and accountability change when intelligence scales across the enterprise.
+
+From: [NEW OUTCOME]
+To: Redefine leadership roles in AI-augmented environments
+
+From: [NEW OUTCOME]
+To: Improve decision quality, speed, and accountability
+
+From: [NEW AUDIENCE]
+To: Senior leaders, managers, and enterprise leadership teams
+
+From: [NEW FORMAT]
+To: Duration to be discussed
+
+TALK 06 (NEW)
+From: [NEW TALK]
+To: GOVERNING AI AT ENTERPRISE SCALE
+
+From: [NEW DESCRIPTION]
+To: Designing governance, oversight, and accountability for AI across complex, global organizations.
+
+From: [NEW OUTCOME]
+To: Establish clear ownership, decision rights, and guardrails
+
+From: [NEW OUTCOME]
+To: Balance innovation, risk, and trust at scale
+
+From: [NEW AUDIENCE]
+To: Boards, executive leadership, legal, risk, and transformation teams
+
+From: [NEW FORMAT]
+To: Duration to be discussed
