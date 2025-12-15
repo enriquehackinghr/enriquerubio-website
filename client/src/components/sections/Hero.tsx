@@ -52,7 +52,7 @@ export function Hero() {
            <img 
              src={userHeadshot} 
              alt="Enrique Rubio" 
-             className="h-[115%] w-auto object-contain object-bottom max-w-none"
+             className="h-[130%] w-auto object-contain object-bottom max-w-none"
            />
         </div>
       </div>
