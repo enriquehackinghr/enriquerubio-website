@@ -313,23 +313,27 @@ Before we dive in, what's your name?`;
     // Process in background
     try {
       const payload = req.body;
-      const eventType = payload.type || payload.event_type;
+      console.log('AgentMail webhook received:', JSON.stringify(payload, null, 2));
       
-      // Only process incoming messages
-      if (eventType === 'message.sent') {
+      // Skip our own sent messages to avoid infinite loops
+      const labels = payload.labels || [];
+      if (labels.includes('sent')) {
+        console.log('AgentMail webhook: skipping sent message');
         return;
       }
       
-      const message = payload.message || {};
-      const messageId = message.message_id;
-      const inboxId = message.inbox_id;
-      const fromField = message.from_ || message.from || '';
-      const subject = message.subject || '(no subject)';
-      const textBody = message.text || '';
+      // Fields are at the top level in AgentMail webhook payload
+      const messageId = payload.message_id;
+      const inboxId = payload.inbox_id;
+      const fromArray = payload.from_ || payload.from || [];
+      const fromField = Array.isArray(fromArray) ? fromArray[0] : fromArray;
+      const subject = payload.subject || '(no subject)';
+      const body = payload.body || {};
+      const textBody = body.text || body.html || '';
       
       // Validate required fields
       if (!messageId || !inboxId || !fromField) {
-        console.log('AgentMail webhook: missing required fields');
+        console.log('AgentMail webhook: missing required fields', { messageId, inboxId, fromField });
         return;
       }
       
