@@ -422,9 +422,20 @@ Before we dive in, what's your name?`;
       // List inboxes
       const inboxes = await client.inboxes.list();
       
+      // Try to list recent threads/messages for the main inbox
+      let recentThreads: any = null;
+      try {
+        const { inboxId } = await getOrCreateAdaInbox();
+        const threads = await client.inboxes.threads.list(inboxId);
+        recentThreads = threads.threads?.slice(0, 5);
+      } catch (e: any) {
+        recentThreads = { error: e.message };
+      }
+      
       res.json({ 
         webhooks: webhooks.webhooks,
         inboxes: inboxes.inboxes,
+        recentThreads,
         expectedWebhookUrl: 'https://enriquerubio.ai/api/webhook/agentmail'
       });
     } catch (error: any) {
