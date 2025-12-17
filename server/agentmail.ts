@@ -45,8 +45,9 @@ export async function getAgentMailClient() {
 let adaInboxId: string | null = null;
 
 export async function getOrCreateAdaInbox(): Promise<{ inboxId: string; emailAddress: string }> {
-  const INBOX_USERNAME = "ada-enrique";
-  const EMAIL_ADDRESS = `${INBOX_USERNAME}@agentmail.to`;
+  const INBOX_USERNAME = "enrique";
+  const DOMAIN = "enriquerubio.ai";
+  const EMAIL_ADDRESS = `${INBOX_USERNAME}@${DOMAIN}`;
   
   if (adaInboxId) {
     return { inboxId: adaInboxId, emailAddress: EMAIL_ADDRESS };
@@ -58,20 +59,21 @@ export async function getOrCreateAdaInbox(): Promise<{ inboxId: string; emailAdd
     // Try to create inbox with a unique client_id to make it idempotent
     const inbox = await client.inboxes.create({
       username: INBOX_USERNAME,
-      displayName: "Ada - Enrique Rubio's AI Assistant",
-      clientId: "ada-enrique-inbox"
+      domain: DOMAIN,
+      displayName: "Enrique Rubio (Ada AI Assistant)",
+      clientId: "enrique-inbox"
     });
     
     adaInboxId = inbox.inboxId;
     console.log(`AgentMail inbox created: ${EMAIL_ADDRESS} (ID: ${inbox.inboxId})`);
     return { inboxId: inbox.inboxId, emailAddress: EMAIL_ADDRESS };
   } catch (error: any) {
-    // If inbox already exists, list inboxes and find ada's
+    // If inbox already exists, list inboxes and find it
     if (String(error).toLowerCase().includes('already exists')) {
       console.log('Inbox already exists, retrieving...');
       const inboxes = await client.inboxes.list();
       const adaInbox = (inboxes.inboxes as any[])?.find((i: any) => 
-        i.displayName?.includes('Ada') || i.clientId === 'ada-enrique-inbox'
+        i.clientId === 'enrique-inbox' || i.displayName?.includes('Enrique')
       );
       
       if (adaInbox) {

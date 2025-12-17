@@ -436,7 +436,7 @@ async function initAgentMail() {
         url: webhookUrl,
         eventTypes: ['message.received'],
         inboxIds: [inboxId],
-        clientId: 'ada-enrique-webhook'
+        clientId: 'enrique-webhook'
       });
       console.log(`AgentMail webhook registered: ${webhookUrl}`);
     } catch (error: any) {
