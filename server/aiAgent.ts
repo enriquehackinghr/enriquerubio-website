@@ -292,3 +292,76 @@ I saw you mentioned: "${context.message.slice(0, 150)}${context.message.length >
 
 I'd love to learn more! What kind of audience will be attending, and what's the main outcome you're hoping Enrique's session will achieve?`;
 }
+
+// Email-specific AI response for AgentMail auto-replies
+export async function generateEmailResponse(
+  emailHistory: Array<{ from: string; subject: string; body: string }>,
+  incomingEmail: { from: string; subject: string; body: string }
+): Promise<{ response: string; shouldEscalate: boolean }> {
+  
+  const emailSystemPrompt = `${SYSTEM_PROMPT}
+
+=== EMAIL CONTEXT ===
+You are responding to an email, not a chat. Keep these email-specific guidelines:
+- Use proper email formatting with line breaks
+- Keep responses concise but complete (3-5 paragraphs max)
+- Sign off as "Ada, Enrique's AI Assistant"
+- Do NOT include a subject line (that's handled separately)
+- If you need information, ask in a friendly email format
+- Reference previous emails in the thread if relevant
+
+Format your response as a JSON object:
+{"response": "Your email response text", "escalate": true/false}`;
+
+  const historyContext = emailHistory.length > 0 
+    ? `\n\nPrevious emails in thread:\n${emailHistory.map(e => `From ${e.from}: "${e.body}"`).join('\n\n')}`
+    : '';
+
+  try {
+    const response = await openai.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        { role: 'system', content: emailSystemPrompt },
+        { 
+          role: 'user', 
+          content: `New email received:
+From: ${incomingEmail.from}
+Subject: ${incomingEmail.subject}
+Body:
+${incomingEmail.body}
+${historyContext}
+
+Please generate a helpful email response.`
+        }
+      ],
+      max_tokens: 1024,
+      response_format: { type: "json_object" }
+    });
+
+    const content = response.choices[0]?.message?.content || '';
+    
+    try {
+      const parsed = JSON.parse(content);
+      return {
+        response: parsed.response || parsed.message || content,
+        shouldEscalate: parsed.escalate === true
+      };
+    } catch {
+      return {
+        response: content || "Thank you for your email. I'll look into this and get back to you shortly.\n\nBest,\nAda, Enrique's AI Assistant",
+        shouldEscalate: false
+      };
+    }
+  } catch (error: any) {
+    console.error('Email AI error:', error);
+    return {
+      response: `Thank you for reaching out! I'm Ada, Enrique's AI assistant.
+
+I received your message and would love to help. Could you tell me a bit more about what you're looking for? Whether it's information about Enrique's speaking topics, availability, or how he works with organizations, I'm here to help.
+
+Best,
+Ada, Enrique's AI Assistant`,
+      shouldEscalate: false
+    };
+  }
+}

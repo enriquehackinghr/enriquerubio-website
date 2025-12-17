@@ -3,8 +3,9 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { appendBookingToSheet } from "./googleSheets";
 import { sendBookingNotificationEmail, sendEmailToAddress } from "./gmail";
-import { generateResponse, generateWelcomeEmail, generateInitialAssistantMessage, type ChatMessage } from "./aiAgent";
+import { generateResponse, generateWelcomeEmail, generateInitialAssistantMessage, generateEmailResponse, type ChatMessage } from "./aiAgent";
 import { createAnonymousConversationSchema, updateContactSchema, sendMessageSchema } from "@shared/schema";
+import { getOrCreateAdaInbox, sendEmailReply, getAgentMailClient } from "./agentmail";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -302,5 +303,150 @@ Before we dive in, what's your name?`;
     }
   });
 
+  // AgentMail webhook for incoming emails - Ada auto-replies
+  const processedEmailIds = new Set<string>();
+  
+  app.post('/api/webhook/agentmail', async (req, res) => {
+    // Return 200 immediately to acknowledge receipt
+    res.status(200).send('OK');
+    
+    // Process in background
+    try {
+      const payload = req.body;
+      const eventType = payload.type || payload.event_type;
+      
+      // Only process incoming messages
+      if (eventType === 'message.sent') {
+        return;
+      }
+      
+      const message = payload.message || {};
+      const messageId = message.message_id;
+      const inboxId = message.inbox_id;
+      const fromField = message.from_ || message.from || '';
+      const subject = message.subject || '(no subject)';
+      const textBody = message.text || '';
+      
+      // Validate required fields
+      if (!messageId || !inboxId || !fromField) {
+        console.log('AgentMail webhook: missing required fields');
+        return;
+      }
+      
+      // Prevent duplicate processing
+      if (processedEmailIds.has(messageId)) {
+        console.log('AgentMail webhook: duplicate message', messageId);
+        return;
+      }
+      processedEmailIds.add(messageId);
+      
+      // Extract sender email
+      let senderEmail = fromField;
+      if (fromField.includes('<') && fromField.includes('>')) {
+        senderEmail = fromField.split('<')[1].split('>')[0].trim();
+      }
+      
+      console.log(`AgentMail: Received email from ${senderEmail}: ${subject}`);
+      
+      // Generate AI response
+      const aiResponse = await generateEmailResponse(
+        [], // No history for now - could be enhanced to track threads
+        {
+          from: senderEmail,
+          subject,
+          body: textBody
+        }
+      );
+      
+      // Send auto-reply
+      await sendEmailReply(
+        inboxId,
+        messageId,
+        aiResponse.response
+      );
+      
+      console.log(`AgentMail: Auto-reply sent to ${senderEmail}`);
+      
+      // If escalation needed, notify Enrique
+      if (aiResponse.shouldEscalate) {
+        try {
+          await sendBookingNotificationEmail({
+            name: senderEmail,
+            organization: 'Email via AgentMail',
+            email: senderEmail,
+            eventDate: '',
+            format: 'Email Inquiry',
+            message: `Email from ${senderEmail}:\nSubject: ${subject}\n\n${textBody}\n\n--- Ada's Response ---\n\n${aiResponse.response}`
+          });
+          console.log('AgentMail: Escalation email sent to Enrique');
+        } catch (e) {
+          console.error('Failed to send escalation email:', e);
+        }
+      }
+      
+      // Clean up old message IDs to prevent memory leak
+      if (processedEmailIds.size > 1000) {
+        const iterator = processedEmailIds.values();
+        for (let i = 0; i < 500; i++) {
+          processedEmailIds.delete(iterator.next().value!);
+        }
+      }
+    } catch (error: any) {
+      console.error('AgentMail webhook error:', error);
+    }
+  });
+
+  // Get Ada's email address
+  app.get('/api/ada-email', async (req, res) => {
+    try {
+      const { inboxId, emailAddress } = await getOrCreateAdaInbox();
+      res.json({ inboxId, emailAddress });
+    } catch (error: any) {
+      console.error('Get Ada email error:', error);
+      res.status(500).json({ error: 'Failed to get Ada email address' });
+    }
+  });
+
+  // Initialize AgentMail inbox and webhook on startup
+  initAgentMail().catch(console.error);
+
   return httpServer;
+}
+
+// Set up AgentMail inbox and webhook
+async function initAgentMail() {
+  try {
+    const { inboxId, emailAddress } = await getOrCreateAdaInbox();
+    console.log(`Ada's email inbox ready: ${emailAddress}`);
+    
+    // Get webhook URL from environment
+    const baseUrl = process.env.REPLIT_DEV_DOMAIN 
+      ? `https://${process.env.REPLIT_DEV_DOMAIN}`
+      : process.env.REPL_SLUG 
+      ? `https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`
+      : 'https://enriquerubio.ai';
+    
+    const webhookUrl = `${baseUrl}/api/webhook/agentmail`;
+    
+    // Create or update webhook
+    const client = await getAgentMailClient();
+    
+    try {
+      await client.webhooks.create({
+        url: webhookUrl,
+        eventTypes: ['message.received'],
+        inboxIds: [inboxId],
+        clientId: 'ada-enrique-webhook'
+      });
+      console.log(`AgentMail webhook registered: ${webhookUrl}`);
+    } catch (error: any) {
+      if (String(error).toLowerCase().includes('already exists')) {
+        console.log('AgentMail webhook already exists');
+      } else {
+        console.error('Failed to create webhook:', error);
+      }
+    }
+  } catch (error: any) {
+    console.error('AgentMail initialization failed:', error.message);
+  }
 }
