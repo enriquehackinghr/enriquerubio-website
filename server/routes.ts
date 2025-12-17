@@ -411,6 +411,28 @@ Before we dive in, what's your name?`;
     }
   });
 
+  // Debug endpoint to check AgentMail configuration
+  app.get('/api/ada-email/debug', async (req, res) => {
+    try {
+      const client = await getAgentMailClient();
+      
+      // List webhooks
+      const webhooks = await client.webhooks.list();
+      
+      // List inboxes
+      const inboxes = await client.inboxes.list();
+      
+      res.json({ 
+        webhooks: webhooks.webhooks,
+        inboxes: inboxes.inboxes,
+        expectedWebhookUrl: 'https://enriquerubio.ai/api/webhook/agentmail'
+      });
+    } catch (error: any) {
+      console.error('Ada debug error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+
   // Initialize AgentMail inbox and webhook on startup
   initAgentMail().catch(console.error);
 
