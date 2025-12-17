@@ -49,6 +49,10 @@ Preferred communication style: Simple, everyday language.
 - **OpenAI**: AI chat responses via Replit AI Integrations connector
 - **Google Sheets**: Lead/booking storage via Replit Connectors (`google-sheet`)
 - **Gmail**: Notification emails via Replit Connectors (`google-mail`)
+- **AgentMail**: Email inbox for Ada auto-replies via Replit Connectors (`agentmail`)
+  - Inbox: `ada-enrique@agentmail.to`
+  - Webhook: `/api/webhook/agentmail` receives incoming emails
+  - Ada automatically responds to emails using AI
 
 ### Environment Variables Required
 - `DATABASE_URL`: PostgreSQL connection string
