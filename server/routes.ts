@@ -419,29 +419,37 @@ async function initAgentMail() {
     const { inboxId, emailAddress } = await getOrCreateAdaInbox();
     console.log(`Ada's email inbox ready: ${emailAddress}`);
     
-    // Get webhook URL from environment
-    const baseUrl = process.env.REPLIT_DEV_DOMAIN 
-      ? `https://${process.env.REPLIT_DEV_DOMAIN}`
-      : process.env.REPL_SLUG 
-      ? `https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`
-      : 'https://enriquerubio.ai';
-    
-    const webhookUrl = `${baseUrl}/api/webhook/agentmail`;
+    // Always use production URL for webhook so emails work in production
+    const webhookUrl = 'https://enriquerubio.ai/api/webhook/agentmail';
     
     // Create or update webhook
     const client = await getAgentMailClient();
+    
+    // First, try to delete existing webhook to update URL
+    try {
+      const webhooks = await client.webhooks.list();
+      const existingWebhook = (webhooks.webhooks as any[])?.find((w: any) => 
+        w.clientId === 'enrique-webhook' || w.url?.includes('agentmail')
+      );
+      if (existingWebhook && existingWebhook.url !== webhookUrl) {
+        await client.webhooks.delete(existingWebhook.webhookId);
+        console.log('Deleted old webhook to update URL');
+      }
+    } catch (e) {
+      // Ignore errors when deleting
+    }
     
     try {
       await client.webhooks.create({
         url: webhookUrl,
         eventTypes: ['message.received'],
         inboxIds: [inboxId],
-        clientId: 'enrique-webhook'
+        clientId: 'enrique-webhook-prod'
       });
       console.log(`AgentMail webhook registered: ${webhookUrl}`);
     } catch (error: any) {
       if (String(error).toLowerCase().includes('already exists')) {
-        console.log('AgentMail webhook already exists');
+        console.log('AgentMail webhook already exists for production');
       } else {
         console.error('Failed to create webhook:', error);
       }
