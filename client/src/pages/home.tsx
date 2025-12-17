@@ -2,7 +2,6 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { ProblemFraming } from "@/components/sections/ProblemFraming";
-import { AdaChatSection } from "@/components/sections/AdaChatSection";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { BuildWithYouSection } from "@/components/sections/BuildWithYouSection";
 import { TopicGrid } from "@/components/sections/TopicGrid";
@@ -20,7 +19,6 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <ProblemFraming />
-        <AdaChatSection />
         <HowItWorks />
         <BuildWithYouSection />
         <SpeakingSection />
