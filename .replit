@@ -41,7 +41,7 @@ waitForPort = 5000
 
 [agent]
 mockupState = "FULLSTACK"
-integrations = ["google-sheet:1.0.0", "google-mail:1.0.0", "javascript_openai_ai_integrations:1.0.0"]
+integrations = ["google-sheet:1.0.0", "google-mail:1.0.0", "javascript_openai_ai_integrations:1.0.0", "agentmail:1.0.0"]
 
 [userenv]
 
