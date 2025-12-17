@@ -50,7 +50,7 @@ Preferred communication style: Simple, everyday language.
 - **Google Sheets**: Lead/booking storage via Replit Connectors (`google-sheet`)
 - **Gmail**: Notification emails via Replit Connectors (`google-mail`)
 - **AgentMail**: Email inbox for Ada auto-replies via Replit Connectors (`agentmail`)
-  - Inbox: `ada-enrique@agentmail.to`
+  - Inbox: `enrique@enriquerubio.ai`
   - Webhook: `/api/webhook/agentmail` receives incoming emails
   - Ada automatically responds to emails using AI
 
