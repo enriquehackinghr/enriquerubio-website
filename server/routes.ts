@@ -483,6 +483,47 @@ Before we dive in, what's your name?`;
     }
   });
 
+  // Force recreate webhook endpoint
+  app.post('/api/ada-email/recreate-webhook', async (req, res) => {
+    try {
+      const client = await getAgentMailClient();
+      const { inboxId } = await getOrCreateAdaInbox();
+      const webhookUrl = 'https://enriquerubio.ai/api/webhook/agentmail';
+      
+      // Delete all existing webhooks for this inbox
+      const webhooks = await client.webhooks.list();
+      const deleted: string[] = [];
+      for (const w of (webhooks.webhooks as any[]) || []) {
+        if (w.inboxIds?.includes(inboxId) || w.clientId?.includes('enrique')) {
+          try {
+            await client.webhooks.delete(w.webhookId);
+            deleted.push(w.webhookId);
+          } catch (e) {
+            console.log('Failed to delete webhook:', w.webhookId);
+          }
+        }
+      }
+      
+      // Create new webhook
+      const newWebhook = await client.webhooks.create({
+        url: webhookUrl,
+        eventTypes: ['message.received'],
+        inboxIds: [inboxId],
+        clientId: 'enrique-webhook-v2-' + Date.now()
+      });
+      
+      res.json({
+        success: true,
+        deleted,
+        newWebhook,
+        message: 'Webhook recreated successfully'
+      });
+    } catch (error: any) {
+      console.error('Recreate webhook error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+
   // Debug endpoint to check AgentMail configuration
   app.get('/api/ada-email/debug', async (req, res) => {
     try {
