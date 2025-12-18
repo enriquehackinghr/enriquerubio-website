@@ -411,6 +411,57 @@ Before we dive in, what's your name?`;
     }
   });
 
+  // Test endpoint to manually trigger Ada reply to an existing email
+  app.post('/api/ada-email/test-reply', async (req, res) => {
+    try {
+      const { threadId } = req.body;
+      const client = await getAgentMailClient();
+      const { inboxId } = await getOrCreateAdaInbox();
+      
+      // Get the thread to find the latest message
+      const thread = await client.inboxes.threads.get(inboxId, threadId);
+      const messages = (thread as any).messages || [];
+      
+      if (messages.length === 0) {
+        return res.status(400).json({ error: 'No messages in thread' });
+      }
+      
+      // Get the last received message (not from Ada)
+      const lastReceived = messages.filter((m: any) => !m.labels?.includes('sent')).pop();
+      if (!lastReceived) {
+        return res.status(400).json({ error: 'No received messages found' });
+      }
+      
+      const senderEmail = Array.isArray(lastReceived.from_) ? lastReceived.from_[0] : lastReceived.from_;
+      const subject = lastReceived.subject || '(no subject)';
+      const textBody = lastReceived.body?.text || lastReceived.body?.html || '';
+      
+      console.log(`Test reply: Processing email from ${senderEmail}: ${subject}`);
+      
+      // Generate AI response
+      const aiResponse = await generateEmailResponse(
+        [],
+        { from: senderEmail, subject, body: textBody }
+      );
+      
+      console.log(`Test reply: AI generated response (${aiResponse.response.length} chars)`);
+      
+      // Send reply
+      await sendEmailReply(inboxId, lastReceived.messageId, aiResponse.response);
+      
+      res.json({ 
+        success: true, 
+        messageId: lastReceived.messageId,
+        senderEmail,
+        subject,
+        responsePreview: aiResponse.response.substring(0, 200) + '...'
+      });
+    } catch (error: any) {
+      console.error('Test reply error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+
   // Debug endpoint to check AgentMail configuration
   app.get('/api/ada-email/debug', async (req, res) => {
     try {
