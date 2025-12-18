@@ -328,8 +328,11 @@ Before we dive in, what's your name?`;
       const fromArray = payload.from_ || payload.from || [];
       const fromField = Array.isArray(fromArray) ? fromArray[0] : fromArray;
       const subject = payload.subject || '(no subject)';
+      // Body can be in body.text (webhook) or at top level (some cases)
       const body = payload.body || {};
-      const textBody = body.text || body.html || '';
+      const textBody = body.text || body.html || payload.text || payload.extracted_text || '';
+      
+      console.log(`AgentMail webhook: Email body length: ${textBody.length}, preview: ${textBody.substring(0, 100)}`);
       
       // Validate required fields
       if (!messageId || !inboxId || !fromField) {
@@ -422,8 +425,10 @@ Before we dive in, what's your name?`;
       const thread = await client.inboxes.threads.get(inboxId, threadId);
       const messages = (thread as any).messages || [];
       
+      console.log('Thread structure:', JSON.stringify(thread, null, 2));
+      
       if (messages.length === 0) {
-        return res.status(400).json({ error: 'No messages in thread' });
+        return res.status(400).json({ error: 'No messages in thread', threadData: thread });
       }
       
       // Get the last received message (not from Ada)
@@ -432,9 +437,25 @@ Before we dive in, what's your name?`;
         return res.status(400).json({ error: 'No received messages found' });
       }
       
-      const senderEmail = Array.isArray(lastReceived.from_) ? lastReceived.from_[0] : lastReceived.from_;
+      console.log('Last received message:', JSON.stringify(lastReceived, null, 2));
+      
+      // Message body is at top level (text/html), not in body object
+      let textBody = lastReceived.text || lastReceived.extracted_text || lastReceived.body?.text || lastReceived.body?.html || '';
+      if (!textBody && lastReceived.messageId) {
+        try {
+          const fullMessage = await client.inboxes.messages.get(inboxId, lastReceived.messageId);
+          console.log('Full message from API:', JSON.stringify(fullMessage, null, 2));
+          textBody = (fullMessage as any).text || (fullMessage as any).extracted_text || (fullMessage as any).body?.text || '';
+        } catch (e) {
+          console.error('Failed to fetch full message:', e);
+        }
+      }
+      
+      // from is at top level, not from_
+      const senderEmail = lastReceived.from || (Array.isArray(lastReceived.from_) ? lastReceived.from_[0] : lastReceived.from_);
       const subject = lastReceived.subject || '(no subject)';
-      const textBody = lastReceived.body?.text || lastReceived.body?.html || '';
+      
+      console.log(`Test reply: Email body (${textBody.length} chars): ${textBody.substring(0, 100)}...`);
       
       console.log(`Test reply: Processing email from ${senderEmail}: ${subject}`);
       
