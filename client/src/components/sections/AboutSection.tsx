@@ -1,4 +1,4 @@
-import { Users, Globe, BookOpen, Lightbulb, Mountain, TreePine, Book } from "lucide-react";
+import { Users, Globe, BookOpen, Lightbulb, Mountain, TreePine } from "lucide-react";
 
 export function AboutSection() {
   const highlights = [
@@ -151,16 +151,15 @@ export function AboutSection() {
         {/* Upcoming Book Section */}
         <div className="mt-24 pt-24 border-t border-white/10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left - Book Cover Placeholder */}
+            {/* Left - Book Cover */}
             <div className="flex justify-center lg:justify-start">
               <div className="relative">
-                <div className="w-64 md:w-80 aspect-[3/4] bg-gradient-to-br from-primary/20 to-black border-2 border-primary shadow-[8px_8px_0px_0px_#00E676] flex flex-col items-center justify-center p-8">
-                  <Book className="w-16 h-16 text-primary mb-6" />
-                  <p className="font-heading font-bold text-xl md:text-2xl text-center uppercase leading-tight">
-                    Human-Centered,<br />
-                    <span className="text-primary">AI-Powered</span>
-                  </p>
-                  <p className="font-mono text-xs text-gray-400 mt-4 text-center">Coming Soon</p>
+                <div className="w-64 md:w-80 aspect-[3/4] border-2 border-primary shadow-[8px_8px_0px_0px_#00E676] overflow-hidden">
+                  <img 
+                    src="/book-cover.png" 
+                    alt="Human-Centered, AI-Powered - A Strategic Leadership Playbook for the Age of AI"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="absolute -top-3 -right-3 bg-primary text-black px-3 py-1 font-mono font-bold text-xs uppercase">
                   New Book
