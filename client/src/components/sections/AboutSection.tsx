@@ -94,7 +94,7 @@ export function AboutSection() {
                   <Mountain className="w-8 h-8 text-primary" />
                   <div>
                     <p className="font-heading font-bold uppercase text-sm">Ultrarunner</p>
-                    <p className="text-gray-500 font-mono text-xs">50+ mile races</p>
+                    <p className="text-gray-500 font-mono text-xs">50+ and 100+ mile races</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-4 border border-white/10 bg-white/5">
@@ -109,27 +109,40 @@ export function AboutSection() {
 
             {/* Right - Image Grid */}
             <div className="grid grid-cols-2 gap-4">
-              {/* Placeholder images - replace with real photos */}
               <div className="aspect-square bg-gray-800 border border-white/10 overflow-hidden relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Mountain className="w-16 h-16 text-white/20" />
-                </div>
-                <p className="absolute bottom-2 left-2 text-xs font-mono text-white/50">// trail_photo_1</p>
+                <img 
+                  src="/attached_assets/IMG_6539_1766711846621.jpg" 
+                  alt="Enrique running in canyon"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="aspect-square bg-gray-800 border border-white/10 overflow-hidden relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <TreePine className="w-16 h-16 text-white/20" />
-                </div>
-                <p className="absolute bottom-2 left-2 text-xs font-mono text-white/50">// nature_photo_1</p>
+                <img 
+                  src="/attached_assets/IMG_4258_1766711846622.jpg" 
+                  alt="Enrique at mountain lake"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-square bg-gray-800 border border-white/10 overflow-hidden relative group">
+                <img 
+                  src="/attached_assets/IMG_6816_1766711846622.jpg" 
+                  alt="Enrique at waterfall"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-square bg-gray-800 border border-white/10 overflow-hidden relative group">
+                <img 
+                  src="/attached_assets/IMG_5530_1766711846623.jpg" 
+                  alt="Enrique at Monument Valley"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="aspect-square bg-gray-800 border border-white/10 overflow-hidden relative group col-span-2">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Mountain className="w-24 h-24 text-white/20" />
-                </div>
-                <p className="absolute bottom-2 left-2 text-xs font-mono text-white/50">// ultrarunning_hero</p>
+                <img 
+                  src="/attached_assets/IMG_5656_1766711846623.jpg" 
+                  alt="Enrique at rock formations"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
             </div>
           </div>
