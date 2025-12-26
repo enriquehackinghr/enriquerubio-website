@@ -111,35 +111,35 @@ export function AboutSection() {
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-square bg-gray-800 border border-white/10 overflow-hidden relative group">
                 <img 
-                  src="/attached_assets/IMG_6539_1766711846621.jpg" 
+                  src="/ultrarunner-1.jpg" 
                   alt="Enrique running in canyon"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="aspect-square bg-gray-800 border border-white/10 overflow-hidden relative group">
                 <img 
-                  src="/attached_assets/IMG_4258_1766711846622.jpg" 
+                  src="/ultrarunner-2.jpg" 
                   alt="Enrique at mountain lake"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="aspect-square bg-gray-800 border border-white/10 overflow-hidden relative group">
                 <img 
-                  src="/attached_assets/IMG_6816_1766711846622.jpg" 
+                  src="/ultrarunner-3.jpg" 
                   alt="Enrique at waterfall"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="aspect-square bg-gray-800 border border-white/10 overflow-hidden relative group">
                 <img 
-                  src="/attached_assets/IMG_5530_1766711846623.jpg" 
+                  src="/ultrarunner-4.jpg" 
                   alt="Enrique at Monument Valley"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="aspect-square bg-gray-800 border border-white/10 overflow-hidden relative group col-span-2">
                 <img 
-                  src="/attached_assets/IMG_5656_1766711846623.jpg" 
+                  src="/ultrarunner-5.jpg" 
                   alt="Enrique at rock formations"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
