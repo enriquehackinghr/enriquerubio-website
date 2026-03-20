@@ -157,7 +157,7 @@ export function AboutSection() {
                 <div className="w-64 md:w-80 aspect-[3/4] border-2 border-primary shadow-[8px_8px_0px_0px_#00E676] overflow-hidden">
                   <img 
                     src="/book-cover.png" 
-                    alt="Human-Centered, AI-Powered - A Strategic Leadership Playbook for the Age of AI"
+                    alt="Our Existential Advantage - Human Leadership in the Age of Intelligent Machines"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -172,21 +172,24 @@ export function AboutSection() {
               <div className="inline-block bg-primary text-black px-4 py-1 font-mono font-bold uppercase tracking-widest text-xs mb-6">
                 :: Upcoming_Book
               </div>
-              <h3 className="text-4xl md:text-5xl font-heading font-bold mb-6 uppercase tracking-tight">
-                Human-Centered, <br/><span className="text-primary">AI-Powered</span>
+              <h3 className="text-4xl md:text-5xl font-heading font-bold mb-4 uppercase tracking-tight">
+                Our Existential <br/><span className="text-primary">Advantage</span>
               </h3>
-              <p className="text-xl text-gray-300 font-mono mb-6 leading-relaxed">
-                A Strategic Leadership Playbook for the Age of AI
+              <p className="text-lg text-gray-300 font-mono mb-1 leading-relaxed">
+                Human Leadership in the Age of Intelligent Machines
               </p>
-              <div className="space-y-6 text-gray-300 font-mono leading-relaxed">
+              <p className="text-sm text-gray-500 font-mono mb-6 uppercase tracking-widest">
+                Enrique Rubio | Founder, Hacking HR
+              </p>
+              <div className="space-y-5 text-gray-300 font-mono leading-relaxed">
                 <p>
-                  &gt; The first strategic leadership playbook for building AI-ready organizations where AI becomes a core capability that accelerates performance—while leaders protect trust, accountability, and what makes work human.
+                  &gt; This book is not about artificial intelligence. It is about you. It is about what happens to human judgment, strategic imagination, and moral courage when the most powerful cognitive tool in history becomes available to everyone, everywhere, at negligible cost.
                 </p>
                 <p>
-                  &gt; This book moves leaders beyond narrow conversations about AI tools and efficiency gains, developing their ability to lead systemic organizational redesign. It shows how to embed AI as a core organizational capability across work, workforce, culture, data, processes, governance, and technology.
+                  &gt; Our Existential Advantage moves through the full landscape a strategic leader must navigate: the history of technological disruption, the deep psychology of change, the organizational ecosystems AI is rewiring right now, and the governance and ethics questions that can no longer be deferred.
                 </p>
                 <p>
-                  &gt; Through structured frameworks, real-world scenarios, and progressive exercises, readers actively build their own human-centered, AI-powered organizational blueprint.
+                  &gt; In the age of intelligent machines, the most strategic thing you can do is become more fully, more deliberately, more courageously human.
                 </p>
               </div>
               
