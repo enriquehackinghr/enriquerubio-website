@@ -183,13 +183,16 @@ export function AboutSection() {
               </p>
               <div className="space-y-5 text-gray-300 font-mono leading-relaxed">
                 <p>
-                  &gt; This book is not about artificial intelligence. It is about you. It is about what happens to human judgment, strategic imagination, and moral courage when the most powerful cognitive tool in history becomes available to everyone, everywhere, at negligible cost.
+                  This book is not about artificial intelligence. It is about you. It is about what happens to human judgment, strategic imagination, and moral courage when the most powerful cognitive tool in history becomes available to everyone, everywhere, at negligible cost, and why your humanity remains the only advantage that cannot be replicated, automated, or scaled away.
                 </p>
                 <p>
-                  &gt; Our Existential Advantage moves through the full landscape a strategic leader must navigate: the history of technological disruption, the deep psychology of change, the organizational ecosystems AI is rewiring right now, and the governance and ethics questions that can no longer be deferred.
+                  We are at an inflection point. AI is accelerating faster than most organizations can absorb, faster than most leaders can process, faster than most institutions can govern, and faster than our brains can keep up with. The temptation is to keep up by leaning harder into the machines, letting them synthesize, decide, and lead. But that path leads somewhere dangerous: organizations that are efficient and hollow, and leaders who trade their judgment for convenience.
                 </p>
                 <p>
-                  &gt; In the age of intelligent machines, the most strategic thing you can do is become more fully, more deliberately, more courageously human.
+                  Our Existential Advantage is a different kind of leadership book for this moment. It moves through the full landscape a strategic leader must navigate, the history of technological disruption and what it actually teaches us, the deep psychology of why humans resist and adopt change, the organizational ecosystems that AI is rewiring right now, the governance and ethics questions that can no longer be deferred, and the inner life of a leader who is trying to stay human while everything accelerates around them.
+                </p>
+                <p>
+                  This is not a book about AI tools. It is a book about you as a leader and your thinking, your values, your responsibility to the people and institutions in your care, and how they all must be upgraded even faster than AI is. It is built on a single conviction: that in the age of intelligent machines, the most strategic thing you can do is become more fully, more deliberately, more courageously human.
                 </p>
               </div>
               
