@@ -150,13 +150,14 @@ export function AboutSection() {
 
         {/* Upcoming Book Section */}
         <div className="mt-24 pt-24 border-t border-white/10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left - Book Cover */}
-            <div className="flex justify-center lg:justify-start">
+
+          {/* Top: Cover + Title side by side */}
+          <div className="flex flex-col md:flex-row gap-12 items-center md:items-start mb-14">
+            <div className="flex-shrink-0 flex justify-center">
               <div className="relative">
-                <div className="w-64 md:w-80 aspect-[3/4] border-2 border-primary shadow-[8px_8px_0px_0px_#00E676] overflow-hidden">
-                  <img 
-                    src="/book-cover.png" 
+                <div className="w-48 md:w-56 aspect-[3/4] border-2 border-primary shadow-[8px_8px_0px_0px_#00E676] overflow-hidden">
+                  <img
+                    src="/book-cover.png"
                     alt="Our Existential Advantage - Human Leadership in the Age of Intelligent Machines"
                     className="w-full h-full object-cover"
                   />
@@ -166,52 +167,54 @@ export function AboutSection() {
                 </div>
               </div>
             </div>
-
-            {/* Right - Book Info */}
-            <div>
-              <div className="inline-block bg-primary text-black px-4 py-1 font-mono font-bold uppercase tracking-widest text-xs mb-6">
+            <div className="flex flex-col justify-center">
+              <div className="inline-block bg-primary text-black px-4 py-1 font-mono font-bold uppercase tracking-widest text-xs mb-5">
                 :: Upcoming_Book
               </div>
-              <h3 className="text-4xl md:text-5xl font-heading font-bold mb-4 uppercase tracking-tight">
-                Our Existential <br/><span className="text-primary">Advantage</span>
+              <h3 className="text-4xl md:text-6xl font-heading font-bold mb-3 uppercase tracking-tight leading-none">
+                Our Existential <br /><span className="text-primary">Advantage</span>
               </h3>
-              <p className="text-lg text-gray-300 font-mono mb-1 leading-relaxed">
+              <p className="text-lg text-gray-300 font-mono mb-1">
                 Human Leadership in the Age of Intelligent Machines
               </p>
-              <p className="text-sm text-gray-500 font-mono mb-6 uppercase tracking-widest">
+              <p className="text-sm text-gray-500 font-mono uppercase tracking-widest">
                 Enrique Rubio | Founder, Hacking HR
               </p>
-              <div className="space-y-5 text-gray-300 font-mono leading-relaxed">
-                <p>
-                  This book is not about artificial intelligence. It is about you. It is about what happens to human judgment, strategic imagination, and moral courage when the most powerful cognitive tool in history becomes available to everyone, everywhere, at negligible cost, and why your humanity remains the only advantage that cannot be replicated, automated, or scaled away.
-                </p>
-                <p>
-                  We are at an inflection point. AI is accelerating faster than most organizations can absorb, faster than most leaders can process, faster than most institutions can govern, and faster than our brains can keep up with. The temptation is to keep up by leaning harder into the machines, letting them synthesize, decide, and lead. But that path leads somewhere dangerous: organizations that are efficient and hollow, and leaders who trade their judgment for convenience.
-                </p>
-                <p>
-                  Our Existential Advantage is a different kind of leadership book for this moment. It moves through the full landscape a strategic leader must navigate, the history of technological disruption and what it actually teaches us, the deep psychology of why humans resist and adopt change, the organizational ecosystems that AI is rewiring right now, the governance and ethics questions that can no longer be deferred, and the inner life of a leader who is trying to stay human while everything accelerates around them.
-                </p>
-                <p>
-                  This is not a book about AI tools. It is a book about you as a leader and your thinking, your values, your responsibility to the people and institutions in your care, and how they all must be upgraded even faster than AI is. It is built on a single conviction: that in the age of intelligent machines, the most strategic thing you can do is become more fully, more deliberately, more courageously human.
-                </p>
-              </div>
-              
-              <div className="flex flex-wrap gap-4 mt-8">
-                <div className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5">
-                  <span className="text-primary font-mono text-sm">//</span>
-                  <span className="font-mono text-sm">Strategic Frameworks</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5">
-                  <span className="text-primary font-mono text-sm">//</span>
-                  <span className="font-mono text-sm">Real-World Scenarios</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5">
-                  <span className="text-primary font-mono text-sm">//</span>
-                  <span className="font-mono text-sm">Practical Exercises</span>
-                </div>
-              </div>
             </div>
           </div>
+
+          {/* Body text in two columns */}
+          <div className="grid md:grid-cols-2 gap-8 text-gray-300 font-mono leading-relaxed text-sm mb-10">
+            <p>
+              This book is not about artificial intelligence. It is about you. It is about what happens to human judgment, strategic imagination, and moral courage when the most powerful cognitive tool in history becomes available to everyone, everywhere, at negligible cost, and why your humanity remains the only advantage that cannot be replicated, automated, or scaled away.
+            </p>
+            <p>
+              We are at an inflection point. AI is accelerating faster than most organizations can absorb, faster than most leaders can process, faster than most institutions can govern, and faster than our brains can keep up with. The temptation is to keep up by leaning harder into the machines, letting them synthesize, decide, and lead. But that path leads somewhere dangerous: organizations that are efficient and hollow, and leaders who trade their judgment for convenience.
+            </p>
+            <p>
+              Our Existential Advantage is a different kind of leadership book for this moment. It moves through the full landscape a strategic leader must navigate, the history of technological disruption and what it actually teaches us, the deep psychology of why humans resist and adopt change, the organizational ecosystems that AI is rewiring right now, the governance and ethics questions that can no longer be deferred, and the inner life of a leader who is trying to stay human while everything accelerates around them.
+            </p>
+            <p>
+              This is not a book about AI tools. It is a book about you as a leader and your thinking, your values, your responsibility to the people and institutions in your care, and how they all must be upgraded even faster than AI is. It is built on a single conviction: that in the age of intelligent machines, the most strategic thing you can do is become more fully, more deliberately, more courageously human.
+            </p>
+          </div>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-4">
+            <div className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5">
+              <span className="text-primary font-mono text-sm">//</span>
+              <span className="font-mono text-sm">Strategic Frameworks</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5">
+              <span className="text-primary font-mono text-sm">//</span>
+              <span className="font-mono text-sm">Real-World Scenarios</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5">
+              <span className="text-primary font-mono text-sm">//</span>
+              <span className="font-mono text-sm">Practical Exercises</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
