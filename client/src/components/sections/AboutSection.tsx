@@ -184,7 +184,7 @@ export function AboutSection() {
           </div>
 
           {/* Body text in two columns */}
-          <div className="grid md:grid-cols-2 gap-8 text-gray-300 font-mono leading-relaxed text-sm mb-10">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-300 font-mono leading-relaxed text-base mb-10">
             <p>
               This book is not about artificial intelligence. It is about you. It is about what happens to human judgment, strategic imagination, and moral courage when the most powerful cognitive tool in history becomes available to everyone, everywhere, at negligible cost, and why your humanity remains the only advantage that cannot be replicated, automated, or scaled away.
             </p>
