@@ -163,7 +163,7 @@ export function AboutSection() {
                   />
                 </div>
                 <div className="absolute -top-3 -right-3 bg-primary text-black px-3 py-1 font-mono font-bold text-xs uppercase">
-                  New Book
+                  Coming June 2026
                 </div>
               </div>
             </div>

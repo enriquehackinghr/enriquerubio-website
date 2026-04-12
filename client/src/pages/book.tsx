@@ -286,7 +286,7 @@ export default function BookPage() {
                   />
                 </div>
                 <div className="absolute -top-3 -right-3 bg-primary text-black px-3 py-1 font-mono font-bold text-xs uppercase shadow-[4px_4px_0px_0px_#000]">
-                  Advance Review Copy
+                  Coming June 2026
                 </div>
               </div>
             </div>
@@ -302,9 +302,13 @@ export default function BookPage() {
               <p className="text-xl md:text-2xl text-gray-300 font-mono mb-3">
                 Human Leadership in the Age of Intelligent Machines
               </p>
-              <p className="text-sm text-gray-500 font-mono uppercase tracking-widest mb-10">
+              <p className="text-sm text-gray-500 font-mono uppercase tracking-widest mb-4">
                 Enrique Rubio — Founder &amp; CEO, Hacking HR | People and Culture Strategy Institute
               </p>
+              <div className="inline-flex items-center gap-2 border-2 border-primary px-4 py-2 mb-8">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span className="font-mono font-bold text-primary text-sm uppercase tracking-widest">Coming June 2026</span>
+              </div>
 
               {/* Stats */}
               <div className="flex flex-wrap gap-0 mb-10">
