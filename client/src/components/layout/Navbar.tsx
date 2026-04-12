@@ -15,6 +15,8 @@ export function Navbar() {
     { name: "About", href: "#about" },
   ];
 
+  const isHomePage = location === "/";
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -58,6 +60,13 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
+            <Link
+              href="/book"
+              className="text-sm font-mono font-bold px-4 py-2 border-2 border-primary bg-primary/10 hover:bg-primary hover:text-black transition-all uppercase tracking-wider text-primary cursor-pointer flex items-center gap-1.5"
+            >
+              <span className="text-[10px] bg-primary text-black px-1 font-bold">NEW</span>
+              Book
+            </Link>
           </div>
           <a href="#booking" onClick={(e) => handleNavClick(e, '#booking')}>
             <Button size="default" className="bg-primary text-black font-bold uppercase tracking-wider rounded-none border-2 border-black shadow-[4px_4px_0px_0px_#000] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
@@ -90,6 +99,14 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
+            <Link
+              href="/book"
+              onClick={() => setIsOpen(false)}
+              className="text-xl font-heading font-bold py-3 border-b-2 border-primary text-primary hover:text-black uppercase cursor-pointer flex items-center gap-2"
+            >
+              <span className="text-[10px] bg-primary text-black px-1 font-bold">NEW</span>
+              Upcoming Book
+            </Link>
             <a href="#booking" onClick={(e) => handleNavClick(e, '#booking')}>
               <Button className="w-full mt-4 bg-primary text-black rounded-none border-2 border-black font-bold uppercase" size="lg">
                 Book_Enrique
