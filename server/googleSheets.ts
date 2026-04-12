@@ -114,6 +114,60 @@ export async function getOrCreateBookingSheet(): Promise<string> {
   return bookingSpreadsheetId;
 }
 
+let newsletterSpreadsheetId: string | null = null;
+
+export async function getOrCreateNewsletterSheet(): Promise<string> {
+  if (newsletterSpreadsheetId) return newsletterSpreadsheetId;
+
+  const sheets = await getGoogleSheetsClient();
+  const drive = await getGoogleDriveClient();
+
+  const searchResponse = await drive.files.list({
+    q: "name='Book Newsletter Subscribers' and mimeType='application/vnd.google-apps.spreadsheet' and trashed=false",
+    fields: 'files(id, name)',
+    spaces: 'drive'
+  });
+
+  if (searchResponse.data.files && searchResponse.data.files.length > 0) {
+    newsletterSpreadsheetId = searchResponse.data.files[0].id!;
+    return newsletterSpreadsheetId;
+  }
+
+  const createResponse = await sheets.spreadsheets.create({
+    requestBody: {
+      properties: { title: 'Book Newsletter Subscribers' },
+      sheets: [{ properties: { title: 'Subscribers' } }]
+    }
+  });
+
+  newsletterSpreadsheetId = createResponse.data.spreadsheetId!;
+
+  await sheets.spreadsheets.values.update({
+    spreadsheetId: newsletterSpreadsheetId,
+    range: 'Subscribers!A1:C1',
+    valueInputOption: 'RAW',
+    requestBody: { values: [['Timestamp', 'Name', 'Email']] }
+  });
+
+  return newsletterSpreadsheetId;
+}
+
+export async function appendNewsletterSubscriber(data: { name: string; email: string }) {
+  const sheets = await getGoogleSheetsClient();
+  const spreadsheetId = await getOrCreateNewsletterSheet();
+
+  await sheets.spreadsheets.values.append({
+    spreadsheetId,
+    range: 'Subscribers!A:C',
+    valueInputOption: 'RAW',
+    requestBody: {
+      values: [[new Date().toISOString(), data.name, data.email]]
+    }
+  });
+
+  return { success: true };
+}
+
 export async function appendBookingToSheet(data: {
   name: string;
   organization: string;

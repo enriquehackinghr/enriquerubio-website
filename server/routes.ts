@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { appendBookingToSheet } from "./googleSheets";
+import { appendBookingToSheet, appendNewsletterSubscriber } from "./googleSheets";
 import { sendBookingNotificationEmail, sendEmailToAddress } from "./gmail";
 import { generateResponse, generateWelcomeEmail, generateInitialAssistantMessage, generateEmailResponse, type ChatMessage } from "./aiAgent";
 import { createAnonymousConversationSchema, updateContactSchema, sendMessageSchema } from "@shared/schema";
@@ -11,6 +11,21 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  // Book newsletter sign-up endpoint
+  app.post('/api/newsletter/book', async (req, res) => {
+    try {
+      const { name, email } = req.body;
+      if (!name || !email) {
+        return res.status(400).json({ success: false, error: 'Name and email are required' });
+      }
+      await appendNewsletterSubscriber({ name, email });
+      return res.json({ success: true });
+    } catch (error: any) {
+      console.error('Newsletter sign-up error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to save subscriber' });
+    }
+  });
+
   // Booking form submission endpoint
   app.post('/api/booking', async (req, res) => {
     try {
