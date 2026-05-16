@@ -3,7 +3,7 @@ import { Brain, Zap } from "lucide-react";
 const thinkItems = [
   {
     label: "Leadership in the Age of AI",
-    text: "Helping leaders understand what changes — and what must not — when AI becomes available to every organization on earth.",
+    text: "Helping leaders understand what changes, and what must not, when AI becomes available to every organization on earth.",
   },
   {
     label: "Strategic Frameworks",
@@ -11,18 +11,18 @@ const thinkItems = [
   },
   {
     label: "Organizational Readiness",
-    text: "Building the culture, workforce fluency, and decision architecture that make AI transformation real — not just announced.",
+    text: "Building the culture, workforce fluency, and decision architecture that make AI transformation real, not just announced.",
   },
   {
     label: "The Human Advantage",
-    text: "Why human judgment, ethical courage, and strategic imagination become more valuable — not less — as AI becomes more capable.",
+    text: "Why human judgment, ethical courage, and strategic imagination become more valuable, not less, as AI becomes more capable.",
   },
 ];
 
 const doItems = [
   {
     label: "Intensive Bootcamps",
-    text: "Hands-on, fast-paced sessions where teams build real AI-powered systems, workflows, and operating capabilities — not slides.",
+    text: "Hands-on, fast-paced sessions where teams build real AI-powered systems, workflows, and operating capabilities, not slides.",
   },
   {
     label: "Leadership Workshops",
@@ -30,7 +30,7 @@ const doItems = [
   },
   {
     label: "Certificate Programs",
-    text: "Multi-week cohort experiences that take leaders from AI curiosity to operational fluency — with frameworks, live practice, and accountability.",
+    text: "Multi-week cohort experiences that take leaders from AI curiosity to operational fluency, with frameworks, live practice, and accountability.",
   },
   {
     label: "Custom Team Experiences",
@@ -94,7 +94,7 @@ export function ThinkDoSection() {
             </div>
             <div className="px-8 py-8">
               <p className="text-gray-400 font-mono text-sm leading-relaxed mb-8 border-l-2 border-primary pl-4">
-                The doing side is about building real capability — hands-on experiences where leaders and teams move from knowing to actually working differently with AI.
+                The doing side is about building real capability: hands-on experiences where leaders and teams move from knowing to actually working differently with AI.
               </p>
               <div className="space-y-6">
                 {doItems.map((item, i) => (
@@ -117,7 +117,7 @@ export function ThinkDoSection() {
         {/* Bottom CTA */}
         <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-2 border-white/10 px-8 py-5 bg-white/5">
           <p className="text-gray-400 font-mono text-sm">
-            <span className="text-primary font-bold">//</span> Every engagement is designed around where your organization actually is — not where it should be.
+            <span className="text-primary font-bold">//</span> Every engagement is designed around where your organization actually is, not where it should be.
           </p>
           <a
             href="#booking"

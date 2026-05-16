@@ -42,13 +42,13 @@ export function AboutSection() {
                 &gt; I'm Enrique Rubio. For over two decades, I've worked at the intersection of technology, leadership, and organizational transformation, helping leaders navigate how work actually changes in moments of disruption.
               </p>
               <p>
-                &gt; As the founder of Hacking HR, I built a global leadership and learning ecosystem focused on the future of work, AI, and organizational change. My work is not about prediction—it's about helping organizations build the capability to respond.
+                &gt; As the founder of Hacking HR, I built a global leadership and learning ecosystem focused on the future of work, AI, and organizational change. My work is not about prediction: it's about helping organizations build the capability to respond.
               </p>
               <p>
                 &gt; I don't just talk about change. I work with leaders to understand it, structure for it, and lead through it with clarity and intent.
               </p>
               <p className="text-gray-400 text-sm">
-                My background spans engineering, public administration, and global leadership—bringing a systems lens to how organizations adapt in the age of AI.
+                My background spans engineering, public administration, and global leadership, bringing a systems lens to how organizations adapt in the age of AI.
               </p>
             </div>
           </div>
@@ -85,7 +85,7 @@ export function AboutSection() {
                   &gt; When I'm not speaking or building communities, you'll find me on mountain trails pushing my limits as an ultrarunner. There's something about running 3 to 4 thousand miles a year through wilderness that teaches you about resilience, patience, and the power of one step at a time.
                 </p>
                 <p>
-                  &gt; Nature isn't just where I train—it's where I think. The clarity I find in forests and mountains directly informs my perspective on work and leadership. The best ideas often come when you're miles away from any screen.
+                  &gt; Nature isn't just where I train, it's where I think. The clarity I find in forests and mountains directly informs my perspective on work and leadership. The best ideas often come when you're miles away from any screen.
                 </p>
               </div>
               

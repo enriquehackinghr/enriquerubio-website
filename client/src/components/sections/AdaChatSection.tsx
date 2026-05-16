@@ -173,7 +173,7 @@ export function AdaChatSection() {
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-2 font-heading">Hi, I'm Ada!</h3>
                   <p className="text-gray-600 mb-6 max-w-md">
-                    I'm inspired by Ada Lovelace — a visionary who believed technology should amplify human creativity. Ask me anything about Enrique's speaking topics and how he can help your organization thrive in the age of AI.
+                    I'm inspired by Ada Lovelace, a visionary who believed technology should amplify human creativity. Ask me anything about Enrique's speaking topics and how he can help your organization thrive in the age of AI.
                   </p>
                   <div className="flex flex-wrap justify-center gap-2">
                     {suggestedQuestions.map((q, i) => (

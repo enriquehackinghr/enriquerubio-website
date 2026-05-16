@@ -48,7 +48,7 @@ export function SpeakingSection() {
       description: "How organizations translate AI ambition into execution across workflows, functions, and business units.",
       outcomes: [
         "Connect AI strategy to measurable business outcomes",
-        "Identify where AI creates value—and where it creates risk"
+        "Identify where AI creates value and where it creates risk"
       ],
       audience: "Executive teams, operations, strategy, and transformation leaders",
       format: "Duration to be discussed"

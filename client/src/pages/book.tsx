@@ -305,7 +305,7 @@ export default function BookPage() {
                 Human Leadership in the Age of Intelligent Machines
               </p>
               <p className="text-sm text-gray-500 font-mono uppercase tracking-widest mb-4">
-                Enrique Rubio — Founder &amp; CEO, Hacking HR | People and Culture Strategy Institute
+                Enrique Rubio, Founder &amp; CEO, Hacking HR | People and Culture Strategy Institute
               </p>
               <div className="inline-flex items-center gap-2 border-2 border-primary px-4 py-2 mb-8">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>

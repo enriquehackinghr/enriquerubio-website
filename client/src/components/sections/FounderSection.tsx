@@ -31,7 +31,7 @@ export function FounderSection() {
                 &gt; I don't just speak about the future. I build platforms, programs, and communities that help leaders turn change into capability at scale.
               </p>
               <p className="text-sm text-gray-400 leading-relaxed font-mono">
-                Hacking HR brings together senior leaders, practitioners, and organizations to explore how technology, work, and leadership are evolving—and how to respond with clarity and intent.
+                Hacking HR brings together senior leaders, practitioners, and organizations to explore how technology, work, and leadership are evolving, and how to respond with clarity and intent.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
@@ -65,7 +65,7 @@ export function FounderSection() {
                       <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                       <div className="w-3 h-3 rounded-full bg-green-500"></div>
                    </div>
-                   <div className="text-xs font-mono text-gray-500">bash — 80x24</div>
+                   <div className="text-xs font-mono text-gray-500">bash 80x24</div>
                 </div>
                 <div className="p-8 min-h-[300px] flex flex-col items-center justify-center text-center space-y-6 relative overflow-hidden font-mono">
                    
