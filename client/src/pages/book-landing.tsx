@@ -40,7 +40,7 @@ export default function BookLanding() {
       </div>
 
       {/* Main content */}
-      <div className="flex-1 flex flex-row items-stretch min-h-0 overflow-hidden">
+      <div className="flex-1 flex flex-row items-stretch justify-center min-h-0 overflow-hidden max-w-6xl mx-auto w-full">
 
         {/* Left — Book cover (tall, fills height) */}
         <div
@@ -172,7 +172,7 @@ export default function BookLanding() {
               borderRadius: 0,
             }}
           >
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.18em]">
+            <span className="text-base font-mono font-bold uppercase tracking-[0.15em]">
               Continue to website
             </span>
             <ArrowRight className="w-4 h-4" />
