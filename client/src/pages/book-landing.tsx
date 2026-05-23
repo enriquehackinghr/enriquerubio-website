@@ -84,18 +84,17 @@ export default function BookLanding() {
 
           {/* Title */}
           <h1
-            className="uppercase leading-[0.88] mb-5 w-full"
+            className="uppercase leading-[0.88] mb-5"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(2rem, 3.8vw, 4.2rem)",
+              fontSize: "clamp(2rem, 3.5vw, 3.8rem)",
               letterSpacing: "-0.02em",
-              wordBreak: "break-word",
-              overflowWrap: "break-word",
+              whiteSpace: "nowrap",
             }}
           >
-            <span style={{ color: "#FFFFFF" }}>Our<br />Existential<br /></span>
-            <span style={{ color: "#C41230" }}>Advantage</span>
+            <span style={{ color: "#FFFFFF", display: "block" }}>Our Existential</span>
+            <span style={{ color: "#C41230", display: "block" }}>Advantage</span>
           </h1>
 
           {/* Subtitle + author */}
