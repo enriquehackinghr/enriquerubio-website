@@ -84,12 +84,14 @@ export default function BookLanding() {
 
           {/* Title */}
           <h1
-            className="uppercase leading-[0.88] mb-5"
+            className="uppercase leading-[0.88] mb-5 w-full"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(2.4rem, 5vw, 5rem)",
-              letterSpacing: "-0.03em",
+              fontSize: "clamp(2rem, 3.8vw, 4.2rem)",
+              letterSpacing: "-0.02em",
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
             }}
           >
             <span style={{ color: "#FFFFFF" }}>Our<br />Existential<br /></span>
