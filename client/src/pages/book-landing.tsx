@@ -72,7 +72,7 @@ export default function BookLanding() {
         </div>
 
         {/* Right — Text + form */}
-        <div className="flex-1 flex flex-col justify-center pr-8 md:pr-14 py-6 min-w-0">
+        <div className="flex-1 flex flex-col justify-center pr-8 md:pr-14 py-6 min-w-0 overflow-hidden">
 
           {/* Coming badge */}
           <div className="flex items-center gap-3 mb-5">
@@ -88,7 +88,7 @@ export default function BookLanding() {
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(3rem, 7.5vw, 7rem)",
+              fontSize: "clamp(2.4rem, 5vw, 5rem)",
               letterSpacing: "-0.03em",
             }}
           >
