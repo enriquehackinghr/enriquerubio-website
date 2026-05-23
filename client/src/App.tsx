@@ -11,10 +11,18 @@ import BookPage from "@/pages/book";
 import BookLanding from "@/pages/book-landing";
 import { useEffect } from "react";
 
+const SEEN_KEY = "enrique_book_landing_seen";
+
+function RootRoute() {
+  const hasSeen = localStorage.getItem(SEEN_KEY) === "true";
+  return hasSeen ? <Home /> : <BookLanding />;
+}
+
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={RootRoute} />
+      <Route path="/home" component={Home} />
       <Route path="/speaking" component={Speaking} />
       <Route path="/book" component={BookPage} />
       <Route path="/book-launch" component={BookLanding} />

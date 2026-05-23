@@ -163,7 +163,8 @@ export default function BookLanding() {
           {/* Continue to website — green CTA */}
           <a
             href="/"
-            className="inline-flex items-center gap-3 self-start group transition-opacity hover:opacity-85"
+            onClick={() => localStorage.setItem("enrique_book_landing_seen", "true")}
+            className="inline-flex items-center gap-3 self-start transition-opacity hover:opacity-85"
             style={{
               background: "#00E676",
               color: "#000000",
