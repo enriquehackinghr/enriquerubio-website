@@ -42,17 +42,16 @@ export default function BookLanding() {
       {/* Main content */}
       <div className="flex-1 flex flex-row items-stretch justify-center min-h-0 overflow-hidden max-w-6xl mx-auto w-full">
 
-        {/* Left — Book cover (tall, fills height) */}
+        {/* Left — Book cover (fixed 40% width) */}
         <div
-          className="flex-shrink-0 flex items-center justify-center px-8 md:px-12"
-          style={{ minWidth: "clamp(220px, 28vw, 420px)" }}
+          className="flex items-center justify-center py-6 px-8"
+          style={{ width: "40%", flexShrink: 0 }}
         >
-          <div className="relative h-full flex items-center py-6">
+          <div className="relative w-full flex items-center justify-center">
             <div
               className="overflow-hidden"
               style={{
-                height: "calc(100vh - 120px)",
-                maxHeight: "780px",
+                width: "min(100%, 340px)",
                 aspectRatio: "3/4",
                 boxShadow: "0 40px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06)",
               }}
@@ -63,7 +62,6 @@ export default function BookLanding() {
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Red glow behind cover */}
             <div
               className="absolute inset-0 -z-10 blur-3xl opacity-25"
               style={{ background: "#C41230", transform: "scale(0.7) translateY(15%)" }}
@@ -71,8 +69,8 @@ export default function BookLanding() {
           </div>
         </div>
 
-        {/* Right — Text + form */}
-        <div className="flex-1 flex flex-col justify-center pr-8 md:pr-14 py-6 min-w-0 overflow-hidden">
+        {/* Right — Text + form (remaining 60%) */}
+        <div className="flex flex-col justify-center pr-8 md:pr-14 py-6" style={{ width: "60%", flexShrink: 0 }}>
 
           {/* Coming badge */}
           <div className="flex items-center gap-3 mb-5">
