@@ -35,82 +35,107 @@ export default function BookLanding() {
           className="text-xs font-mono tracking-[0.25em] uppercase px-3 py-1 border"
           style={{ borderColor: "#C41230", color: "#C41230" }}
         >
-          New Book
+          New Books
         </span>
       </div>
 
       {/* Main content */}
       <div className="flex-1 flex flex-row items-stretch justify-center min-h-0 overflow-hidden max-w-6xl mx-auto w-full">
 
-        {/* Left — Book cover (fixed 40% width) */}
+        {/* Left — Two book covers side by side */}
         <div
-          className="flex items-center justify-center py-6 px-8"
-          style={{ width: "40%", flexShrink: 0 }}
+          className="flex items-center justify-center gap-4 py-6 px-6"
+          style={{ width: "42%", flexShrink: 0 }}
         >
-          <div className="relative w-full flex items-center justify-center">
+          {/* OEA cover */}
+          <div className="flex flex-col items-center gap-3" style={{ flex: 1 }}>
             <div
-              className="overflow-hidden"
+              className="overflow-hidden w-full"
               style={{
-                width: "min(100%, 340px)",
                 aspectRatio: "3/4",
-                boxShadow: "0 40px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06)",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06)",
               }}
             >
-              <img
-                src="/book-cover.png"
-                alt="Our Existential Advantage"
-                className="w-full h-full object-cover"
-              />
+              <img src="/book-cover.png" alt="Our Existential Advantage" className="w-full h-full object-cover" />
             </div>
+            <p className="text-white/40 text-[10px] font-mono uppercase tracking-widest text-center leading-tight">
+              Our Existential<br />Advantage
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="w-px self-stretch bg-white/10 flex-shrink-0" />
+
+          {/* AI for Beginners cover */}
+          <div className="flex flex-col items-center gap-3" style={{ flex: 1 }}>
             <div
-              className="absolute inset-0 -z-10 blur-3xl opacity-25"
-              style={{ background: "#C41230", transform: "scale(0.7) translateY(15%)" }}
-            />
+              className="overflow-hidden w-full"
+              style={{
+                aspectRatio: "3/4",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06)",
+              }}
+            >
+              <img src="/ai-for-beginners-cover.png" alt="AI for Beginners" className="w-full h-full object-cover" />
+            </div>
+            <p className="text-white/40 text-[10px] font-mono uppercase tracking-widest text-center leading-tight">
+              AI for<br />Beginners
+            </p>
           </div>
         </div>
 
-        {/* Right — Text + form (remaining 60%) */}
-        <div className="flex flex-col justify-center pr-8 md:pr-14 py-6" style={{ width: "60%", flexShrink: 0 }}>
+        {/* Right — Text + form */}
+        <div className="flex flex-col justify-center pr-8 md:pr-12 py-6" style={{ width: "58%", flexShrink: 0 }}>
 
-          {/* Coming badge */}
+          {/* Badge */}
           <div className="flex items-center gap-3 mb-5">
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#C41230" }} />
             <span className="text-xs font-mono tracking-[0.2em] uppercase text-white/50">
-              Coming June 2026
+              Two Books. Coming June 2026.
             </span>
           </div>
 
-          {/* Title */}
+          {/* Headline */}
           <h1
-            className="uppercase leading-[0.88] mb-5"
+            className="uppercase leading-[0.88] mb-6"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(2rem, 3.5vw, 3.8rem)",
+              fontSize: "clamp(1.8rem, 3vw, 3.2rem)",
               letterSpacing: "-0.02em",
               whiteSpace: "nowrap",
             }}
           >
-            <span style={{ color: "#FFFFFF", display: "block" }}>Our Existential</span>
-            <span style={{ color: "#C41230", display: "block" }}>Advantage</span>
+            <span style={{ color: "#FFFFFF", display: "block" }}>Enrique Rubio</span>
+            <span style={{ color: "#C41230", display: "block" }}>June 2026</span>
           </h1>
 
-          {/* Subtitle + author */}
-          <p className="text-white/60 mb-1" style={{ fontSize: "1rem", lineHeight: 1.5 }}>
-            Human Leadership in the Age of Intelligent Machines
-          </p>
-          <p className="text-white/30 text-xs font-mono tracking-widest uppercase mb-5">
-            Enrique Rubio
-          </p>
-
-          {/* Divider */}
-          <div className="mb-5 w-12 h-px" style={{ background: "#C41230" }} />
-
-          {/* Thesis */}
-          <p className="text-white/70 leading-relaxed mb-6" style={{ fontSize: "0.93rem", maxWidth: "480px" }}>
-            This book is not about AI. It is about you, and why your humanity remains
-            the only advantage that cannot be replicated, automated, or scaled away.
-          </p>
+          {/* Two book entries */}
+          <div className="flex flex-col gap-3 mb-6">
+            {/* Book 1 */}
+            <div className="flex gap-4 items-start p-4 border border-white/10 bg-white/[0.02]">
+              <div className="w-1 self-stretch flex-shrink-0" style={{ background: "#C41230" }} />
+              <div>
+                <p className="font-bold text-white text-sm mb-0.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  Our Existential Advantage
+                </p>
+                <p className="text-white/50 text-xs font-mono leading-relaxed">
+                  Human Leadership in the Age of Intelligent Machines
+                </p>
+              </div>
+            </div>
+            {/* Book 2 */}
+            <div className="flex gap-4 items-start p-4 border border-white/10 bg-white/[0.02]">
+              <div className="w-1 self-stretch flex-shrink-0" style={{ background: "#1d4a35" }} />
+              <div>
+                <p className="font-bold text-white text-sm mb-0.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  AI for Beginners
+                </p>
+                <p className="text-white/50 text-xs font-mono leading-relaxed">
+                  A Practical Path from Curious to Confident
+                </p>
+              </div>
+            </div>
+          </div>
 
           {/* Sign-up */}
           {status === "success" ? (
@@ -118,8 +143,8 @@ export default function BookLanding() {
               className="px-5 py-4 mb-5"
               style={{ border: "1px solid #C41230", background: "rgba(196,18,48,0.06)", maxWidth: "520px" }}
             >
-              <p className="font-semibold mb-0.5" style={{ color: "#C41230" }}>You're on the list.</p>
-              <p className="text-white/50 text-sm">We'll notify you as soon as the book is released.</p>
+              <p className="font-semibold mb-0.5 text-sm" style={{ color: "#C41230" }}>You're on the list.</p>
+              <p className="text-white/50 text-xs font-mono">We'll notify you as soon as both books are released.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="mb-5" style={{ maxWidth: "520px" }}>
@@ -160,17 +185,12 @@ export default function BookLanding() {
             </form>
           )}
 
-          {/* Continue to website — green CTA */}
+          {/* Continue to website */}
           <a
             href="/"
             onClick={() => localStorage.setItem("enrique_book_landing_seen", "true")}
             className="inline-flex items-center gap-3 self-start transition-opacity hover:opacity-85"
-            style={{
-              background: "#00E676",
-              color: "#000000",
-              padding: "11px 24px",
-              borderRadius: 0,
-            }}
+            style={{ background: "#00E676", color: "#000000", padding: "11px 24px", borderRadius: 0 }}
           >
             <span className="text-base font-mono font-bold uppercase tracking-[0.15em]">
               Continue to website
