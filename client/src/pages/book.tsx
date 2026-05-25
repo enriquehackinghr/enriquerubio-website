@@ -396,9 +396,28 @@ export default function BookPage() {
             <div className="flex-1 h-px bg-white/10"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="grid md:grid-cols-3 gap-12 items-start">
 
-            {/* Left — identity */}
+            {/* Left — book cover */}
+            <div className="flex justify-center md:justify-start">
+              <div
+                className="overflow-hidden"
+                style={{
+                  width: "100%",
+                  maxWidth: "260px",
+                  aspectRatio: "3/4",
+                  boxShadow: "0 30px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06)",
+                }}
+              >
+                <img
+                  src="/ai-for-beginners-cover.png"
+                  alt="AI for Beginners"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Middle — identity */}
             <div>
               <div className="inline-flex items-center gap-2 border-2 border-primary px-4 py-2 mb-8">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
