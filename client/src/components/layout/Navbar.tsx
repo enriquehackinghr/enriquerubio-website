@@ -65,7 +65,7 @@ export function Navbar() {
               className="text-sm font-mono font-bold px-4 py-2 border border-transparent hover:border-black hover:bg-white transition-all uppercase tracking-wider text-foreground cursor-pointer flex items-center gap-1.5"
             >
               <span className="text-[9px] bg-primary text-black px-1 py-0.5 font-bold leading-none">NEW</span>
-              Upcoming Book
+              Upcoming Books
             </Link>
           </div>
           <a href="#booking" onClick={(e) => handleNavClick(e, '#booking')}>
@@ -105,7 +105,7 @@ export function Navbar() {
               className="text-xl font-heading font-bold py-3 border-b border-black text-foreground hover:text-primary uppercase cursor-pointer flex items-center gap-2"
             >
               <span className="text-[9px] bg-primary text-black px-1 py-0.5 font-bold leading-none">NEW</span>
-              Upcoming Book
+              Upcoming Books
             </Link>
             <a href="#booking" onClick={(e) => handleNavClick(e, '#booking')}>
               <Button className="w-full mt-4 bg-primary text-black rounded-none border-2 border-black font-bold uppercase" size="lg">

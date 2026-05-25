@@ -384,6 +384,67 @@ export default function BookPage() {
         </div>
       </section>
 
+      {/* Second Book — AI for Beginners */}
+      <section className="py-20 px-4 border-t-2 border-white/10 bg-[#0a0a0a]">
+        <div className="max-w-6xl mx-auto">
+
+          {/* Section label */}
+          <div className="flex items-center gap-4 mb-16">
+            <div className="inline-block bg-white/10 text-white px-4 py-1 font-mono font-bold uppercase tracking-widest text-xs">
+              :: Also Coming June 2026
+            </div>
+            <div className="flex-1 h-px bg-white/10"></div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+
+            {/* Left — identity */}
+            <div>
+              <div className="inline-flex items-center gap-2 border-2 border-primary px-4 py-2 mb-8">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span className="font-mono font-bold text-primary text-sm uppercase tracking-widest">Coming June 2026</span>
+              </div>
+
+              <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase tracking-tight leading-none mb-4">
+                AI for<br /><span className="text-primary">Beginners</span>
+              </h2>
+              <p className="text-gray-400 font-mono text-sm uppercase tracking-widest mb-8">Enrique Rubio</p>
+
+              <blockquote className="border-l-4 border-primary pl-6 text-gray-300 font-mono italic text-lg leading-relaxed mb-10">
+                "AI is your first hire. Brief it well, and the work begins."
+              </blockquote>
+
+              {/* Stats */}
+              <div className="flex flex-wrap gap-0">
+                <div className="border-2 border-white/20 px-6 py-4 bg-white/5">
+                  <div className="text-3xl font-heading font-bold text-primary">44</div>
+                  <div className="text-xs font-mono text-gray-400 uppercase tracking-widest">Chapters</div>
+                </div>
+                <div className="border-2 border-l-0 border-white/20 px-6 py-4 bg-white/5">
+                  <div className="text-3xl font-heading font-bold text-primary">~20</div>
+                  <div className="text-xs font-mono text-gray-400 uppercase tracking-widest">Min / Chapter</div>
+                </div>
+                <div className="border-2 border-l-0 border-white/20 px-6 py-4 bg-white/5">
+                  <div className="text-3xl font-heading font-bold text-primary">$19</div>
+                  <div className="text-xs font-mono text-gray-400 uppercase tracking-widest">US Paperback</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right — description */}
+            <div className="space-y-6 text-gray-300 font-mono leading-relaxed">
+              <p>You opened ChatGPT or Claude once, asked a question, glanced at the answer, and closed the tab. The interaction lasted under a minute and produced a mediocre result. You walked away thinking AI was overrated, or that it works for other people but somehow not for you.</p>
+              <p>This book is built around one simple frame. AI is your first hire. Brief it the way you would brief a smart new colleague, and the work begins. Skip the briefing, and you get the generic output you have already learned to dismiss.</p>
+              <p>In forty-four short chapters, you will move from curious to confident. Each chapter takes about twenty minutes and gives you something you can use the next day: a reusable brief, a sharper question, a habit that compounds across years.</p>
+              <div className="border-2 border-white/10 bg-white/5 p-6">
+                <p className="text-primary font-mono font-bold text-xs uppercase tracking-widest mb-3">// What this book is really about</p>
+                <p className="text-white font-mono text-sm leading-relaxed">This is not a book about AI. It is a book about you, helping you complete work that used to require more manual effort, in a fraction of the time, with more of your judgment showing through.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Newsletter Sign-Up */}
       <BookNewsletter />
 
