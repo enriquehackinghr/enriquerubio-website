@@ -9,6 +9,7 @@ import Speaking from "@/pages/speaking";
 import ChatPage from "@/pages/chat";
 import BookPage from "@/pages/book";
 import BookLanding from "@/pages/book-landing";
+import OurExistentialAdvantage from "@/pages/books/our-existential-advantage";
 import { useEffect } from "react";
 
 const SEEN_KEY = "enrique_book_landing_seen";
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/speaking" component={Speaking} />
       <Route path="/book" component={BookPage} />
       <Route path="/book-launch" component={BookLanding} />
+      <Route path="/books/our-existential-advantage" component={OurExistentialAdvantage} />
       <Route path="/chat/:id" component={ChatPage} />
       <Route component={NotFound} />
     </Switch>
