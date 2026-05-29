@@ -13,21 +13,23 @@ const featuredReviews = [
     quote: "The leaders who will win are the ones who deepen their judgment instead of outsourcing it to AI. Required reading for anyone serious about leading through what comes next.",
     name: "Eynat Guez",
     role: "Co-Founder & CEO, Papaya Global",
+    photo: "/reviewer-eynat.jpg",
   },
   {
     quote: "Enrique Rubio has written the manual for human-centric leading in the age of AI — a compelling case for Team Human as the true competitive advantage.",
     name: "Gary A. Bolles",
     role: "Chair for the Future of Work, Singularity University",
+    photo: "/reviewer-gary.jpg",
   },
 ];
 
 const allReviews = [
-  { quote: "At a time when leaders are inundated with AI hype, this book delivers something no LLM can match: authentic human wisdom.", name: "Jeff Wetzler", role: "Author, Ask: Tap Into the Hidden Wisdom of People Around You", photo: "" },
-  { quote: "A must-read for anyone leading their business through this AI transition.", name: "Janine Yancey", role: "Founder & CEO, Emtrain", photo: "" },
-  { quote: "A smart, deeply human guide to leading through change while preserving the qualities that make us irreplaceable.", name: "Tracy Brower, PhD", role: "VP of Workplace Insights, Steelcase", photo: "" },
-  { quote: "The 90/10 principle alone should be required doctrine in every executive team.", name: "Nico Decock", role: "CHRO, Distrilog Group", photo: "" },
-  { quote: "Enrique reframes AI as a leadership challenge: protect human judgment, build trust, and lead transformation with clarity, ethics, and care.", name: "Clarissa Schuhmacher", role: "Head of Capabilities, Leadership & Culture, Imperial Brands PLC", photo: "" },
-  { quote: "Deeply human, sharply practical. Enrique distills what five centuries of disruption keep teaching us, then applies it to the most consequential transition of our careers.", name: "Eynat Guez", role: "Co-Founder & CEO, Papaya Global", photo: "" },
+  { quote: "At a time when leaders are inundated with AI hype, this book delivers something no LLM can match: authentic human wisdom.", name: "Jeff Wetzler", role: "Author, Ask: Tap Into the Hidden Wisdom of People Around You", photo: "/reviewer-jeff.jpg" },
+  { quote: "A must-read for anyone leading their business through this AI transition.", name: "Janine Yancey", role: "Founder & CEO, Emtrain", photo: "/reviewer-janine.jpg" },
+  { quote: "A smart, deeply human guide to leading through change while preserving the qualities that make us irreplaceable.", name: "Tracy Brower, PhD", role: "VP of Workplace Insights, Steelcase", photo: "/reviewer-tracy.jpg" },
+  { quote: "The 90/10 principle alone should be required doctrine in every executive team.", name: "Nico Decock", role: "CHRO, Distrilog Group", photo: "/reviewer-nico.jpg" },
+  { quote: "Enrique reframes AI as a leadership challenge: protect human judgment, build trust, and lead transformation with clarity, ethics, and care.", name: "Clarissa Schuhmacher", role: "Head of Capabilities, Leadership & Culture, Imperial Brands PLC", photo: "/reviewer-clarissa.jpg" },
+  { quote: "Deeply human, sharply practical. Enrique distills what five centuries of disruption keep teaching us, then applies it to the most consequential transition of our careers.", name: "Eynat Guez", role: "Co-Founder & CEO, Papaya Global", photo: "/reviewer-eynat.jpg" },
 ];
 
 const parts = [
@@ -202,9 +204,14 @@ export default function OurExistentialAdvantage() {
           {/* 3-col: review | cover | review */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 340px 1fr", gap: "3rem", alignItems: "center", marginBottom: "3rem" }}>
             <div className="hero-flanks" style={{ textAlign: "right" }}>
-              <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "1rem", color: "#3A3028", lineHeight: 1.75, marginBottom: "0.875rem" }}>"{featuredReviews[0].quote}"</p>
-              <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.78rem", color: "#1C1410", letterSpacing: "-0.01em" }}>{featuredReviews[0].name}</p>
-              <p style={{ fontFamily: BODY, fontSize: "0.7rem", color: "#9A8878", marginTop: "0.15rem" }}>{featuredReviews[0].role}</p>
+              <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "1rem", color: "#3A3028", lineHeight: 1.75, marginBottom: "1rem" }}>"{featuredReviews[0].quote}"</p>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "0.75rem" }}>
+                <div>
+                  <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.78rem", color: "#1C1410", letterSpacing: "-0.01em", margin: 0 }}>{featuredReviews[0].name}</p>
+                  <p style={{ fontFamily: BODY, fontSize: "0.7rem", color: "#9A8878", marginTop: "0.1rem", margin: 0 }}>{featuredReviews[0].role}</p>
+                </div>
+                <img src={featuredReviews[0].photo} alt={featuredReviews[0].name} style={{ width: "2.75rem", height: "2.75rem", borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: "2px solid #E8DDD4" }} />
+              </div>
             </div>
 
             <div style={{ display: "flex", justifyContent: "center" }}>
@@ -214,9 +221,14 @@ export default function OurExistentialAdvantage() {
             </div>
 
             <div className="hero-flanks">
-              <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "1rem", color: "#3A3028", lineHeight: 1.75, marginBottom: "0.875rem" }}>"{featuredReviews[1].quote}"</p>
-              <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.78rem", color: "#1C1410", letterSpacing: "-0.01em" }}>{featuredReviews[1].name}</p>
-              <p style={{ fontFamily: BODY, fontSize: "0.7rem", color: "#9A8878", marginTop: "0.15rem" }}>{featuredReviews[1].role}</p>
+              <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "1rem", color: "#3A3028", lineHeight: 1.75, marginBottom: "1rem" }}>"{featuredReviews[1].quote}"</p>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                <img src={featuredReviews[1].photo} alt={featuredReviews[1].name} style={{ width: "2.75rem", height: "2.75rem", borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: "2px solid #E8DDD4" }} />
+                <div>
+                  <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.78rem", color: "#1C1410", letterSpacing: "-0.01em", margin: 0 }}>{featuredReviews[1].name}</p>
+                  <p style={{ fontFamily: BODY, fontSize: "0.7rem", color: "#9A8878", marginTop: "0.1rem", margin: 0 }}>{featuredReviews[1].role}</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -291,30 +303,41 @@ export default function OurExistentialAdvantage() {
 
       {/* ── ALL REVIEWS ── */}
       <section style={{ background: "#F7F3EC", padding: "6rem 2rem" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", marginBottom: "3.5rem", textAlign: "center" }}>Advance Reviews</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "2.5rem 3rem" }} className="reviews-grid">
-            {allReviews.map((r, i) => {
-              const initials = r.name.split(" ").map(w => w[0]).slice(0, 2).join("");
-              return (
-                <div key={i} style={{ display: "flex", flexDirection: "column" }}>
-                  <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "0.97rem", color: "#2C2418", lineHeight: 1.85, marginBottom: "1.25rem", flex: 1 }}>"{r.quote}"</p>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", paddingTop: "1rem", borderTop: "1px solid #EDE5DB" }}>
-                    {r.photo ? (
-                      <img src={r.photo} alt={r.name} style={{ width: "2.25rem", height: "2.25rem", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
-                    ) : (
-                      <div style={{ width: "2.25rem", height: "2.25rem", borderRadius: "50%", background: "#E8DDD4", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                        <span style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.65rem", color: "#9A8878", letterSpacing: "0.02em" }}>{initials}</span>
-                      </div>
-                    )}
-                    <div>
-                      <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.75rem", color: "#1C1410", letterSpacing: "-0.01em", margin: 0 }}>{r.name}</p>
-                      <p style={{ fontFamily: BODY, fontSize: "0.68rem", color: "#9A8878", marginTop: "0.1rem", margin: 0, lineHeight: 1.4 }}>{r.role}</p>
+        <div style={{ maxWidth: "1140px", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+            <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", marginBottom: "0.75rem" }}>Advance Reviews</p>
+            <h2 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "clamp(1.5rem, 3vw, 2.25rem)", color: "#1C1410", letterSpacing: "-0.035em", textTransform: "uppercase", margin: 0 }}>
+              What Leaders Are Saying
+            </h2>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1.5rem" }} className="reviews-grid">
+            {allReviews.map((r, i) => (
+              <div key={i} style={{ background: "#fff", padding: "2.5rem 2rem 2rem", display: "flex", flexDirection: "column", boxShadow: "0 1px 3px rgba(28,20,16,0.06)" }}>
+                {/* Photo */}
+                <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.75rem" }}>
+                  <div style={{ position: "relative" }}>
+                    <img
+                      src={r.photo}
+                      alt={r.name}
+                      style={{ width: "88px", height: "88px", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", display: "block", border: "3px solid #F7F3EC" }}
+                    />
+                    <div style={{ position: "absolute", bottom: "-2px", right: "-2px", width: "22px", height: "22px", borderRadius: "50%", background: "#C41230", display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #fff" }}>
+                      <span style={{ color: "#fff", fontSize: "0.6rem", fontFamily: SERIF, fontStyle: "italic", lineHeight: 1 }}>"</span>
                     </div>
                   </div>
                 </div>
-              );
-            })}
+                {/* Quote */}
+                <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "0.95rem", color: "#2C2418", lineHeight: 1.85, marginBottom: "1.75rem", flex: 1, textAlign: "center" }}>
+                  "{r.quote}"
+                </p>
+                {/* Attribution */}
+                <div style={{ textAlign: "center", paddingTop: "1.25rem", borderTop: "1px solid #F0E8E0" }}>
+                  <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.78rem", color: "#1C1410", letterSpacing: "-0.01em", margin: 0 }}>{r.name}</p>
+                  <p style={{ fontFamily: BODY, fontSize: "0.68rem", color: "#9A8878", marginTop: "0.3rem", lineHeight: 1.5 }}>{r.role}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
