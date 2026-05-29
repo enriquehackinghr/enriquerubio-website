@@ -422,79 +422,86 @@ export default function OurExistentialAdvantage() {
         `}</style>
       </section>
 
-      {/* ENDORSEMENTS STRIP */}
-      <section style={{ background: "#161210", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }} className="reviews-strip">
-          {reviews.slice(0, 3).map((r, i) => (
-            <div key={i} style={{ padding: "2.5rem 2rem", borderRight: i < 2 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
-              <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.7, marginBottom: "1.25rem" }}>
-                "{r.quote.length > 150 ? r.quote.slice(0, 150) + "..." : r.quote}"
-              </p>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "0.82rem", color: "#FFFFFF" }}>{r.name}</p>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.35)", marginTop: "0.15rem" }}>{r.org}</p>
-            </div>
-          ))}
-          <style>{`@media (max-width: 768px) { .reviews-strip { grid-template-columns: 1fr !important; } }`}</style>
+      {/* FEATURED QUOTE — full bleed, single voice */}
+      <section style={{ background: "#0D0B09", padding: "6rem 2rem" }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto", textAlign: "center" }}>
+          <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: "italic", fontSize: "clamp(1.4rem, 2.8vw, 2rem)", color: "rgba(255,255,255,0.85)", lineHeight: 1.6, marginBottom: "2rem" }}>
+            "The leaders who will win are the ones who deepen their judgment instead of outsourcing it to AI. This book is the clearest framework I've seen for what that actually looks like in practice."
+          </p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: "0.82rem", color: "#FFFFFF", letterSpacing: "0.08em" }}>Eynat Guez</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.3)", marginTop: "0.2rem", letterSpacing: "0.05em" }}>Co-Founder & CEO, Papaya Global</p>
         </div>
       </section>
 
       {/* ABOUT THE BOOK */}
-      <section style={{ background: "#FAFAF8", padding: "7rem 1.5rem", borderBottom: "1px solid #DDD6CC" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }} className="about-grid">
+      <section style={{ background: "#FAFAF8", padding: "8rem 2rem" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
 
-          <div>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#9C8E80", marginBottom: "1.5rem" }}>About the Book</p>
-            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: "italic", fontWeight: 700, fontSize: "clamp(1.8rem, 3vw, 2.8rem)", color: "#1C1410", lineHeight: 1.25, letterSpacing: "-0.01em", marginBottom: "2rem" }}>
-              This book is not about AI. It is about you.
+          {/* Big statement */}
+          <div style={{ marginBottom: "6rem" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#B0A090", marginBottom: "1.75rem" }}>About the Book</p>
+            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: "italic", fontWeight: 700, fontSize: "clamp(2.2rem, 5vw, 4rem)", color: "#1C1410", lineHeight: 1.1, letterSpacing: "-0.02em", maxWidth: "820px" }}>
+              This book is not about AI.<br />It is about you.
             </h2>
-            <div style={{ width: "2.5rem", height: "2px", background: "#C41230", marginBottom: "2rem" }} />
-            <div style={{ background: "#F0EBE3", padding: "1.5rem", border: "1px solid #DDD6CC" }}>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#C41230", marginBottom: "0.75rem", fontWeight: 700 }}>
-                The 90 / 10 Formula
-              </p>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#4A4035", lineHeight: 1.75 }}>
-                Ninety percent of a leader's thinking should remain theirs, ten percent AI-augmented. The doing can be shared fifty-fifty in genuine collaboration with AI. The formula is a discipline against the gradual outsourcing of judgment that AI makes easy and organizational effectiveness makes dangerous.
-              </p>
+          </div>
+
+          {/* Two-column thesis */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }} className="about-grid">
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#3A3028", lineHeight: 1.85 }}>
+              <p style={{ marginBottom: "1.5rem" }}>More precisely, it is about what people bring to the world that AI cannot replicate, what leaders risk losing if they are not careful, and what it takes to lead with genuine judgment, ethical courage, and human care.</p>
+              <p>The central argument is both simple and consequential: as artificial intelligence becomes more capable, the capabilities that make human leadership irreplaceable become more valuable. The judgment that integrates experience with context. The ethical reasoning that weighs competing human interests. The empathy that recognizes what data cannot capture.</p>
             </div>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#3A3028", lineHeight: 1.85 }}>
+              <p style={{ marginBottom: "1.5rem" }}>This is not optimism for its own sake. It is a claim grounded in five centuries of technological transitions, in the research on what AI can and cannot do, and in the operational reality of what organizations navigating genuine AI transformation consistently discover: the limiting factor is almost never the technology.</p>
+              <p>The leaders this book is written for already sense that AI is changing something fundamental about the nature of their role. They are right. What this book argues is that the change is an invitation to become more fully what genuine leadership has always been.</p>
+            </div>
+            <style>{`@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; } }`}</style>
           </div>
-
-          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#4A4035", lineHeight: 1.85 }}>
-            <p style={{ marginBottom: "1.25rem" }}>This book is not about artificial intelligence. It is about people, and especially the leaders navigating this transition.</p>
-            <p style={{ marginBottom: "1.25rem" }}>More precisely, it is about what people bring to the world that AI cannot replicate, what leaders risk losing if they are not careful, and what it takes to lead with genuine judgment, ethical courage, and human care at a moment when the most powerful cognitive tools in human history are now available to every organization and individual on earth.</p>
-            <p style={{ marginBottom: "1.25rem" }}>The central argument is both simple and consequential: as artificial intelligence becomes more capable, the capabilities that make human leadership irreplaceable become more valuable. The judgment that integrates experience with context; the ethical reasoning that weighs competing human interests; the empathy that recognizes what data cannot capture; the strategic imagination that asks not what becomes more efficient but what becomes possible.</p>
-            <p>The leaders this book is written for already sense that AI is changing something fundamental about the nature of their role. They are right. What this book argues is that the change is an invitation to become more fully what genuine leadership has always been: the irreplaceable human contribution to outcomes that matter.</p>
-          </div>
-
-          <style>{`@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr !important; gap: 3rem !important; } }`}</style>
         </div>
       </section>
 
-      {/* ALL REVIEWS */}
-      <section style={{ background: "#F0EBE3", padding: "6rem 1.5rem", borderBottom: "1px solid #DDD6CC" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "baseline", gap: "1.5rem", marginBottom: "3rem" }}>
-            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: "italic", fontWeight: 700, fontSize: "2rem", color: "#1C1410", whiteSpace: "nowrap" }}>
-              What Leaders Are Saying
-            </h2>
-            <div style={{ flex: 1, height: "1px", background: "#DDD6CC" }} />
-          </div>
+      {/* 90/10 FORMULA — full-bleed accent band, no box */}
+      <section style={{ background: "#1C1410", padding: "5rem 2rem" }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#C41230", marginBottom: "1.5rem" }}>
+            The 90 / 10 Formula
+          </p>
+          <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: "italic", fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)", color: "rgba(255,255,255,0.9)", lineHeight: 1.6 }}>
+            Ninety percent of a leader's thinking should remain theirs, ten percent AI-augmented. The doing can be shared fifty-fifty in genuine collaboration with AI. The formula is a discipline against the gradual outsourcing of judgment that AI makes easy and organizational effectiveness makes dangerous.
+          </p>
+        </div>
+      </section>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }} className="reviews-grid">
+      {/* ALL REVIEWS — flat editorial list, no boxes */}
+      <section style={{ background: "#FAFAF8", padding: "7rem 2rem" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#B0A090", marginBottom: "4rem" }}>
+            Advance Reviews
+          </p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0", alignItems: "start" }} className="reviews-flat-grid">
             {reviews.map((r, i) => (
-              <div key={i} style={{ background: "#FAFAF8", border: "1px solid #DDD6CC", padding: "2rem", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "3rem", color: "#C41230", lineHeight: 0.75, opacity: 0.5 }}>"</span>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.92rem", color: "#4A4035", lineHeight: 1.8, marginTop: "-0.5rem" }}>
-                  {r.quote}
+              <div
+                key={i}
+                style={{
+                  padding: "2.75rem 3rem 2.75rem 0",
+                  borderTop: "1px solid #E2DAD0",
+                  marginRight: i % 2 === 0 ? "3rem" : 0,
+                  paddingRight: i % 2 === 0 ? "3rem" : 0,
+                  borderRight: i % 2 === 0 ? "1px solid #E2DAD0" : "none",
+                }}
+              >
+                <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: "italic", fontSize: "1.05rem", color: "#2C2418", lineHeight: 1.75, marginBottom: "1.5rem" }}>
+                  "{r.quote}"
                 </p>
-                <div style={{ borderTop: "1px solid #DDD6CC", paddingTop: "1.25rem" }}>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "0.85rem", color: "#1C1410" }}>{r.name}</p>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.77rem", color: "#9C8E80", marginTop: "0.15rem" }}>{r.title}</p>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.77rem", color: "#C41230", fontStyle: "italic", marginTop: "0.1rem" }}>{r.org}</p>
-                </div>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "0.82rem", color: "#1C1410", letterSpacing: "0.03em" }}>{r.name}</p>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "#9C8E80", marginTop: "0.2rem" }}>
+                  {r.title} &middot; <span style={{ color: "#C41230" }}>{r.org}</span>
+                </p>
               </div>
             ))}
           </div>
-          <style>{`@media (max-width: 768px) { .reviews-grid { grid-template-columns: 1fr !important; } }`}</style>
+          <style>{`@media (max-width: 768px) { .reviews-flat-grid { grid-template-columns: 1fr !important; } .reviews-flat-grid > div { margin-right: 0 !important; padding-right: 0 !important; border-right: none !important; } }`}</style>
         </div>
       </section>
 
