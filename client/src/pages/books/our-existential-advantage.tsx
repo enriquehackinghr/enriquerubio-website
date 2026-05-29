@@ -53,19 +53,19 @@ function Accordion({ p }: { p: typeof parts[0] }) {
         onClick={() => setOpen(!open)}
         style={{ width: "100%", display: "flex", alignItems: "flex-start", gap: "1.5rem", padding: "1.1rem 0", background: "none", border: "none", cursor: "pointer", textAlign: "left" }}
       >
-        <span style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.7rem", color: "#C41230", minWidth: "1.5rem", paddingTop: "2px", flexShrink: 0, letterSpacing: "0.05em" }}>{p.n}</span>
+        <span style={{ fontFamily: DISPLAY, fontWeight: 800, fontSize: "0.78rem", color: "#C41230", minWidth: "2rem", paddingTop: "3px", flexShrink: 0, letterSpacing: "0.04em" }}>{p.n}</span>
         <span style={{ flex: 1 }}>
-          <span style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.9rem", color: "#1C1410", display: "block", letterSpacing: "-0.01em" }}>{p.title}</span>
-          <span style={{ fontFamily: BODY, fontSize: "0.73rem", color: "#9A8878", marginTop: "0.1rem", display: "block" }}>{p.sub}</span>
+          <span style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "1.1rem", color: "#1C1410", display: "block", letterSpacing: "-0.02em" }}>{p.title}</span>
+          <span style={{ fontFamily: BODY, fontSize: "0.88rem", color: "#9A8878", marginTop: "0.2rem", display: "block" }}>{p.sub}</span>
         </span>
-        <span style={{ color: "#C4B5A8", flexShrink: 0, paddingTop: "3px" }}>
-          {open ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+        <span style={{ color: "#C4B5A8", flexShrink: 0, paddingTop: "6px" }}>
+          {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </span>
       </button>
       {open && (
-        <div style={{ paddingLeft: "3rem", paddingBottom: "1.25rem" }}>
+        <div style={{ paddingLeft: "3rem", paddingBottom: "1.75rem" }}>
           {p.body.split("\n\n").map((para, i) => (
-            <p key={i} style={{ fontFamily: BODY, fontSize: "0.875rem", color: "#5A4E44", lineHeight: 1.85, marginBottom: "0.6rem" }}>{para}</p>
+            <p key={i} style={{ fontFamily: BODY, fontSize: "1rem", color: "#5A4E44", lineHeight: 1.9, marginBottom: "0.75rem" }}>{para}</p>
           ))}
         </div>
       )}
@@ -340,24 +340,19 @@ export default function OurExistentialAdvantage() {
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
 
           {/* Section header */}
-          <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", marginBottom: "1.5rem" }}>Inside the Book</p>
+          <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", marginBottom: "1.25rem" }}>Inside the Book</p>
 
-          {/* Big split headline */}
-          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "1rem", flexWrap: "wrap", marginBottom: "0.75rem" }}>
-            <h2 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "clamp(2.25rem, 5vw, 4rem)", color: "#1C1410", lineHeight: 0.95, letterSpacing: "-0.04em", textTransform: "uppercase", margin: 0 }}>
-              Nine Parts.
-            </h2>
-            <h2 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "clamp(2.25rem, 5vw, 4rem)", color: "#C41230", lineHeight: 0.95, letterSpacing: "-0.04em", textTransform: "uppercase", margin: 0, textAlign: "right" }}>
-              One Conviction.
-            </h2>
-          </div>
+          {/* Headline */}
+          <h2 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "clamp(2.5rem, 5.5vw, 4.25rem)", color: "#1C1410", lineHeight: 1.0, letterSpacing: "-0.04em", textTransform: "uppercase", margin: "0 0 0.75rem 0" }}>
+            Nine Parts. <span style={{ color: "#C41230" }}>One Conviction.</span>
+          </h2>
 
           {/* Rule + description */}
-          <div style={{ borderTop: "2px solid #1C1410", paddingTop: "1.25rem", marginBottom: "3rem", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
-            <p style={{ fontFamily: BODY, fontSize: "0.9rem", color: "#9A8878", lineHeight: 1.7, maxWidth: "540px", margin: 0 }}>
+          <div style={{ borderTop: "2px solid #1C1410", paddingTop: "1.25rem", marginBottom: "3.5rem", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", gap: "2rem" }}>
+            <p style={{ fontFamily: BODY, fontSize: "1rem", color: "#6B5E52", lineHeight: 1.75, margin: 0 }}>
               A complete architecture for leading organizations through the age of AI, from the long view of history to the personal responsibility of the leader.
             </p>
-            <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#C4B8AD", margin: 0, flexShrink: 0 }}>
+            <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#C4B8AD", margin: 0, whiteSpace: "nowrap" }}>
               9 Parts &nbsp;·&nbsp; 350 Pages
             </p>
           </div>
