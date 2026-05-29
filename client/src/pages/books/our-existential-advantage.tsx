@@ -188,34 +188,40 @@ export default function OurExistentialAdvantage() {
       </header>
 
       {/* ── HERO ── */}
-      <section style={{ background: "#F7F3EC", paddingTop: "4.5rem", paddingBottom: "3rem" }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 2rem" }}>
+      <section style={{ background: "#F7F3EC", paddingTop: "4.5rem", minHeight: "calc(100vh - 48px)", display: "flex", alignItems: "center" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "4rem 2rem", width: "100%" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "420px 1fr", gap: "5rem", alignItems: "center" }} className="hero-layout">
 
-          {/* Book cover centered */}
-          <div style={{ display: "flex", justifyContent: "center", marginBottom: "3rem" }}>
-            <div style={{ width: "280px", aspectRatio: "3/4", overflow: "hidden", boxShadow: "0 20px 60px rgba(28,20,16,0.18), 0 4px 16px rgba(28,20,16,0.1)" }}>
-              <img src="/book-cover.png" alt="Our Existential Advantage" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            {/* Cover — large */}
+            <div style={{ boxShadow: "0 32px 80px rgba(28,20,16,0.22), 0 8px 24px rgba(28,20,16,0.12)" }}>
+              <img src="/book-cover.png" alt="Our Existential Advantage" style={{ width: "100%", display: "block" }} />
             </div>
-          </div>
 
-          {/* Title block */}
-          <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
-            <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", marginBottom: "0.875rem" }}>Coming June 2026</p>
-            <h1 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "clamp(2.75rem, 6vw, 5rem)", color: "#1C1410", lineHeight: 0.95, letterSpacing: "-0.04em", textTransform: "uppercase", marginBottom: "1rem" }}>
-              Our Existential<br />
-              <span style={{ color: "#C41230" }}>Advantage</span>
-            </h1>
-            <p style={{ fontFamily: BODY, fontWeight: 400, fontSize: "1.05rem", color: "#6B5E52", marginBottom: "0.35rem", letterSpacing: "-0.01em" }}>
-              Human Leadership in the Age of Intelligent Machines
-            </p>
-            <p style={{ fontFamily: DISPLAY, fontWeight: 500, fontSize: "0.78rem", color: "#B8A898", letterSpacing: "0.05em", marginBottom: "2.25rem" }}>by Enrique Rubio</p>
-            <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="#notify" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", background: "#1C1410", color: "#fff", fontFamily: DISPLAY, fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.85rem 1.75rem", textDecoration: "none" }}>
-                Notify Me at Launch <ArrowRight size={13} />
-              </a>
-              <button onClick={scrollToBooking} style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", background: "transparent", color: "#1C1410", fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.85rem 1.75rem", border: "1.5px solid #1C1410", cursor: "pointer" }}>
-                Book Enrique to Speak
-              </button>
+            {/* Info */}
+            <div>
+              <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", marginBottom: "2rem" }}>Coming June 2026</p>
+              <h1 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "clamp(3rem, 5.5vw, 5.5rem)", color: "#1C1410", lineHeight: 0.92, letterSpacing: "-0.045em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
+                Our<br />Existential<br /><span style={{ color: "#C41230" }}>Advantage</span>
+              </h1>
+              <p style={{ fontFamily: BODY, fontSize: "1.15rem", color: "#6B5E52", lineHeight: 1.65, marginBottom: "0.5rem" }}>
+                Human Leadership in the Age of Intelligent Machines
+              </p>
+              <p style={{ fontFamily: DISPLAY, fontWeight: 500, fontSize: "0.82rem", color: "#B8A898", letterSpacing: "0.06em", marginBottom: "2.5rem" }}>by Enrique Rubio</p>
+
+              <div style={{ width: "3rem", height: "3px", background: "#C41230", marginBottom: "2rem" }} />
+
+              <p style={{ fontFamily: BODY, fontSize: "1rem", color: "#5A4E44", lineHeight: 1.8, marginBottom: "2.5rem", maxWidth: "440px" }}>
+                The essential leadership guide for navigating AI without losing what makes leadership human — your judgment, your ethics, your irreplaceable perspective.
+              </p>
+
+              <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+                <a href="#notify" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#1C1410", color: "#fff", fontFamily: DISPLAY, fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "1rem 2rem", textDecoration: "none" }}>
+                  Notify Me at Launch <ArrowRight size={13} />
+                </a>
+                <button onClick={scrollToBooking} style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "transparent", color: "#1C1410", fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "1rem 2rem", border: "1.5px solid #1C1410", cursor: "pointer" }}>
+                  Book Enrique to Speak
+                </button>
+              </div>
             </div>
           </div>
         </div>
