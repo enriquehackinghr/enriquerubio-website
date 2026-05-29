@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { ChevronDown, ChevronUp, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 // ─── FONTS ───────────────────────────────────────────
@@ -45,30 +45,20 @@ const parts = [
 ];
 
 // ─── COMPONENTS ──────────────────────────────────────
-function Accordion({ p }: { p: typeof parts[0] }) {
-  const [open, setOpen] = useState(false);
+function PartItem({ p }: { p: typeof parts[0] }) {
   return (
-    <div style={{ borderBottom: "1px solid #E8E0D8" }}>
-      <button
-        onClick={() => setOpen(!open)}
-        style={{ width: "100%", display: "flex", alignItems: "flex-start", gap: "1.5rem", padding: "1.1rem 0", background: "none", border: "none", cursor: "pointer", textAlign: "left" }}
-      >
-        <span style={{ fontFamily: DISPLAY, fontWeight: 800, fontSize: "0.78rem", color: "#C41230", minWidth: "2rem", paddingTop: "3px", flexShrink: 0, letterSpacing: "0.04em" }}>{p.n}</span>
-        <span style={{ flex: 1 }}>
-          <span style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "1.1rem", color: "#1C1410", display: "block", letterSpacing: "-0.02em" }}>{p.title}</span>
-          <span style={{ fontFamily: BODY, fontSize: "0.88rem", color: "#9A8878", marginTop: "0.2rem", display: "block" }}>{p.sub}</span>
-        </span>
-        <span style={{ color: "#C4B5A8", flexShrink: 0, paddingTop: "6px" }}>
-          {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-        </span>
-      </button>
-      {open && (
-        <div style={{ paddingLeft: "3rem", paddingBottom: "1.75rem" }}>
-          {p.body.split("\n\n").map((para, i) => (
-            <p key={i} style={{ fontFamily: BODY, fontSize: "1rem", color: "#5A4E44", lineHeight: 1.9, marginBottom: "0.75rem" }}>{para}</p>
-          ))}
-        </div>
-      )}
+    <div style={{ display: "grid", gridTemplateColumns: "3.5rem 1fr", gap: "0 2rem", padding: "2.5rem 0", borderBottom: "1px solid #E8E0D8" }}>
+      <div style={{ paddingTop: "0.2rem" }}>
+        <span style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "0.7rem", color: "#C41230", letterSpacing: "0.08em", textTransform: "uppercase" }}>Part</span>
+        <div style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "2rem", color: "#1C1410", lineHeight: 1, letterSpacing: "-0.04em", marginTop: "0.1rem" }}>{p.n}</div>
+      </div>
+      <div>
+        <p style={{ fontFamily: DISPLAY, fontWeight: 800, fontSize: "1.2rem", color: "#1C1410", letterSpacing: "-0.025em", margin: "0 0 0.3rem" }}>{p.title}</p>
+        <p style={{ fontFamily: BODY, fontSize: "0.85rem", color: "#B8A898", fontStyle: "italic", margin: "0 0 1rem", letterSpacing: "0.01em" }}>{p.sub}</p>
+        {p.body.split("\n\n").map((para, i) => (
+          <p key={i} style={{ fontFamily: BODY, fontSize: "0.97rem", color: "#5A4E44", lineHeight: 1.85, margin: "0 0 0.6rem" }}>{para}</p>
+        ))}
+      </div>
     </div>
   );
 }
@@ -199,36 +189,12 @@ export default function OurExistentialAdvantage() {
 
       {/* ── HERO ── */}
       <section style={{ background: "#F7F3EC", paddingTop: "4.5rem", paddingBottom: "3rem" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 2rem" }}>
 
-          {/* 3-col: review | cover | review */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 340px 1fr", gap: "3rem", alignItems: "center", marginBottom: "3rem" }}>
-            <div className="hero-flanks" style={{ textAlign: "right" }}>
-              <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "1rem", color: "#3A3028", lineHeight: 1.75, marginBottom: "1rem" }}>"{featuredReviews[0].quote}"</p>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "0.75rem" }}>
-                <div>
-                  <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.78rem", color: "#1C1410", letterSpacing: "-0.01em", margin: 0 }}>{featuredReviews[0].name}</p>
-                  <p style={{ fontFamily: BODY, fontSize: "0.7rem", color: "#9A8878", marginTop: "0.1rem", margin: 0 }}>{featuredReviews[0].role}</p>
-                </div>
-                <img src={featuredReviews[0].photo} alt={featuredReviews[0].name} style={{ width: "2.75rem", height: "2.75rem", borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: "2px solid #E8DDD4" }} />
-              </div>
-            </div>
-
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <div style={{ width: "100%", aspectRatio: "3/4", overflow: "hidden", boxShadow: "0 20px 60px rgba(28,20,16,0.18), 0 4px 16px rgba(28,20,16,0.1)" }}>
-                <img src="/book-cover.png" alt="Our Existential Advantage" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-              </div>
-            </div>
-
-            <div className="hero-flanks">
-              <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "1rem", color: "#3A3028", lineHeight: 1.75, marginBottom: "1rem" }}>"{featuredReviews[1].quote}"</p>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                <img src={featuredReviews[1].photo} alt={featuredReviews[1].name} style={{ width: "2.75rem", height: "2.75rem", borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: "2px solid #E8DDD4" }} />
-                <div>
-                  <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.78rem", color: "#1C1410", letterSpacing: "-0.01em", margin: 0 }}>{featuredReviews[1].name}</p>
-                  <p style={{ fontFamily: BODY, fontSize: "0.7rem", color: "#9A8878", marginTop: "0.1rem", margin: 0 }}>{featuredReviews[1].role}</p>
-                </div>
-              </div>
+          {/* Book cover centered */}
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: "3rem" }}>
+            <div style={{ width: "280px", aspectRatio: "3/4", overflow: "hidden", boxShadow: "0 20px 60px rgba(28,20,16,0.18), 0 4px 16px rgba(28,20,16,0.1)" }}>
+              <img src="/book-cover.png" alt="Our Existential Advantage" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             </div>
           </div>
 
@@ -319,7 +285,7 @@ export default function OurExistentialAdvantage() {
                   <img
                     src={r.photo}
                     alt={r.name}
-                    style={{ width: "72px", height: "72px", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                    style={{ width: "110px", height: "110px", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", display: "block" }}
                   />
                 </div>
                 {/* Quote */}
@@ -359,7 +325,7 @@ export default function OurExistentialAdvantage() {
 
           {/* Accordion */}
           <div>
-            {parts.map(part => <Accordion key={part.n} p={part} />)}
+            {parts.map(part => <PartItem key={part.n} p={part} />)}
           </div>
         </div>
       </section>
