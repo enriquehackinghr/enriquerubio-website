@@ -22,12 +22,12 @@ const featuredReviews = [
 ];
 
 const allReviews = [
-  { quote: "At a time when leaders are inundated with AI hype, this book delivers something no LLM can match: authentic human wisdom.", name: "Jeff Wetzler", role: "Author, Ask: Tap Into the Hidden Wisdom of People Around You" },
-  { quote: "A must-read for anyone leading their business through this AI transition.", name: "Janine Yancey", role: "Founder & CEO, Emtrain" },
-  { quote: "A smart, deeply human guide to leading through change while preserving the qualities that make us irreplaceable.", name: "Tracy Brower, PhD", role: "VP of Workplace Insights, Steelcase" },
-  { quote: "The 90/10 principle alone should be required doctrine in every executive team.", name: "Nico Decock", role: "CHRO, Distrilog Group" },
-  { quote: "Enrique reframes AI as a leadership challenge: protect human judgment, build trust, and lead transformation with clarity, ethics, and care.", name: "Clarissa Schuhmacher", role: "Head of Capabilities, Leadership & Culture, Imperial Brands PLC" },
-  { quote: "Deeply human, sharply practical. Enrique distills what five centuries of disruption keep teaching us, then applies it to the most consequential transition of our careers.", name: "Nico Decock", role: "CHRO, Distrilog Group" },
+  { quote: "At a time when leaders are inundated with AI hype, this book delivers something no LLM can match: authentic human wisdom.", name: "Jeff Wetzler", role: "Author, Ask: Tap Into the Hidden Wisdom of People Around You", photo: "" },
+  { quote: "A must-read for anyone leading their business through this AI transition.", name: "Janine Yancey", role: "Founder & CEO, Emtrain", photo: "" },
+  { quote: "A smart, deeply human guide to leading through change while preserving the qualities that make us irreplaceable.", name: "Tracy Brower, PhD", role: "VP of Workplace Insights, Steelcase", photo: "" },
+  { quote: "The 90/10 principle alone should be required doctrine in every executive team.", name: "Nico Decock", role: "CHRO, Distrilog Group", photo: "" },
+  { quote: "Enrique reframes AI as a leadership challenge: protect human judgment, build trust, and lead transformation with clarity, ethics, and care.", name: "Clarissa Schuhmacher", role: "Head of Capabilities, Leadership & Culture, Imperial Brands PLC", photo: "" },
+  { quote: "Deeply human, sharply practical. Enrique distills what five centuries of disruption keep teaching us, then applies it to the most consequential transition of our careers.", name: "Eynat Guez", role: "Co-Founder & CEO, Papaya Global", photo: "" },
 ];
 
 const parts = [
@@ -293,30 +293,60 @@ export default function OurExistentialAdvantage() {
       <section style={{ background: "#F7F3EC", padding: "6rem 2rem" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", marginBottom: "3.5rem", textAlign: "center" }}>Advance Reviews</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "2.5rem" }} className="reviews-grid">
-            {allReviews.map((r, i) => (
-              <div key={i}>
-                <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "0.97rem", color: "#2C2418", lineHeight: 1.8, marginBottom: "1.1rem" }}>"{r.quote}"</p>
-                <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.75rem", color: "#1C1410", letterSpacing: "-0.01em" }}>{r.name}</p>
-                <p style={{ fontFamily: BODY, fontSize: "0.7rem", color: "#9A8878", marginTop: "0.15rem" }}>{r.role}</p>
-              </div>
-            ))}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "2.5rem 3rem" }} className="reviews-grid">
+            {allReviews.map((r, i) => {
+              const initials = r.name.split(" ").map(w => w[0]).slice(0, 2).join("");
+              return (
+                <div key={i} style={{ display: "flex", flexDirection: "column" }}>
+                  <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "0.97rem", color: "#2C2418", lineHeight: 1.85, marginBottom: "1.25rem", flex: 1 }}>"{r.quote}"</p>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", paddingTop: "1rem", borderTop: "1px solid #EDE5DB" }}>
+                    {r.photo ? (
+                      <img src={r.photo} alt={r.name} style={{ width: "2.25rem", height: "2.25rem", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+                    ) : (
+                      <div style={{ width: "2.25rem", height: "2.25rem", borderRadius: "50%", background: "#E8DDD4", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                        <span style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.65rem", color: "#9A8878", letterSpacing: "0.02em" }}>{initials}</span>
+                      </div>
+                    )}
+                    <div>
+                      <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.75rem", color: "#1C1410", letterSpacing: "-0.01em", margin: 0 }}>{r.name}</p>
+                      <p style={{ fontFamily: BODY, fontSize: "0.68rem", color: "#9A8878", marginTop: "0.1rem", margin: 0, lineHeight: 1.4 }}>{r.role}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* ── INSIDE THE BOOK ── */}
       <section style={{ background: "#fff", padding: "6rem 2rem" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "260px 1fr", gap: "5rem", alignItems: "start" }} className="parts-layout">
-          <div className="parts-sticky" style={{ position: "sticky", top: "5rem" }}>
-            <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", marginBottom: "1rem" }}>Inside the Book</p>
-            <h2 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "1.75rem", color: "#1C1410", lineHeight: 1.05, letterSpacing: "-0.035em", textTransform: "uppercase", marginBottom: "1rem" }}>
-              Nine<br />Parts.<br />One<br />Conviction.
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+
+          {/* Section header */}
+          <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", marginBottom: "1.5rem" }}>Inside the Book</p>
+
+          {/* Big split headline */}
+          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "1rem", flexWrap: "wrap", marginBottom: "0.75rem" }}>
+            <h2 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "clamp(2.25rem, 5vw, 4rem)", color: "#1C1410", lineHeight: 0.95, letterSpacing: "-0.04em", textTransform: "uppercase", margin: 0 }}>
+              Nine Parts.
             </h2>
-            <p style={{ fontFamily: BODY, fontSize: "0.82rem", color: "#9A8878", lineHeight: 1.75 }}>
-              A complete architecture for leading through the age of AI.
+            <h2 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "clamp(2.25rem, 5vw, 4rem)", color: "#C41230", lineHeight: 0.95, letterSpacing: "-0.04em", textTransform: "uppercase", margin: 0, textAlign: "right" }}>
+              One Conviction.
+            </h2>
+          </div>
+
+          {/* Rule + description */}
+          <div style={{ borderTop: "2px solid #1C1410", paddingTop: "1.25rem", marginBottom: "3rem", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
+            <p style={{ fontFamily: BODY, fontSize: "0.9rem", color: "#9A8878", lineHeight: 1.7, maxWidth: "540px", margin: 0 }}>
+              A complete architecture for leading organizations through the age of AI, from the long view of history to the personal responsibility of the leader.
+            </p>
+            <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#C4B8AD", margin: 0, flexShrink: 0 }}>
+              9 Parts &nbsp;·&nbsp; 350 Pages
             </p>
           </div>
+
+          {/* Accordion */}
           <div>
             {parts.map(part => <Accordion key={part.n} p={part} />)}
           </div>
