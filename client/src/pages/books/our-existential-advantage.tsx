@@ -303,39 +303,32 @@ export default function OurExistentialAdvantage() {
 
       {/* ── ALL REVIEWS ── */}
       <section style={{ background: "#F7F3EC", padding: "6rem 2rem" }}>
-        <div style={{ maxWidth: "1140px", margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-            <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", marginBottom: "0.75rem" }}>Advance Reviews</p>
-            <h2 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "clamp(1.5rem, 3vw, 2.25rem)", color: "#1C1410", letterSpacing: "-0.035em", textTransform: "uppercase", margin: 0 }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", borderBottom: "2px solid #1C1410", paddingBottom: "1rem", marginBottom: "4.5rem", flexWrap: "wrap", gap: "1rem" }}>
+            <h2 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", color: "#1C1410", letterSpacing: "-0.04em", textTransform: "uppercase", margin: 0 }}>
               What Leaders Are Saying
             </h2>
+            <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", margin: 0 }}>Advance Reviews</p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1.5rem" }} className="reviews-grid">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "4rem 3.5rem" }} className="reviews-grid">
             {allReviews.map((r, i) => (
-              <div key={i} style={{ background: "#fff", padding: "2.5rem 2rem 2rem", display: "flex", flexDirection: "column", boxShadow: "0 1px 3px rgba(28,20,16,0.06)" }}>
+              <div key={i}>
                 {/* Photo */}
-                <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.75rem" }}>
-                  <div style={{ position: "relative" }}>
-                    <img
-                      src={r.photo}
-                      alt={r.name}
-                      style={{ width: "88px", height: "88px", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", display: "block", border: "3px solid #F7F3EC" }}
-                    />
-                    <div style={{ position: "absolute", bottom: "-2px", right: "-2px", width: "22px", height: "22px", borderRadius: "50%", background: "#C41230", display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #fff" }}>
-                      <span style={{ color: "#fff", fontSize: "0.6rem", fontFamily: SERIF, fontStyle: "italic", lineHeight: 1 }}>"</span>
-                    </div>
-                  </div>
+                <div style={{ marginBottom: "1.5rem" }}>
+                  <img
+                    src={r.photo}
+                    alt={r.name}
+                    style={{ width: "72px", height: "72px", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                  />
                 </div>
                 {/* Quote */}
-                <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "0.95rem", color: "#2C2418", lineHeight: 1.85, marginBottom: "1.75rem", flex: 1, textAlign: "center" }}>
+                <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "1.08rem", color: "#2C2418", lineHeight: 1.8, marginBottom: "1.25rem" }}>
                   "{r.quote}"
                 </p>
                 {/* Attribution */}
-                <div style={{ textAlign: "center", paddingTop: "1.25rem", borderTop: "1px solid #F0E8E0" }}>
-                  <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.78rem", color: "#1C1410", letterSpacing: "-0.01em", margin: 0 }}>{r.name}</p>
-                  <p style={{ fontFamily: BODY, fontSize: "0.68rem", color: "#9A8878", marginTop: "0.3rem", lineHeight: 1.5 }}>{r.role}</p>
-                </div>
+                <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.82rem", color: "#1C1410", letterSpacing: "-0.01em", margin: 0 }}>{r.name}</p>
+                <p style={{ fontFamily: BODY, fontSize: "0.75rem", color: "#9A8878", marginTop: "0.2rem", lineHeight: 1.5 }}>{r.role}</p>
               </div>
             ))}
           </div>
