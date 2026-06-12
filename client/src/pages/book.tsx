@@ -72,21 +72,6 @@ export default function BookPage() {
                 Enrique Rubio
               </p>
 
-              {/* Stats */}
-              <div className="flex flex-wrap gap-0 mb-8">
-                <div className="border-2 border-white/20 px-6 py-4 bg-white/5">
-                  <div className="text-3xl font-heading font-bold text-primary">9</div>
-                  <div className="text-xs font-mono text-gray-400 uppercase tracking-widest">Parts</div>
-                </div>
-                <div className="border-2 border-l-0 border-white/20 px-6 py-4 bg-white/5">
-                  <div className="text-3xl font-heading font-bold text-primary">55</div>
-                  <div className="text-xs font-mono text-gray-400 uppercase tracking-widest">Chapters</div>
-                </div>
-                <div className="border-2 border-l-0 border-white/20 px-6 py-4 bg-white/5">
-                  <div className="text-3xl font-heading font-bold text-primary">1</div>
-                  <div className="text-xs font-mono text-gray-400 uppercase tracking-widest">Conviction</div>
-                </div>
-              </div>
 
               <blockquote className="border-l-4 border-primary pl-6 text-gray-300 font-mono italic text-lg leading-relaxed mb-8">
                 "In the age of intelligent machines, the most strategic thing you can do is become more fully, more deliberately, more courageously human."
@@ -160,21 +145,6 @@ export default function BookPage() {
                 "AI is your first hire. Brief it well, and the work begins."
               </blockquote>
 
-              {/* Stats */}
-              <div className="flex flex-wrap gap-0">
-                <div className="border-2 border-white/20 px-6 py-4 bg-white/5">
-                  <div className="text-3xl font-heading font-bold text-primary">44</div>
-                  <div className="text-xs font-mono text-gray-400 uppercase tracking-widest">Chapters</div>
-                </div>
-                <div className="border-2 border-l-0 border-white/20 px-6 py-4 bg-white/5">
-                  <div className="text-3xl font-heading font-bold text-primary">~20</div>
-                  <div className="text-xs font-mono text-gray-400 uppercase tracking-widest">Min / Chapter</div>
-                </div>
-                <div className="border-2 border-l-0 border-white/20 px-6 py-4 bg-white/5">
-                  <div className="text-3xl font-heading font-bold text-primary">$19</div>
-                  <div className="text-xs font-mono text-gray-400 uppercase tracking-widest">US Paperback</div>
-                </div>
-              </div>
             </div>
 
             {/* Right — description */}
