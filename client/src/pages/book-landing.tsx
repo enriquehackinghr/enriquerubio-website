@@ -20,44 +20,16 @@ export default function BookLanding() {
       {/* Main content */}
       <div className="flex-1 flex flex-row items-stretch justify-center min-h-0 overflow-hidden max-w-6xl mx-auto w-full">
 
-        {/* Left — Two book covers side by side */}
+        {/* Left — Two promo images stacked */}
         <div
-          className="flex items-center justify-center gap-4 py-6 px-6"
+          className="flex flex-col items-center justify-center gap-3 py-6 px-6"
           style={{ width: "42%", flexShrink: 0 }}
         >
-          {/* OEA cover */}
-          <div className="flex flex-col items-center gap-3" style={{ flex: 1 }}>
-            <div
-              className="overflow-hidden w-full"
-              style={{
-                aspectRatio: "3/4",
-                boxShadow: "0 20px 50px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06)",
-              }}
-            >
-              <img src="/book-cover.png" alt="Our Existential Advantage" className="w-full h-full object-cover" />
-            </div>
-            <p className="text-white/40 text-[10px] font-mono uppercase tracking-widest text-center leading-tight">
-              Our Existential<br />Advantage
-            </p>
+          <div className="overflow-hidden w-full" style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.7)" }}>
+            <img src="/oea-promo.png" alt="Our Existential Advantage — Available Now" className="w-full h-full object-cover block" />
           </div>
-
-          {/* Divider */}
-          <div className="w-px self-stretch bg-white/10 flex-shrink-0" />
-
-          {/* AI for Beginners cover */}
-          <div className="flex flex-col items-center gap-3" style={{ flex: 1 }}>
-            <div
-              className="overflow-hidden w-full"
-              style={{
-                aspectRatio: "3/4",
-                boxShadow: "0 20px 50px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06)",
-              }}
-            >
-              <img src="/ai-for-beginners-cover.png" alt="AI for Beginners" className="w-full h-full object-cover" />
-            </div>
-            <p className="text-white/40 text-[10px] font-mono uppercase tracking-widest text-center leading-tight">
-              AI for<br />Beginners
-            </p>
+          <div className="overflow-hidden w-full" style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.7)" }}>
+            <img src="/aib-promo.png" alt="AI for Beginners — Available Now" className="w-full h-full object-cover block" />
           </div>
         </div>
 
