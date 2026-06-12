@@ -1,28 +1,6 @@
-import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 export default function BookLanding() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/newsletter/book", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }),
-      });
-      const data = await res.json();
-      setStatus(data.success ? "success" : "error");
-      if (data.success) { setName(""); setEmail(""); }
-    } catch {
-      setStatus("error");
-    }
-  }
-
   return (
     <div
       className="h-screen overflow-hidden flex flex-col"
@@ -88,9 +66,9 @@ export default function BookLanding() {
 
           {/* Badge */}
           <div className="flex items-center gap-3 mb-5">
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#C41230" }} />
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#C41230" }} />
             <span className="text-xs font-mono tracking-[0.2em] uppercase text-white/50">
-              Two Books. Coming June 2026.
+              Two Books. Now Available on Amazon.
             </span>
           </div>
 
@@ -106,15 +84,20 @@ export default function BookLanding() {
             }}
           >
             <span style={{ color: "#FFFFFF", display: "block" }}>Enrique Rubio</span>
-            <span style={{ color: "#C41230", display: "block" }}>June 2026</span>
+            <span style={{ color: "#C41230", display: "block" }}>Now Available</span>
           </h1>
 
-          {/* Two book entries */}
+          {/* Two book entries with buy links */}
           <div className="flex flex-col gap-3 mb-6">
             {/* Book 1 */}
-            <div className="flex gap-4 items-start p-4 border border-white/10 bg-white/[0.02]">
+            <a
+              href="https://www.amazon.com/dp/B0H46B8KFZ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-4 items-start p-4 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors no-underline"
+            >
               <div className="w-1 self-stretch flex-shrink-0" style={{ background: "#C41230" }} />
-              <div>
+              <div className="flex-1">
                 <p className="font-bold text-white text-sm mb-0.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                   Our Existential Advantage
                 </p>
@@ -122,11 +105,17 @@ export default function BookLanding() {
                   Human Leadership in the Age of Intelligent Machines
                 </p>
               </div>
-            </div>
+              <span className="text-xs font-mono text-white/30 self-center flex-shrink-0">Buy on Amazon →</span>
+            </a>
             {/* Book 2 */}
-            <div className="flex gap-4 items-start p-4 border border-white/10 bg-white/[0.02]">
+            <a
+              href="https://www.amazon.com/dp/B0H42FYT4Z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-4 items-start p-4 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors no-underline"
+            >
               <div className="w-1 self-stretch flex-shrink-0" style={{ background: "#1d4a35" }} />
-              <div>
+              <div className="flex-1">
                 <p className="font-bold text-white text-sm mb-0.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                   AI for Beginners
                 </p>
@@ -134,56 +123,9 @@ export default function BookLanding() {
                   A Practical Path from Curious to Confident
                 </p>
               </div>
-            </div>
+              <span className="text-xs font-mono text-white/30 self-center flex-shrink-0">Buy on Amazon →</span>
+            </a>
           </div>
-
-          {/* Sign-up */}
-          {status === "success" ? (
-            <div
-              className="px-5 py-4 mb-5"
-              style={{ border: "1px solid #C41230", background: "rgba(196,18,48,0.06)", maxWidth: "520px" }}
-            >
-              <p className="font-semibold mb-0.5 text-sm" style={{ color: "#C41230" }}>You're on the list.</p>
-              <p className="text-white/50 text-xs font-mono">We'll notify you as soon as both books are released.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="mb-5" style={{ maxWidth: "520px" }}>
-              <p className="text-white/40 text-xs font-mono uppercase tracking-widest mb-3">
-                Get notified at launch
-              </p>
-              <div className="flex flex-row gap-0">
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="w-32 h-11 px-4 text-sm font-mono bg-white/5 border border-white/15 text-white placeholder-white/30 focus:outline-none focus:border-white/40 flex-shrink-0"
-                  style={{ borderRadius: 0 }}
-                />
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 h-11 px-4 text-sm font-mono bg-white/5 border border-l-0 border-white/15 text-white placeholder-white/30 focus:outline-none focus:border-white/40"
-                  style={{ borderRadius: 0 }}
-                />
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="h-11 px-5 text-xs font-mono font-bold uppercase tracking-widest hover:opacity-90 transition-opacity flex-shrink-0"
-                  style={{ background: "#C41230", color: "#FFFFFF", borderRadius: 0, letterSpacing: "0.12em" }}
-                >
-                  {status === "loading" ? "..." : "Notify Me"}
-                </button>
-              </div>
-              {status === "error" && (
-                <p className="mt-2 text-red-400 text-xs font-mono">Something went wrong. Please try again.</p>
-              )}
-            </form>
-          )}
 
           {/* Continue to website */}
           <a

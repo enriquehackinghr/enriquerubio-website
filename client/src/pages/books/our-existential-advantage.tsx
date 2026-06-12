@@ -199,7 +199,7 @@ export default function OurExistentialAdvantage() {
 
             {/* Info */}
             <div>
-              <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#B8A898", marginBottom: "2rem" }}>Coming June 2026</p>
+              <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#C41230", marginBottom: "2rem" }}>Now Available</p>
               <h1 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "clamp(3rem, 5.5vw, 5.5rem)", color: "#1C1410", lineHeight: 0.92, letterSpacing: "-0.045em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
                 Our<br />Existential<br /><span style={{ color: "#C41230" }}>Advantage</span>
               </h1>
@@ -215,8 +215,8 @@ export default function OurExistentialAdvantage() {
               </p>
 
               <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                <a href="#notify" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#1C1410", color: "#fff", fontFamily: DISPLAY, fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "1rem 2rem", textDecoration: "none" }}>
-                  Notify Me at Launch <ArrowRight size={13} />
+                <a href="https://www.amazon.com/dp/B0H46B8KFZ" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#C41230", color: "#fff", fontFamily: DISPLAY, fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "1rem 2rem", textDecoration: "none" }}>
+                  Buy on Amazon <ArrowRight size={13} />
                 </a>
                 <button onClick={scrollToBooking} style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "transparent", color: "#1C1410", fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "1rem 2rem", border: "1.5px solid #1C1410", cursor: "pointer" }}>
                   Book Enrique to Speak
@@ -353,27 +353,24 @@ export default function OurExistentialAdvantage() {
         </div>
       </section>
 
-      {/* ── NOTIFY ── */}
+      {/* ── GET THE BOOK ── */}
       <section id="notify" style={{ background: "#1C1410", padding: "5.5rem 2rem" }}>
-        <div style={{ maxWidth: "480px", margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.28)", marginBottom: "0.75rem" }}>Coming June 2026</p>
+        <div style={{ maxWidth: "560px", margin: "0 auto", textAlign: "center" }}>
+          <p style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#C41230", marginBottom: "0.75rem" }}>Now Available</p>
           <h2 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: "2.5rem", color: "#fff", lineHeight: 1.0, letterSpacing: "-0.04em", textTransform: "uppercase", marginBottom: "0.875rem" }}>
-            Be First<br />to Know
+            Get the Book
           </h2>
-          <p style={{ fontFamily: BODY, fontSize: "0.9rem", color: "rgba(255,255,255,0.42)", lineHeight: 1.7, marginBottom: "2rem" }}>
-            Get notified the moment <em>Our Existential Advantage</em> is available.
+          <p style={{ fontFamily: BODY, fontSize: "0.95rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.75, marginBottom: "2.25rem" }}>
+            Available now on Amazon in paperback and Kindle.
           </p>
-          {nlStatus === "success" ? (
-            <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "1rem", color: "#C41230" }}>You're on the list.</p>
-          ) : (
-            <form onSubmit={submitNl} style={{ display: "flex" }}>
-              <input type="text" placeholder="Name" value={nlName} onChange={e => setNlName(e.target.value)} required style={{ height: "2.75rem", padding: "0 0.875rem", fontFamily: BODY, fontSize: "0.875rem", border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.06)", color: "#fff", outline: "none", width: "110px", flexShrink: 0 }} />
-              <input type="email" placeholder="Email address" value={nlEmail} onChange={e => setNlEmail(e.target.value)} required style={{ height: "2.75rem", padding: "0 0.875rem", fontFamily: BODY, fontSize: "0.875rem", border: "1px solid rgba(255,255,255,0.1)", borderLeft: "none", background: "rgba(255,255,255,0.06)", color: "#fff", outline: "none", flex: 1 }} />
-              <button type="submit" disabled={nlStatus === "loading"} style={{ height: "2.75rem", padding: "0 1.25rem", background: "#C41230", color: "#fff", fontFamily: DISPLAY, fontWeight: 800, fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase", border: "none", cursor: "pointer", flexShrink: 0 }}>
-                {nlStatus === "loading" ? "..." : "Notify Me"}
-              </button>
-            </form>
-          )}
+          <a
+            href="https://www.amazon.com/dp/B0H46B8KFZ"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "#C41230", color: "#fff", fontFamily: DISPLAY, fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "1.1rem 2.5rem", textDecoration: "none" }}
+          >
+            Buy on Amazon <ArrowRight size={14} />
+          </a>
         </div>
       </section>
 
