@@ -2,10 +2,16 @@
 // Uses Replit AI Integrations for OpenAI access (no API key required, billed to credits)
 import OpenAI from "openai";
 
-const openai = new OpenAI({
-  baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
-  apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY
-});
+function getOpenAI() {
+  const apiKey = process.env.AI_INTEGRATIONS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    throw new Error("OpenAI API key is not configured");
+  }
+  return new OpenAI({
+    baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
+    apiKey
+  });
+}
 
 const SYSTEM_PROMPT = `You are Ada, Enrique Rubio's AI assistant.
 
@@ -178,7 +184,7 @@ CURRENT PROSPECT INFO:
   ];
 
   try {
-    const response = await openai.chat.completions.create({
+    const response = await getOpenAI().chat.completions.create({
       model: "gpt-4o",
       messages: messages.map(m => ({ role: m.role, content: m.content })),
       max_tokens: 1024,
@@ -254,7 +260,7 @@ Keep it concise (3-4 short paragraphs). Be warm and professional.
 Respond with just the email body text, no subject line.`;
 
   try {
-    const response = await openai.chat.completions.create({
+    const response = await getOpenAI().chat.completions.create({
       model: "gpt-4o",
       messages: [{ role: 'user', content: prompt }],
       max_completion_tokens: 512
@@ -318,7 +324,7 @@ Format your response as a JSON object:
     : '';
 
   try {
-    const response = await openai.chat.completions.create({
+    const response = await getOpenAI().chat.completions.create({
       model: "gpt-4o",
       messages: [
         { role: 'system', content: emailSystemPrompt },
