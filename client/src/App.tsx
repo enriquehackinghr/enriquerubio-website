@@ -6,7 +6,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Speaking from "@/pages/speaking";
-import ChatPage from "@/pages/chat";
 import BookPage from "@/pages/book";
 import BookLanding from "@/pages/book-landing";
 import OurExistentialAdvantage from "@/pages/books/our-existential-advantage";
@@ -28,7 +27,6 @@ function Router() {
       <Route path="/book" component={BookPage} />
       <Route path="/book-launch" component={BookLanding} />
       <Route path="/books/our-existential-advantage" component={OurExistentialAdvantage} />
-      <Route path="/chat/:id" component={ChatPage} />
       <Route component={NotFound} />
     </Switch>
   );
