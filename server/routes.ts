@@ -67,10 +67,5 @@ export async function registerRoutes(
     }
   });
 
-  // Ada is deactivated. Acknowledge leftover AgentMail webhooks without auto-replying.
-  app.post('/api/webhook/agentmail', (_req, res) => {
-    res.status(200).send('OK');
-  });
-
   return httpServer;
 }
