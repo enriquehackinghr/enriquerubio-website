@@ -148,7 +148,7 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Upcoming Book Section */}
+        {/* Book Section */}
         <div className="mt-24 pt-24 border-t border-white/10">
 
           {/* Top: Cover + Title side by side */}
@@ -163,13 +163,13 @@ export function AboutSection() {
                   />
                 </div>
                 <div className="absolute -top-3 -right-3 bg-primary text-black px-3 py-1 font-mono font-bold text-xs uppercase">
-                  Coming June 2026
+                  Available Now
                 </div>
               </div>
             </div>
             <div className="flex flex-col justify-center">
               <div className="inline-block bg-primary text-black px-4 py-1 font-mono font-bold uppercase tracking-widest text-xs mb-5">
-                :: Upcoming_Book
+                :: Available_Now
               </div>
               <h3 className="text-4xl md:text-6xl font-heading font-bold mb-3 uppercase tracking-tight leading-none">
                 Our Existential <br /><span className="text-primary">Advantage</span>

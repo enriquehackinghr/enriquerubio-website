@@ -378,7 +378,7 @@ export default function OurExistentialAdvantage() {
       <footer style={{ background: "#F0EAE0", borderTop: "1px solid #E0D5C8", padding: "1.5rem 2rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <p style={{ fontFamily: BODY, fontSize: "0.72rem", color: "#B8A898" }}>&copy; 2026 Enrique Rubio</p>
         <Link href="/book" style={{ fontFamily: DISPLAY, fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.08em", color: "#B8A898", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.35rem", textTransform: "uppercase" }}>
-          <ArrowLeft size={11} /> Back to Upcoming Books
+          <ArrowLeft size={11} /> Back to Books
         </Link>
       </footer>
     </div>
