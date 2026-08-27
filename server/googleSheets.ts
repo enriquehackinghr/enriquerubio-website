@@ -1,208 +1,202 @@
-import { google } from "googleapis";
-import type { BookingInquiry } from "./email";
+// Google Sheets Integration (via Replit Connector)
+import { google } from 'googleapis';
 
-const BOOKING_SHEET_ID =
-  process.env.GOOGLE_SHEET_ID ||
-  "1b5yhcH4ROHG3iKRsF2jhxbwPz5lxeY74fEYGaoYK7KU";
+let connectionSettings: any;
 
-const BOOKING_TAB = "Submissions";
-const NEWSLETTER_TAB = "Newsletter";
-const BOOKING_HEADERS = [
-  "Timestamp",
-  "Name",
-  "Organization",
-  "Email",
-  "Event Date",
-  "Format",
-  "Message",
-];
-const NEWSLETTER_HEADERS = ["Timestamp", "Name", "Email"];
+async function getAccessToken() {
+  if (connectionSettings && connectionSettings.settings.expires_at && new Date(connectionSettings.settings.expires_at).getTime() > Date.now()) {
+    return connectionSettings.settings.access_token;
+  }
+  
+  const hostname = process.env.REPLIT_CONNECTORS_HOSTNAME;
+  const xReplitToken = process.env.REPL_IDENTITY 
+    ? 'repl ' + process.env.REPL_IDENTITY 
+    : process.env.WEB_REPL_RENEWAL 
+    ? 'depl ' + process.env.WEB_REPL_RENEWAL 
+    : null;
 
-type ServiceAccount = {
-  client_email: string;
-  private_key: string;
-};
-
-export function isGoogleSheetsConfigured() {
-  return Boolean(
-    process.env.GOOGLE_SERVICE_ACCOUNT_JSON ||
-      process.env.GOOGLE_SHEETS_WEBHOOK_URL,
-  );
-}
-
-function spreadsheetId() {
-  return process.env.GOOGLE_SHEET_ID || BOOKING_SHEET_ID;
-}
-
-function parseServiceAccount(): ServiceAccount | null {
-  const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
-  if (!raw) {
-    return null;
+  if (!xReplitToken) {
+    throw new Error('X_REPLIT_TOKEN not found for repl/depl');
   }
 
-  const parsed = JSON.parse(raw) as ServiceAccount;
-  return {
-    client_email: parsed.client_email,
-    private_key: parsed.private_key.replace(/\\n/g, "\n"),
-  };
+  connectionSettings = await fetch(
+    'https://' + hostname + '/api/v2/connection?include_secrets=true&connector_names=google-sheet',
+    {
+      headers: {
+        'Accept': 'application/json',
+        'X_REPLIT_TOKEN': xReplitToken
+      }
+    }
+  ).then(res => res.json()).then(data => data.items?.[0]);
+
+  const accessToken = connectionSettings?.settings?.access_token || connectionSettings.settings?.oauth?.credentials?.access_token;
+
+  if (!connectionSettings || !accessToken) {
+    throw new Error('Google Sheet not connected');
+  }
+  return accessToken;
 }
 
-async function appendViaWebhook(payload: Record<string, unknown>) {
-  const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
-  if (!webhookUrl) {
-    throw new Error("GOOGLE_SHEETS_WEBHOOK_URL is not set");
-  }
+// Get a fresh Google Sheets client (never cache - tokens expire)
+export async function getGoogleSheetsClient() {
+  const accessToken = await getAccessToken();
 
-  const response = await fetch(webhookUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-    redirect: "follow",
+  const oauth2Client = new google.auth.OAuth2();
+  oauth2Client.setCredentials({
+    access_token: accessToken
   });
 
-  const text = await response.text();
-  let body: { ok?: boolean; error?: string } = {};
-  try {
-    body = text ? JSON.parse(text) : {};
-  } catch {
-    throw new Error(
-      "Google Sheet webhook did not return JSON. Confirm the Apps Script is deployed as a web app with access set to Anyone.",
-    );
-  }
-
-  if (!response.ok || !body.ok) {
-    throw new Error(body.error || `Google Sheet webhook failed (${response.status})`);
-  }
+  return google.sheets({ version: 'v4', auth: oauth2Client });
 }
 
-async function getSheetsClient() {
-  const credentials = parseServiceAccount();
-  if (!credentials) {
-    return null;
-  }
+// Get Google Drive client to create new spreadsheets
+export async function getGoogleDriveClient() {
+  const accessToken = await getAccessToken();
 
-  const auth = new google.auth.JWT({
-    email: credentials.client_email,
-    key: credentials.private_key,
-    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  const oauth2Client = new google.auth.OAuth2();
+  oauth2Client.setCredentials({
+    access_token: accessToken
   });
 
-  return google.sheets({ version: "v4", auth });
+  return google.drive({ version: 'v3', auth: oauth2Client });
 }
 
-async function ensureTab(
-  sheets: ReturnType<typeof google.sheets>,
-  title: string,
-  headers: string[],
-) {
-  const id = spreadsheetId();
-  const meta = await sheets.spreadsheets.get({ spreadsheetId: id });
-  const exists = meta.data.sheets?.some(
-    (sheet) => sheet.properties?.title === title,
-  );
+// Store the spreadsheet ID after creation
+let bookingSpreadsheetId: string | null = null;
 
-  if (!exists) {
-    await sheets.spreadsheets.batchUpdate({
-      spreadsheetId: id,
-      requestBody: {
-        requests: [{ addSheet: { properties: { title } } }],
+export async function getOrCreateBookingSheet(): Promise<string> {
+  // If we already have the ID, return it
+  if (bookingSpreadsheetId) {
+    return bookingSpreadsheetId;
+  }
+
+  const sheets = await getGoogleSheetsClient();
+  const drive = await getGoogleDriveClient();
+
+  // Search for existing "Booking Inquiries" spreadsheet
+  const searchResponse = await drive.files.list({
+    q: "name='Booking Inquiries' and mimeType='application/vnd.google-apps.spreadsheet' and trashed=false",
+    fields: 'files(id, name)',
+    spaces: 'drive'
+  });
+
+  if (searchResponse.data.files && searchResponse.data.files.length > 0) {
+    bookingSpreadsheetId = searchResponse.data.files[0].id!;
+    return bookingSpreadsheetId;
+  }
+
+  // Create new spreadsheet
+  const createResponse = await sheets.spreadsheets.create({
+    requestBody: {
+      properties: {
+        title: 'Booking Inquiries'
       },
-    });
-  }
-
-  const headerResponse = await sheets.spreadsheets.values.get({
-    spreadsheetId: id,
-    range: `${title}!1:1`,
+      sheets: [{
+        properties: {
+          title: 'Submissions'
+        }
+      }]
+    }
   });
 
-  if (!headerResponse.data.values?.length) {
-    await sheets.spreadsheets.values.update({
-      spreadsheetId: id,
-      range: `${title}!A1`,
-      valueInputOption: "RAW",
-      requestBody: { values: [headers] },
-    });
-  }
+  bookingSpreadsheetId = createResponse.data.spreadsheetId!;
+
+  // Add header row
+  await sheets.spreadsheets.values.update({
+    spreadsheetId: bookingSpreadsheetId,
+    range: 'Submissions!A1:G1',
+    valueInputOption: 'RAW',
+    requestBody: {
+      values: [['Timestamp', 'Name', 'Organization', 'Email', 'Event Date', 'Format', 'Message']]
+    }
+  });
+
+  return bookingSpreadsheetId;
 }
 
-async function appendViaServiceAccount(tab: string, headers: string[], row: string[]) {
-  const sheets = await getSheetsClient();
-  if (!sheets) {
-    throw new Error("Google service account is not configured");
+let newsletterSpreadsheetId: string | null = null;
+
+export async function getOrCreateNewsletterSheet(): Promise<string> {
+  if (newsletterSpreadsheetId) return newsletterSpreadsheetId;
+
+  const sheets = await getGoogleSheetsClient();
+  const drive = await getGoogleDriveClient();
+
+  const searchResponse = await drive.files.list({
+    q: "name='Book Newsletter Subscribers' and mimeType='application/vnd.google-apps.spreadsheet' and trashed=false",
+    fields: 'files(id, name)',
+    spaces: 'drive'
+  });
+
+  if (searchResponse.data.files && searchResponse.data.files.length > 0) {
+    newsletterSpreadsheetId = searchResponse.data.files[0].id!;
+    return newsletterSpreadsheetId;
   }
 
-  await ensureTab(sheets, tab, headers);
+  const createResponse = await sheets.spreadsheets.create({
+    requestBody: {
+      properties: { title: 'Book Newsletter Subscribers' },
+      sheets: [{ properties: { title: 'Subscribers' } }]
+    }
+  });
+
+  newsletterSpreadsheetId = createResponse.data.spreadsheetId!;
+
+  await sheets.spreadsheets.values.update({
+    spreadsheetId: newsletterSpreadsheetId,
+    range: 'Subscribers!A1:C1',
+    valueInputOption: 'RAW',
+    requestBody: { values: [['Timestamp', 'Name', 'Email']] }
+  });
+
+  return newsletterSpreadsheetId;
+}
+
+export async function appendNewsletterSubscriber(data: { name: string; email: string }) {
+  const sheets = await getGoogleSheetsClient();
+  const spreadsheetId = await getOrCreateNewsletterSheet();
+
   await sheets.spreadsheets.values.append({
-    spreadsheetId: spreadsheetId(),
-    range: `${tab}!A:A`,
-    valueInputOption: "USER_ENTERED",
-    insertDataOption: "INSERT_ROWS",
-    requestBody: { values: [row] },
+    spreadsheetId,
+    range: 'Subscribers!A:C',
+    valueInputOption: 'RAW',
+    requestBody: {
+      values: [[new Date().toISOString(), data.name, data.email]]
+    }
   });
+
+  return { success: true };
 }
 
-async function appendRow(
-  kind: "booking" | "newsletter",
-  tab: string,
-  headers: string[],
-  row: string[],
-  extra: Record<string, unknown>,
-) {
-  if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
-    await appendViaServiceAccount(tab, headers, row);
-    return;
-  }
-
-  if (process.env.GOOGLE_SHEETS_WEBHOOK_URL) {
-    await appendViaWebhook({
-      type: kind,
-      spreadsheetId: spreadsheetId(),
-      tab,
-      headers,
-      row,
-      ...extra,
-    });
-    return;
-  }
-
-  throw new Error(
-    "Google Sheets is not configured. Set GOOGLE_SHEETS_WEBHOOK_URL or GOOGLE_SERVICE_ACCOUNT_JSON.",
-  );
-}
-
-export async function appendBookingToSheet(data: BookingInquiry) {
-  const timestamp = new Date().toISOString();
-  await appendRow(
-    "booking",
-    BOOKING_TAB,
-    BOOKING_HEADERS,
-    [
-      timestamp,
-      data.name,
-      data.organization,
-      data.email,
-      data.eventDate || "Not specified",
-      data.format,
-      data.message,
-    ],
-    { ...data, timestamp },
-  );
-
-  return { success: true, spreadsheetId: spreadsheetId() };
-}
-
-export async function appendNewsletterSubscriber(data: {
+export async function appendBookingToSheet(data: {
   name: string;
+  organization: string;
   email: string;
+  eventDate: string;
+  format: string;
+  message: string;
 }) {
-  const timestamp = new Date().toISOString();
-  await appendRow(
-    "newsletter",
-    NEWSLETTER_TAB,
-    NEWSLETTER_HEADERS,
-    [timestamp, data.name, data.email],
-    { ...data, timestamp },
-  );
+  const sheets = await getGoogleSheetsClient();
+  const spreadsheetId = await getOrCreateBookingSheet();
 
-  return { success: true, spreadsheetId: spreadsheetId() };
+  const timestamp = new Date().toISOString();
+
+  await sheets.spreadsheets.values.append({
+    spreadsheetId,
+    range: 'Submissions!A:G',
+    valueInputOption: 'RAW',
+    requestBody: {
+      values: [[
+        timestamp,
+        data.name,
+        data.organization,
+        data.email,
+        data.eventDate || 'Not specified',
+        data.format,
+        data.message
+      ]]
+    }
+  });
+
+  return { success: true, spreadsheetId };
 }
