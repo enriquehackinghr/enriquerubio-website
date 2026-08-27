@@ -41,7 +41,11 @@ export async function registerRoutes(
         message
       };
 
-      const result = await appendBookingToSheet(bookingData);
+      try {
+        await appendBookingToSheet(bookingData);
+      } catch (sheetError: any) {
+        console.error('Google Sheets save failed:', sheetError.message);
+      }
 
       try {
         await sendBookingNotificationEmail(bookingData);
@@ -52,8 +56,7 @@ export async function registerRoutes(
 
       res.json({ 
         success: true, 
-        message: 'Booking inquiry submitted successfully',
-        spreadsheetId: result.spreadsheetId
+        message: 'Booking inquiry submitted successfully'
       });
     } catch (error: any) {
       console.error('Booking submission error:', error);

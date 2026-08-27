@@ -200,7 +200,7 @@ export function AboutSection() {
           </div>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 mb-8">
             <div className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5">
               <span className="text-primary font-mono text-sm">//</span>
               <span className="font-mono text-sm">Strategic Frameworks</span>
@@ -214,6 +214,15 @@ export function AboutSection() {
               <span className="font-mono text-sm">Practical Exercises</span>
             </div>
           </div>
+
+          <a
+            href="https://www.amazon.com/dp/B0H46B8KFZ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-primary text-black px-8 py-4 font-mono font-bold uppercase tracking-widest text-sm border-2 border-black shadow-[4px_4px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all no-underline"
+          >
+            Buy on Amazon →
+          </a>
 
         </div>
       </div>

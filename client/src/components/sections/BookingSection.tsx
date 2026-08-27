@@ -29,7 +29,13 @@ export function BookingSection() {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      const text = await response.text();
+      let result: { success?: boolean; error?: string } = {};
+      try {
+        result = text ? JSON.parse(text) : {};
+      } catch {
+        throw new Error('The booking service is not available right now. Please try again in a moment.');
+      }
 
       if (!response.ok || !result.success) {
         throw new Error(result.error || 'Failed to submit form');
